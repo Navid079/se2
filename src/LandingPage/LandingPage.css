@@ -65,7 +65,28 @@
 =   Tablet Media Query   =
 ==========================
 */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {  
+  .landing-page__signup,
+  .landing-page__login {
+    --btn-font-size: 200%;
+  }
+
+  .landing-page__signup {
+    border: 6px solid var(--clr-primary-5);
+  }
+  
+  .landing-page__footer {
+    margin: 8% 0 4% 0;
+  }
+  
+  .landing-page__footer-icon {
+    width: 2rem;
+    margin: 0 0.5rem;
+  }
+  
+  .landing-page__footer-text {
+    font-size: 250%;
+  }
 }
 
 /* 
