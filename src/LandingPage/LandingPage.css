@@ -1,0 +1,37 @@
+.landing-page {
+  background-image: url("../images/landing-page-bg.png");
+  height: 100%;
+  width: 100%;
+  background-position: top left;
+  background-size: auto 50%;
+  background-repeat: no-repeat;
+}
+.landing-page__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: white;
+  width: 100vw;
+  height: 60vw;
+  border-radius: 50vw 50vw 0 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.landing-page__signup,
+.landing-page__login {
+  --btn-width: 6rem;
+  --btn-height: 2rem;
+  margin: 0.5rem;
+  box-shadow: 0px 3px 6px 0px #1B414840;
+}
+
+.landing-page__signup {
+  background-color: transparent;
+  border: 5px solid var(--clr-primary-5);
+  box-shadow: inset 0px 3px 6px 0px #1B414840,
+    0px 3px 6px 0px #1B414840;
+    color: var(--clr-primary-5);
+}
