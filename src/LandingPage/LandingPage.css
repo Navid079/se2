@@ -6,6 +6,7 @@
   background-size: auto 50%;
   background-repeat: no-repeat;
 }
+
 .landing-page__container {
   display: flex;
   align-items: center;
@@ -30,6 +31,7 @@
   /* margin: 0.5rem; */
   margin: 3%;
 }
+
 .landing-page__login {
   box-shadow: 0 0.1rem 0.3rem 0 #1b414840;
 }
@@ -65,7 +67,7 @@
 =   Tablet Media Query   =
 ==========================
 */
-@media screen and (min-width: 768px) {  
+@media screen and (min-width: 768px) {
   .landing-page__signup,
   .landing-page__login {
     --btn-font-size: 200%;
@@ -74,16 +76,16 @@
   .landing-page__signup {
     border: 6px solid var(--clr-primary-5);
   }
-  
+
   .landing-page__footer {
     margin: 8% 0 4% 0;
   }
-  
+
   .landing-page__footer-icon {
     width: 2rem;
     margin: 0 0.5rem;
   }
-  
+
   .landing-page__footer-text {
     font-size: 250%;
   }
@@ -99,6 +101,7 @@
     background-image: url('../images/landing-page-bg__pc.png');
     background-size: auto 100%;
   }
+
   .landing-page__container {
     align-items: flex-end;
     justify-content: center;
@@ -134,5 +137,6 @@
     font-size: 1.8rem;
   }
 }
+
 @media screen and (min-width: 1440px) {
 }
