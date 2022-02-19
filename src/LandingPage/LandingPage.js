@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Components/UI/Button/Button';
 import './LandingPage.css';
-import bookIcon from '../images/book-icon.svg';
+import { FaBookOpen } from 'react-icons/fa';
 
 const LandingPage = () => {
   return (
@@ -14,8 +14,7 @@ const LandingPage = () => {
           ثبت نام
         </Button>
         <div className="landing-page__footer">
-          <img className="landing-page__footer-icon" src={bookIcon} />
-          {/* <FontAwesomeIcon icon="fas fa-book-open" /> */}
+          <FaBookOpen className="landing-page__footer-icon" />
           <p className="landing-page__footer-text">برایم بنویس</p>
         </div>
       </div>
