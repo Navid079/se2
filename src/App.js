@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import './font.css';
 import LandingPage from "./LandingPage/LandingPage";
 
 function App() {
