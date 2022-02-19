@@ -15,6 +15,7 @@ const LandingPage = () => {
         </Button>
         <div className="landing-page__footer">
           <img className="landing-page__footer-icon" src={bookIcon} />
+          {/* <FontAwesomeIcon icon="fas fa-book-open" /> */}
           <p className="landing-page__footer-text">برایم بنویس</p>
         </div>
       </div>
