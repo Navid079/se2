@@ -1,5 +1,5 @@
 .landing-page {
-  background-image: url("../images/landing-page-bg.png");
+  background-image: url('../images/landing-page-bg.png');
   height: 100%;
   width: 100%;
   background-position: top left;
@@ -22,16 +22,35 @@
 
 .landing-page__signup,
 .landing-page__login {
-  --btn-width: 6rem;
-  --btn-height: 2rem;
+  --btn-width: 6.3rem;
+  --btn-height: 2.1rem;
   margin: 0.5rem;
-  box-shadow: 0px 3px 6px 0px #1B414840;
+}
+.landing-page__login {
+  box-shadow: 0px 3px 6px 0px #1b414840;
 }
 
 .landing-page__signup {
   background-color: transparent;
   border: 5px solid var(--clr-primary-5);
-  box-shadow: inset 0px 3px 6px 0px #1B414840,
-    0px 3px 6px 0px #1B414840;
-    color: var(--clr-primary-5);
+  box-shadow: inset 0px 3px 6px 0px #1b414840, 0px 3px 6px 0px #1b414840;
+  color: var(--clr-primary-5);
+  text-shadow: 0px 3px 6px rgba(27, 65, 72, 0.4);
+}
+
+.landing-page__footer {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 1rem;
+}
+
+.landing-page__footer-icon {
+  width: 1rem;
+  margin: 0 0.3rem;
+}
+
+.landing-page__footer-text {
+  font-size: 1rem;
+  color: var(--clr-primary-5);
+  text-shadow: 0px 3px 6px rgba(27, 65, 72, 0.4);
 }
