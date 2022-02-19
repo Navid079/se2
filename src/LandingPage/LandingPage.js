@@ -1,6 +1,7 @@
-import React from "react";
-import Button from "../Components/UI/Button/Button";
-import "./LandingPage.css";
+import React from 'react';
+import Button from '../Components/UI/Button/Button';
+import './LandingPage.css';
+import bookIcon from '../images/book-icon.svg';
 
 const LandingPage = () => {
   return (
@@ -12,6 +13,11 @@ const LandingPage = () => {
         <Button className="landing-page__signup" type="" onClick="">
           ثبت نام
         </Button>
+        <div className="landing-page__footer">
+          <img className="landing-page__footer-icon" src={bookIcon} />
+          {/* <FontAwesomeIcon icon="fas fa-book-open" /> */}
+          <p className="landing-page__footer-text">برایم بنویس</p>
+        </div>
       </div>
     </div>
   );
