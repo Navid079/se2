@@ -1,0 +1,53 @@
+.text-input__container {
+  display: flex;
+  flex-direction: row-reverse;
+
+  position: relative;
+
+  width: var(--txt-width);
+  height: var(--txt-height);
+
+  border: 1vw solid var(--clr-primary-5);
+  border-radius: 100px;
+
+  background-color: transparent;
+}
+
+.text-input__container:focus {
+  border: 1vw solid var(--clr-tertiary-5);
+}
+
+.icon {
+  color: var(--clr-primary-5);
+  height: auto;
+}
+
+.text-input {
+  width: 90%;
+  border: none;
+  border-radius: 100px;
+  background-color: transparent;
+  text-align: center;
+  padding: 0 0.5rem;
+  font-size: var(--txt-font-size);
+}
+
+.text-input::placeholder {
+  text-align: right;
+  font-size: var(--txt-font-size);
+  color: var(--clr-primary-5);
+}
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .text-input__container {
+    border: 1vh solid var(--clr-primary-5);
+  }
+
+  .text-input__container:focus {
+    border: 1vh solid var(--clr-tertiary-5);
+  }
+}
