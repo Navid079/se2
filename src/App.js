@@ -1,11 +1,14 @@
 import './App.css';
 import './font.css';
-import LandingPage from "./LandingPage/LandingPage";
+import Landing from './Pages/Landing/Landing';
+import Main from './Pages/Main/Main';
 
 function App() {
   return (
     <div className="App">
-      <LandingPage></LandingPage>
+      <Main>
+        <Landing></Landing>
+      </Main>
     </div>
   );
 }
