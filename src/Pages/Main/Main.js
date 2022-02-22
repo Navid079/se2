@@ -2,12 +2,12 @@ import React from 'react';
 
 import './Main.css';
 
-const LandingPage = ({ children }) => {
+const Main = ({ children }) => {
   return (
-    <div className="landing-page">
-      <div className="landing-page__container">{children}</div>
+    <div className="main">
+      <div className="main__container">{children}</div>
     </div>
   );
 };
 
-export default LandingPage;
+export default Main;

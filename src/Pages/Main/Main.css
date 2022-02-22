@@ -1,13 +1,13 @@
-.landing-page {
+.main {
   height: 100%;
   width: 100%;
-  background-image: url('../../images/main-page-bg__mobile.png');
+  background-image: url('../../images/.main-page-bg__mobile.png');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: auto 50%;
 }
 
-.landing-page__container {
+.main__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,12 +35,12 @@
 ==========================
 */
 @media screen and (min-width: 1024px) {
-  .landing-page {
-    background-image: url('../../images/main-page-bg__pc.png');
+  .main {
+    background-image: url('../../images/.main-page-bg__pc.png');
     background-size: auto 100%;
   }
 
-  .landing-page__container {
+  .main__container {
     align-items: center;
     justify-content: center;
     width: 60vh;
