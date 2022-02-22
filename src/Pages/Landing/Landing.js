@@ -7,7 +7,7 @@ import './Landing.css';
 
 export default function Landing() {
   return (
-    <div>
+    <div className="landing-page">
       <Button className="landing-page__login" type="" onClick="">
         ورود
       </Button>
