@@ -9,30 +9,30 @@ import { MdPerson, MdOutlinePersonPin } from 'react-icons/md';
 export default function Signup() {
   return (
     <div className="login">
-      <IconInput className="login__input" placeholder="نام کاربری">
-        <MdPerson className="icon login__input__icon" />
-      </IconInput>
-
+      <IconInput
+        className="login__input"
+        placeholder="نام کاربری"
+        icon={<MdPerson className="icon login__input__icon" />}
+      />
       <IconInput
         className="login__input"
         placeholder="رمز ورود"
         type="password"
-      >
-        <FaLock className="icon login__input__icon" />
-      </IconInput>
-
-      <IconInput className="login__input" placeholder="نام کامل">
-        <MdOutlinePersonPin className="icon login__input__icon" />
-      </IconInput>
-
-      <IconInput className="login__input" placeholder="شماره تلفن">
-        <FaPhoneAlt className="icon login__input__icon" />
-      </IconInput>
-
+        icon={<FaLock className="icon login__input__icon" />}
+      />
+      <IconInput
+        className="login__input"
+        placeholder="نام کامل"
+        icon={<MdOutlinePersonPin className="icon login__input__icon" />}
+      />
+      <IconInput
+        className="login__input"
+        placeholder="شماره تلفن"
+        icon={<FaPhoneAlt className="icon login__input__icon" />}
+      />
       <Button className="login__submit" type="submit" onClick="">
         ثبت
       </Button>
-
       {/* <p className="login__signup-link">
         اکانت دارید؟ برای ورود
         <a href=""> اینجا </a>
