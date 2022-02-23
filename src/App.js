@@ -5,18 +5,20 @@ import Landing from './Pages/Landing/Landing';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Signup/Signup';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
-      {/* <Main>
-        <Landing />
-      </Main> */}
-      {/* <Main>
-      <Login />
-      </Main> */}
-      <Main>
-        <Signup />
-      </Main>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Main />}>
+            <Route exact path="" element={<Landing />} />
+            <Route exact path="login" element={<Login />} />
+            <Route exact path="signup" element={<Signup />} />
+          </Route>
+        </Routes>
+      </Router>
     </div>
   );
 }

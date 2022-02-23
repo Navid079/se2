@@ -1,11 +1,14 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 import './Main.css';
 
-const Main = ({ children }) => {
+const Main = () => {
   return (
     <div className="main">
-      <div className="main__container">{children}</div>
+      <div className="main__container">
+        <Outlet />
+      </div>
     </div>
   );
 };
