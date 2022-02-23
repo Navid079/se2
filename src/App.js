@@ -1,5 +1,6 @@
 import './App.css';
 import './font.css';
+import './Globals.css';
 import Main from './Pages/Main/Main';
 import Landing from './Pages/Landing/Landing';
 import Login from './Pages/Login/Login';
