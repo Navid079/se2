@@ -1,9 +1,13 @@
+// Libraries
+import React from 'react';
+
+// Stylesheets
 import './IconInput.css';
 
-const IconInput = ({ className, placeholder, type, onChange, children }) => {
+const IconInput = ({ className, placeholder, type, onChange, icon }) => {
   return (
     <span className={`text-input__container ${className}`}>
-      {children}
+      {icon}
       <input
         className="text-input"
         placeholder={placeholder}
