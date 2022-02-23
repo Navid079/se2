@@ -1,12 +1,17 @@
-import './App.css';
-import './Assets/Stylesheets/Fonts.css';
-import './Assets/Stylesheets/Globals.css';
+// Libraries
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Components
 import Main from './Pages/Main/Main';
 import Landing from './Pages/Landing/Landing';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Signup/Signup';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// Stylesheets
+import './App.css';
+import './Assets/Stylesheets/Fonts.css';
+import './Assets/Stylesheets/Globals.css';
 
 function App() {
   return (

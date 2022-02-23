@@ -1,11 +1,15 @@
+// Libraries
 import React from 'react';
-import './Login.css';
-
-import Button from '../../Components/UI/Button/Button';
-import IconInput from '../../Components/UI/TextInput/IconInput';
 import { FaLock } from 'react-icons/fa';
 import { MdPerson } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+
+// Components
+import Button from '../../Components/UI/Button/Button';
+import IconInput from '../../Components/UI/TextInput/IconInput';
+
+// Stylesheets
+import './Login.css';
 
 export default function Login() {
   return (

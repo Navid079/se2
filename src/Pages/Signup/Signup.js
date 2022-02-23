@@ -1,10 +1,14 @@
+// Libraries
 import React from 'react';
-import './Signup.css';
-
-import Button from '../../Components/UI/Button/Button';
-import IconInput from '../../Components/UI/TextInput/IconInput';
 import { FaLock, FaPhoneAlt } from 'react-icons/fa';
 import { MdPerson, MdOutlinePersonPin } from 'react-icons/md';
+
+// Components
+import Button from '../../Components/UI/Button/Button';
+import IconInput from '../../Components/UI/TextInput/IconInput';
+
+// Stylesheets
+import './Signup.css';
 
 export default function Signup() {
   return (

@@ -1,6 +1,8 @@
+// Libraries
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
+// Stylesheets
 import './Main.css';
 
 const Main = () => {

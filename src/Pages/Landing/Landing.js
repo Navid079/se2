@@ -1,9 +1,12 @@
+// Libraries
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import Button from '../../Components/UI/Button/Button';
 import { FaBookOpen } from 'react-icons/fa';
 
+// Components
+import Button from '../../Components/UI/Button/Button';
+
+// Stylesheets
 import './Landing.css';
 
 export default function Landing() {

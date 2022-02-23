@@ -1,3 +1,7 @@
+// Libraries
+import React from 'react';
+
+// Stylesheets
 import './IconInput.css';
 
 const IconInput = ({ className, placeholder, type, onChange, icon }) => {
