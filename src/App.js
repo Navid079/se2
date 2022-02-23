@@ -1,8 +1,9 @@
 import './App.css';
 import './font.css';
-import Landing from './Pages/Landing/Landing';
-import Login from "./Pages/Login/Login";
 import Main from './Pages/Main/Main';
+import Landing from './Pages/Landing/Landing';
+import Login from './Pages/Login/Login';
+import Signup from './Pages/Signup/Signup';
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
       {/* <Main>
         <Landing />
       </Main> */}
+      {/* <Main>
+      <Login />
+      </Main> */}
       <Main>
-      <Login></Login>
+        <Signup />
       </Main>
     </div>
   );

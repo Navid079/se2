@@ -1,0 +1,14 @@
+.main__container {
+  height: 70vw;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .main__container {
+    height: 100vh;
+  }
+}
