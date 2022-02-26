@@ -29,7 +29,7 @@ export default function Login() {
         ورود
       </Button>
       <p className="login__signup-link">
-        اکانت ندارید؟ برای ثبت نام
+        حساب کاربری ندارید؟ برای ثبت نام
         <Link to="/signup"> اینجا </Link>
         کلیک کنید.
       </p>
