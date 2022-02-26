@@ -6,6 +6,14 @@
   height: 90%;
 }
 
+.login__success{
+  font-size: 3vw;
+  margin: 2vw 0;
+  color: var(--clr-tertiary-5);
+  text-shadow: 0 0.1rem 0.3rem #DBA35340;
+  /* display: none; */
+}
+
 .login__input__icon {
   font-size: 5vw;
   padding: 2vw 0;
@@ -37,12 +45,16 @@
 @media screen and (min-width: 1024px) {
   .login {
     align-self: flex-end;
-    align-items: flex-end;
     width: 60%;
-    height: 70%;
+    height: 80%;
     margin-right: 5vh;
-    /* padding: 5vh 0; */
   }
+
+  .login__success{
+    font-size: 3vh;
+    margin: 0;
+  }
+  
 
   .login__input__icon {
     font-size: 4vh;

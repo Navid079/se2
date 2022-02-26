@@ -1,7 +1,9 @@
 // Libraries
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaLock, FaPhoneAlt } from 'react-icons/fa';
 import { MdPerson, MdOutlinePersonPin } from 'react-icons/md';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 // Components
 import Button from '../../Components/UI/Button/Button';
@@ -13,10 +15,16 @@ import './Signup.css';
 export default function Signup() {
   return (
     <div className="login">
+    <p className="login__success">اطلاعات با موفقیت ثبت شد</p>
+      <IconInput
+        className="login__input"
+        placeholder="نام کامل"
+        icon={<MdPerson className="icon login__input__icon" />}
+      />
       <IconInput
         className="login__input"
         placeholder="نام کاربری"
-        icon={<MdPerson className="icon login__input__icon" />}
+        icon={<MdOutlinePersonPin className="icon login__input__icon" />}
       />
       <IconInput
         className="login__input"
@@ -26,22 +34,18 @@ export default function Signup() {
       />
       <IconInput
         className="login__input"
-        placeholder="نام کامل"
-        icon={<MdOutlinePersonPin className="icon login__input__icon" />}
-      />
-      <IconInput
-        className="login__input"
         placeholder="شماره تلفن"
         icon={<FaPhoneAlt className="icon login__input__icon" />}
       />
       <Button className="login__submit" type="submit" onClick="">
         ثبت
       </Button>
-      {/* <p className="login__signup-link">
-        اکانت دارید؟ برای ورود
-        <a href=""> اینجا </a>
-        کلیک کنید.
-      </p> */}
+      <Link to="/" className="g-reset">
+        <div className="login__back">
+          <p className="login__back__text">بازگشت</p>
+          <IoMdArrowRoundBack className="login__back__icon" />
+        </div>
+      </Link>
     </div>
   );
 }
