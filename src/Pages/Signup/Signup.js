@@ -40,7 +40,7 @@ export default function Signup() {
       <Button className="login__submit" type="submit" onClick="">
         ثبت
       </Button>
-      <Link to="/" className="g-reset">
+      <Link to="/" className="g-reset g-pointer">
         <div className="login__back">
           <p className="login__back__text">بازگشت</p>
           <IoMdArrowRoundBack className="login__back__icon" />

@@ -1,3 +1,7 @@
 .g-reset {
   all: unset;
 }
+
+.g-pointer {
+  cursor: pointer;
+}
