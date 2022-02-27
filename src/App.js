@@ -12,19 +12,22 @@ import Signup from './Pages/Signup/Signup';
 import './App.css';
 import './Assets/Stylesheets/Fonts.css';
 import './Assets/Stylesheets/Globals.css';
+import { UserContextProvider } from './Logic/Context/UserContext';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Main />}>
-            <Route exact path="" element={<Landing />} />
-            <Route exact path="login" element={<Login />} />
-            <Route exact path="signup" element={<Signup />} />
-          </Route>
-        </Routes>
-      </Router>
+      <UserContextProvider>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Main />}>
+              <Route exact path="" element={<Landing />} />
+              <Route exact path="login" element={<Login />} />
+              <Route exact path="signup" element={<Signup />} />
+            </Route>
+          </Routes>
+        </Router>
+      </UserContextProvider>
     </div>
   );
 }
