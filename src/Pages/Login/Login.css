@@ -3,7 +3,11 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 90%;
+  height: 95%;
+}
+
+.login__dummy{
+  height: 11vw;
 }
 
 .login__success{
@@ -29,6 +33,7 @@
 .login__submit {
   width: 20vw;
   height: 9vw;
+  margin-bottom: -2vw;
   font-size: 4vw;
 }
 
@@ -46,8 +51,12 @@
   .login {
     align-self: flex-end;
     width: 60%;
-    height: 80%;
+    height: 85%;
     margin-right: 5vh;
+  }
+
+  .login__dummy{
+    height: 11vh;
   }
 
   .login__success{
@@ -70,9 +79,11 @@
 
   .login__submit {
     align-self: center;
-    width: 20vh;
-    height: 8vh;
-    font-size: 4vh;
+    width: 14vh;
+    height: 6vh;
+    margin-bottom: -4vh;
+    font-size: 3vh;
+    text-shadow: 0 0.1rem 0.3rem #ffffff30;
   }
 
   .login__signup-link {

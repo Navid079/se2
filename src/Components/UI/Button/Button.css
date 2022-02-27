@@ -7,7 +7,19 @@
   background-color: var(--clr-primary-5);
   color: var(--clr-white);
   border: none;
-  border-radius: 100px;
+  border-radius: 16px;
   font-size: var(--btn-font-size);
   cursor: pointer;
+}
+
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .button {
+    border-radius: 40px;
+  }
 }

@@ -16,6 +16,7 @@
 .icon {
   color: var(--clr-primary-5);
   height: auto;
+  opacity: 80%;
 }
 
 .text-input {
@@ -33,15 +34,17 @@
   text-align: right;
   font-size: var(--txt-font-size);
   color: var(--clr-primary-5);
+  opacity: 80%;
 }
 
-/* TODO: check this style */
 .text-input__error {
   position: absolute;
-  bottom: 0;
-  right: 1vw;
-  transform: translateY(150%);
-  font-size: 0.7rem;
+  transform: translateY(250%);
+  width: 150%;
+  height: 50%;
+  font-size: 2.5vw;
+  text-align: end;
+  padding-right: 2.5vw;
   color: var(--clr-error);
 }
 
@@ -64,11 +67,12 @@
     border-color: var(--clr-error);
   }
 
-  /* TODO: check this style */
   .text-input__error {
-    right: 0.8vh;
-    transform: translateY(150%);
-    font-size: 1.1rem;
-    color: var(--clr-error);
+    transform: translateY(165%);
+    width: 150%;
+    height: 70%;
+    padding-right: 3vh;
+    font-size: 2.1vh;
+    text-align: end;
   }
 }

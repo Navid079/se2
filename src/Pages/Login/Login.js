@@ -25,6 +25,7 @@ export default function Login() {
 
   return (
     <div className="login">
+    <div className="login__dummy"></div>
       <IconInput
         className="login__input"
         placeholder="نام کاربری"
