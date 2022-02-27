@@ -31,6 +31,7 @@ export default function Signup() {
         reference={refs.fullNameInput}
         icon={<MdPerson className="icon login__input__icon" />}
         error={states.fullNameError}
+        onChange={e => {if(states.fullNameError !== '') states.setFullNameError('')}}
       />
       <IconInput
         className="login__input"
@@ -38,14 +39,16 @@ export default function Signup() {
         reference={refs.usernameInput}
         icon={<MdOutlinePersonPin className="icon login__input__icon" />}
         error={states.usernameError}
+        onChange={e => {if(states.usernameError !== '') states.setUsernameError('')}}
       />
       <IconInput
         className="login__input"
-        placeholder="رمز ورود"
+        placeholder="گذرواژه"
         type="password"
         reference={refs.passwordInput}
         icon={<FaLock className="icon login__input__icon" />}
         error={states.passwordError}
+        onChange={e => {if(states.passwordError !== '') states.setPasswordError('')}}
       />
       <IconInput
         className="login__input"
@@ -53,6 +56,7 @@ export default function Signup() {
         reference={refs.phoneInput}
         icon={<FaPhoneAlt className="icon login__input__icon" />}
         error={states.phoneError}
+        onChange={e => {if(states.phoneError !== '') states.setPhoneError('')}}
       />
       <Button
         className="login__submit"

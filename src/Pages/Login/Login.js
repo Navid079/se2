@@ -31,6 +31,9 @@ export default function Login() {
         icon={<MdPerson className="icon login__input__icon" />}
         reference={refs.usernameInput}
         error={states.usernameError}
+        onChange={e => {
+          if (states.usernameError !== '') states.setUsernameError('');
+        }}
       />
       <IconInput
         className="login__input"
@@ -39,6 +42,9 @@ export default function Login() {
         icon={<FaLock className="icon login__input__icon" />}
         reference={refs.passwordInput}
         error={states.passwordError}
+        onChange={e => {
+          if (states.passwordError !== '') states.setPasswordError('');
+        }}
       />
       <Button
         className="login__submit"
