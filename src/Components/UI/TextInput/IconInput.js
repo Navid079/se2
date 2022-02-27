@@ -4,7 +4,14 @@ import React, { useRef } from 'react';
 // Stylesheets
 import './IconInput.css';
 
-const IconInput = ({ className, placeholder, type, onChange, icon }) => {
+const IconInput = ({
+  className,
+  placeholder,
+  type,
+  onChange,
+  icon,
+  reference,
+}) => {
   const containerRef = useRef();
 
   const focusHandler = event => {
@@ -19,6 +26,7 @@ const IconInput = ({ className, placeholder, type, onChange, icon }) => {
     <span className={`text-input__container ${className}`} ref={containerRef}>
       {icon}
       <input
+        ref={reference}
         className="text-input"
         placeholder={placeholder}
         type={type || 'text'}

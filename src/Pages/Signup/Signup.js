@@ -11,30 +11,37 @@ import IconInput from '../../Components/UI/TextInput/IconInput';
 
 // Stylesheets
 import './Signup.css';
+import useRefs from './Hooks/useRefs';
 
 export default function Signup() {
+  const refs = useRefs();
+
   return (
     <div className="login">
-    <p className="login__success">اطلاعات با موفقیت ثبت شد</p>
+      <p className="login__success">اطلاعات با موفقیت ثبت شد</p>
       <IconInput
         className="login__input"
         placeholder="نام کامل"
+        reference={refs.fullNameInput}
         icon={<MdPerson className="icon login__input__icon" />}
       />
       <IconInput
         className="login__input"
         placeholder="نام کاربری"
+        reference={refs.usernameInput}
         icon={<MdOutlinePersonPin className="icon login__input__icon" />}
       />
       <IconInput
         className="login__input"
         placeholder="رمز ورود"
         type="password"
+        reference={refs.passwordInput}
         icon={<FaLock className="icon login__input__icon" />}
       />
       <IconInput
         className="login__input"
         placeholder="شماره تلفن"
+        reference={refs.phoneInput}
         icon={<FaPhoneAlt className="icon login__input__icon" />}
       />
       <Button className="login__submit" type="submit" onClick="">
