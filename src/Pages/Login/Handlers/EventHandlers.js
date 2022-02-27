@@ -1,15 +1,16 @@
 import LoginCall from '../../../Logic/API/LoginSignup/LoginCall';
-import { errorHandler } from './ErrorHandler';
+import { errorHandler, preCallValidator } from './ErrorHandler';
 
 export const submitHandler = async (refs, states, dispatch, navigate) => {
   const { usernameInput, passwordInput } = refs;
-  const result = await LoginCall(
-    {
-      username: usernameInput.current.value,
-      password: passwordInput.current.value,
-    },
-    dispatch
-  );
+  const username = usernameInput.current.value;
+  const password = passwordInput.current.value;
+
+  let result = preCallValidator({ username, password });
+  if (result === 0) {
+    console.log('API Call occured');
+    result = await LoginCall({ username, password }, dispatch);
+  }
   if (result === 0) {
     navigate('/home');
   } else {
