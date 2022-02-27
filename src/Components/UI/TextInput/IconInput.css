@@ -23,11 +23,12 @@
 }
 
 .text-input {
+  all: unset;
   width: 90%;
   border: none;
   border-radius: 100px;
   background-color: transparent;
-  text-align: center;
+  text-align: right;
   padding: 0 0.5rem;
   font-size: var(--txt-font-size);
 }
