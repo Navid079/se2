@@ -1,7 +1,7 @@
 import errorDB from './ErrorList';
 
 const errorFinder = (page, code) => {
-  const prefixedCode = `e${code}`;
+  const prefixedCode = `e0x${code}`;
   const pageDB = errorDB[page];
   if (!pageDB) {
     throw new Error('Page is not valid');
@@ -12,3 +12,5 @@ const errorFinder = (page, code) => {
   }
   return err;
 };
+
+export default errorFinder;
