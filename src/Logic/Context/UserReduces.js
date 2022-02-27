@@ -3,11 +3,11 @@ const UserReducer = (state, action) => {
     case 'LOGIN':
       return {
         ...state,
-        username: action.username,
-        fullName: action.fullName,
-        phone: action.phone,
-        token: action.token,
-        refresh: action.refresh,
+        username: action.user.username,
+        fullName: action.user.fullName,
+        phone: action.user.phone,
+        token: action.user.token,
+        refresh: action.user.refresh,
         isLoggedIn: true,
       };
     case 'LOGOUT':
