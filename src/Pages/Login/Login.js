@@ -1,31 +1,46 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaLock } from 'react-icons/fa';
 import { MdPerson } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+// Hooks and Handlers
+import useRefs from './Hooks/useRefs';
+import { submitHandler } from './Handlers/EventHandlers';
 
 // Components
 import Button from '../../Components/UI/Button/Button';
 import IconInput from '../../Components/UI/TextInput/IconInput';
+import UserContext from '../../Logic/Context/UserContext';
 
 // Stylesheets
 import './Login.css';
 
 export default function Login() {
+  const refs = useRefs();
+  const navigate = useNavigate();
+  const { dispatch } = useContext(UserContext);
+
   return (
     <div className="login">
       <IconInput
         className="login__input"
         placeholder="نام کاربری"
         icon={<MdPerson className="icon login__input__icon" />}
+        reference={refs.usernameInput}
       />
       <IconInput
         className="login__input"
         placeholder="رمز عبور"
         type="password"
         icon={<FaLock className="icon login__input__icon" />}
+        reference={refs.passwordInput}
       />
-      <Button className="login__submit" type="submit" onClick="">
+      <Button
+        className="login__submit"
+        type="submit"
+        onClick={event => submitHandler(refs, dispatch, navigate)}
+      >
         ورود
       </Button>
       <p className="login__signup-link">
