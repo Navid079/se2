@@ -11,6 +11,7 @@ const IconInput = ({
   onChange,
   icon,
   reference,
+  error,
 }) => {
   const containerRef = useRef();
 
@@ -34,6 +35,7 @@ const IconInput = ({
         onFocus={focusHandler}
         onBlur={blurHandler}
       />
+      <p className="text-input__error">{error}</p>
     </span>
   );
 };

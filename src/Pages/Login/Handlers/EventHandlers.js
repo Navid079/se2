@@ -1,6 +1,7 @@
 import LoginCall from '../../../Logic/API/LoginSignup/LoginCall';
+import { errorHandler } from './ErrorHandler';
 
-export const submitHandler = async (refs, dispatch, navigate) => {
+export const submitHandler = async (refs, states, dispatch, navigate) => {
   const { usernameInput, passwordInput } = refs;
   const result = await LoginCall(
     {
@@ -12,6 +13,7 @@ export const submitHandler = async (refs, dispatch, navigate) => {
   if (result === 0) {
     navigate('/home');
   } else {
-    console.log(result.toString(16));
+    const errorCode = result.toString(16);
+    errorHandler(states, errorCode);
   }
 };

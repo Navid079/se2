@@ -6,8 +6,9 @@ import { MdPerson, MdOutlinePersonPin } from 'react-icons/md';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 
 // Hooks and Handlers
-import { submitHandler } from './Handlers/EventHandlers';
 import useRefs from './Hooks/useRefs';
+import useStates from './Hooks/useStates';
+import { submitHandler } from './Handlers/EventHandlers';
 
 // Components
 import Button from '../../Components/UI/Button/Button';
@@ -18,6 +19,7 @@ import './Signup.css';
 
 export default function Signup() {
   const refs = useRefs();
+  const states = useStates();
   const navigate = useNavigate();
 
   return (
@@ -28,12 +30,14 @@ export default function Signup() {
         placeholder="نام کامل"
         reference={refs.fullNameInput}
         icon={<MdPerson className="icon login__input__icon" />}
+        error={states.fullNameError}
       />
       <IconInput
         className="login__input"
         placeholder="نام کاربری"
         reference={refs.usernameInput}
         icon={<MdOutlinePersonPin className="icon login__input__icon" />}
+        error={states.usernameError}
       />
       <IconInput
         className="login__input"
@@ -41,18 +45,20 @@ export default function Signup() {
         type="password"
         reference={refs.passwordInput}
         icon={<FaLock className="icon login__input__icon" />}
+        error={states.passwordError}
       />
       <IconInput
         className="login__input"
         placeholder="شماره تلفن"
         reference={refs.phoneInput}
         icon={<FaPhoneAlt className="icon login__input__icon" />}
+        error={states.phoneError}
       />
       <Button
         className="login__submit"
         type="submit"
         onClick={e => {
-          submitHandler(refs, navigate);
+          submitHandler(refs, states, navigate);
         }}
       >
         ثبت

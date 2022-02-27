@@ -1,6 +1,7 @@
 import SignupCall from '../../../Logic/API/LoginSignup/SignupCall';
+import { errorHandler } from './ErrorHandler';
 
-export const submitHandler = async (refs, navigate) => {
+export const submitHandler = async (refs, states, navigate) => {
   const { fullNameInput, usernameInput, passwordInput, phoneInput } = refs;
   const result = await SignupCall({
     fullName: fullNameInput.current.value,
@@ -10,6 +11,7 @@ export const submitHandler = async (refs, navigate) => {
   });
   if (result === 0) navigate('/');
   else {
-    console.log(result.toString(16));
+    const errorCode = result.toString(16);
+    errorHandler(states, errorCode);
   }
 };
