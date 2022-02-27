@@ -17,6 +17,10 @@
   font-size: 4vw;
 }
 
+.login__success {
+  display: none;
+}
+
 /* 
 ==========================
 =     PC Media Query     =

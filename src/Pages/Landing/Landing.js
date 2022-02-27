@@ -13,12 +13,12 @@ export default function Landing() {
   return (
     <div className="landing-page">
       <Link to="/login" className="g-reset">
-        <Button className="landing-page__login" type="" onClick="">
+        <Button className="landing-page__login">
           ورود
         </Button>
       </Link>
       <Link to="/signup" className="g-reset">
-        <Button className="landing-page__signup" type="" onClick="">
+        <Button className="landing-page__signup">
           ثبت نام
         </Button>
       </Link>

@@ -1,20 +1,16 @@
 .text-input__container {
   display: flex;
   flex-direction: row-reverse;
-
   position: relative;
-
   width: var(--txt-width);
   height: var(--txt-height);
-
   border: 1vw solid var(--clr-primary-5);
   border-radius: 4vw;
-
   background-color: transparent;
 }
 
-.text-input__container:focus {
-  border: 1vw solid var(--clr-tertiary-5);
+.text-input__container--error {
+  border-color: var(--clr-error);
 }
 
 .icon {
@@ -23,11 +19,12 @@
 }
 
 .text-input {
+  all: unset;
   width: 90%;
   border: none;
   border-radius: 100px;
   background-color: transparent;
-  text-align: center;
+  text-align: right;
   padding: 0 0.5rem;
   font-size: var(--txt-font-size);
 }
@@ -37,6 +34,17 @@
   font-size: var(--txt-font-size);
   color: var(--clr-primary-5);
 }
+
+/* TODO: check this style */
+.text-input__error {
+  position: absolute;
+  bottom: 0;
+  right: 1vw;
+  transform: translateY(150%);
+  font-size: 0.7rem;
+  color: var(--clr-error);
+}
+
 /* 
 ==========================
 =     PC Media Query     =
@@ -50,5 +58,17 @@
 
   .text-input__container:focus {
     border: 0.8vh solid var(--clr-tertiary-5);
+  }
+
+  .text-input__container--error {
+    border-color: var(--clr-error);
+  }
+
+  /* TODO: check this style */
+  .text-input__error {
+    right: 0.8vh;
+    transform: translateY(150%);
+    font-size: 1.1rem;
+    color: var(--clr-error);
   }
 }
