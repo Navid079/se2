@@ -24,7 +24,12 @@ const IconInput = ({
   };
 
   return (
-    <span className={`text-input__container ${className}`} ref={containerRef}>
+    <span
+      className={`text-input__container ${
+        error ? 'text-input__container--error' : ''
+      } ${className}`}
+      ref={containerRef}
+    >
       {icon}
       <input
         ref={reference}
