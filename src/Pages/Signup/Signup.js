@@ -1,9 +1,13 @@
 // Libraries
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaLock, FaPhoneAlt } from 'react-icons/fa';
 import { MdPerson, MdOutlinePersonPin } from 'react-icons/md';
 import { IoMdArrowRoundBack } from 'react-icons/io';
+
+// Hooks and Handlers
+import { submitHandler } from './Handlers/EventHandlers';
+import useRefs from './Hooks/useRefs';
 
 // Components
 import Button from '../../Components/UI/Button/Button';
@@ -11,10 +15,10 @@ import IconInput from '../../Components/UI/TextInput/IconInput';
 
 // Stylesheets
 import './Signup.css';
-import useRefs from './Hooks/useRefs';
 
 export default function Signup() {
   const refs = useRefs();
+  const navigate = useNavigate();
 
   return (
     <div className="login">
@@ -44,7 +48,13 @@ export default function Signup() {
         reference={refs.phoneInput}
         icon={<FaPhoneAlt className="icon login__input__icon" />}
       />
-      <Button className="login__submit" type="submit" onClick="">
+      <Button
+        className="login__submit"
+        type="submit"
+        onClick={e => {
+          submitHandler(refs, navigate);
+        }}
+      >
         ثبت
       </Button>
       <Link to="/" className="g-reset g-pointer">
