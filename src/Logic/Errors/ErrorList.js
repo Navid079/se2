@@ -67,11 +67,12 @@ const errorDB = {
     e0x1008: {
       code: 0x1008,
       description: 'Username is already taken',
-      hookName: 'setusernameError',
-      message: 'این نام کاربری قبلا انتخاب شده؛ لطفا نام کاربری دیگری برگزینید',
+      hookName: 'setUsernameError',
+      message: 'این نام کاربری قبلا انتخاب شده',
       page: '/signup',
     },
   },
+
   login: {
     e0x1009: {
       code: 0x1009,
