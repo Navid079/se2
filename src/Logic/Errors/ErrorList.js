@@ -36,7 +36,7 @@ const errorDB = {
       code: 0x1004,
       description: 'Username is not valid',
       hookName: 'setUsernameError',
-      message: '',
+      message: 'نام کاربری نامعتبر است',
       page: '/signup',
     },
 

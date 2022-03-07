@@ -1,5 +1,5 @@
 import { createContext, useReducer } from 'react';
-import UserReducer from './UserReduces';
+import UserReducer from './UserReducer';
 
 const INITIAL = {
   fullName: '',
