@@ -1,4 +1,4 @@
-.main {
+.landing-wrapper {
   height: 100%;
   width: 100%;
   background-image: url('../../images/main-page-bg__mobile.png');
@@ -7,7 +7,7 @@
   background-size: auto 50%;
 }
 
-.main__container {
+.landing-wrapper__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,12 +35,12 @@
 ==========================
 */
 @media screen and (min-width: 1024px) {
-  .main {
+  .landing-wrapper {
     background-image: url('../../images/main-page-bg__pc.png');
     background-size: auto 100%;
   }
 
-  .main__container {
+  .landing-wrapper__container {
     align-items: center;
     justify-content: center;
     width: 60vh;
