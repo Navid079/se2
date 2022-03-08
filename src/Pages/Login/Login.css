@@ -6,7 +6,8 @@
   height: 95%;
 }
 
-.login__dummy{
+.login::before{
+  content: "";
   height: 11vw;
 }
 
@@ -55,7 +56,8 @@
     margin-right: 5vh;
   }
 
-  .login__dummy{
+  .login::before{
+    content: "";
     height: 11vh;
   }
 
