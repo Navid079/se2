@@ -23,56 +23,66 @@ export default function Signup() {
   const navigate = useNavigate();
 
   return (
-    <div className="login">
-      <p className="login__success">اطلاعات با موفقیت ثبت شد</p>
+    <div className="signup">
+      <p className="signup__success">اطلاعات با موفقیت ثبت شد</p>
       <IconInput
-        className="login__input"
+        className="signup__input"
         placeholder="نام کامل"
         reference={refs.fullNameInput}
-        icon={<MdPerson className="icon login__input__icon" />}
+        icon={<MdPerson className="icon signup__input__icon" />}
         error={states.fullNameError}
-        onChange={e => {if(states.fullNameError !== '') states.setFullNameError('')}}
+        onChange={(e) => {
+          if (states.fullNameError !== '') states.setFullNameError('');
+        }}
       />
       <IconInput
-        className="login__input"
+        className="signup__input"
         placeholder="نام کاربری"
         reference={refs.usernameInput}
-        icon={<MdOutlinePersonPin className="icon login__input__icon" />}
+        icon={<MdOutlinePersonPin className="icon signup__input__icon" />}
         error={states.usernameError}
-        onChange={e => {if(states.usernameError !== '') states.setUsernameError('')}}
+        onChange={(e) => {
+          if (states.usernameError !== '') states.setUsernameError('');
+        }}
       />
       <IconInput
-        className="login__input"
+        className="signup__input"
         placeholder="گذرواژه"
         type="password"
         reference={refs.passwordInput}
-        icon={<FaLock className="icon login__input__icon" />}
+        icon={<FaLock className="icon signup__input__icon" />}
         error={states.passwordError}
-        onChange={e => {if(states.passwordError !== '') states.setPasswordError('')}}
+        onChange={(e) => {
+          if (states.passwordError !== '') states.setPasswordError('');
+        }}
       />
       <IconInput
-        className="login__input"
+        className="signup__input"
         placeholder="شماره تلفن"
         reference={refs.phoneInput}
-        icon={<FaPhoneAlt className="icon login__input__icon" />}
+        icon={<FaPhoneAlt className="icon signup__input__icon" />}
         error={states.phoneError}
-        onChange={e => {if(states.phoneError !== '') states.setPhoneError('')}}
-      />
-      <Button
-        className="login__submit"
-        type="submit"
-        onClick={e => {
-          submitHandler(refs, states, navigate);
+        onChange={(e) => {
+          if (states.phoneError !== '') states.setPhoneError('');
         }}
-      >
-        ثبت
-      </Button>
-      <Link to="/" className="g-reset g-pointer">
-        <div className="login__back">
-          <p className="login__back__text">بازگشت</p>
-          <IoMdArrowRoundBack className="login__back__icon" />
-        </div>
-      </Link>
+      />
+      <div className="signup__cta">
+        <Button
+          className="signup__submit"
+          type="submit"
+          onClick={(e) => {
+            submitHandler(refs, states, navigate);
+          }}
+        >
+          ثبت
+        </Button>
+        <Link to="/" className="g-reset g-pointer">
+          <div className="signup__back">
+            <p className="signup__back__text">بازگشت</p>
+            <IoMdArrowRoundBack className="signup__back__icon" />
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }

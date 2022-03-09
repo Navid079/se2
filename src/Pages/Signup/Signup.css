@@ -1,23 +1,70 @@
-.main__container {
-  height: 90vw;
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
-.login__back {
+
+.signup::before {
+  content: '';
+  height: 1vw;
+}
+
+.signup__success {
+  font-size: 3vw;
+  margin: 2vw 0;
+  color: var(--clr-tertiary-5);
+  text-shadow: 0 0.1rem 0.3rem #dba35340;
+  /* display: none; */
+}
+
+.signup__input__icon {
+  font-size: 5vw;
+  padding: 1vw 0;
+  margin-right: 2vw;
+}
+
+.signup__input {
+  --txt-font-size: 3.5vw;
+  --txt-height: 8.5vw;
+  --txt-width: 42vw;
+}
+
+.signup__cta {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 10vw;
+  width: 41vw;
+}
+
+.signup__submit {
+  height: 9vw;
+  width: 24vw;
+  /* margin-bottom: -2vw; */
+  font-size: 4vw;
+}
+
+.signup__back {
   display: flex;
   flex-direction: row-reverse;
   align-self: center;
 }
 
-.login__back * {
+.signup__back * {
   color: var(--clr-primary-5);
   margin: 0.5vw;
   font-size: 3vw;
   text-shadow: 0 0.1rem 0.3rem #00000040;
 }
-.login__back__icon {
+.signup__back__icon {
   font-size: 4vw;
 }
 
-.login__success {
+.signup__success {
   display: none;
 }
 
@@ -27,14 +74,54 @@
 ==========================
 */
 @media screen and (min-width: 1024px) {
-  .main__container {
-    height: 100vh;
+  .signup {
+    align-self: flex-end;
+    justify-content: space-around;
+    width: 60%;
+    height: 80%;
+    margin-right: 5vh;
   }
-  .login__back * {
+
+  .signup::before,
+  .signup::after {
+    content: '';
+  }
+
+  .signup__success {
+    font-size: 3vh;
+    margin: 0;
+  }
+
+  .signup__input__icon {
+    font-size: 4vh;
+    padding: 2vh 0;
+    margin-right: 1vh;
+  }
+
+  .signup__input {
+    --txt-font-size: 3vh;
+    --txt-height: 9vh;
+    --txt-width: 36vh;
+  }
+
+  .signup__cta {
+    height: 10vh;
+    width: 36vh;
+  }
+
+  .signup__submit {
+    align-self: center;
+    width: 19vh;
+    height: 7vh;
+    font-size: 3vh;
+    text-shadow: 0 0.1rem 0.3rem #ffffff30;
+  }
+
+  .signup__back * {
     margin: 0.5vh;
     font-size: 3vh;
   }
-  .login__back__icon {
+  .signup__back__icon {
     font-size: 4vh;
   }
 }
