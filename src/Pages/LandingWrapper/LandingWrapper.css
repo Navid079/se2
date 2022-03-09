@@ -1,7 +1,7 @@
 .landing-wrapper {
   height: 100%;
   width: 100%;
-  background-image: url('../../images/main-page-bg__mobile.png');
+  background-image: url('../../images/landing-page-bg__mobile.png');
   background-position: top left;
   background-repeat: no-repeat;
   background-size: auto 50%;
@@ -14,7 +14,7 @@
   justify-content: flex-end;
 
   width: 100vw;
-  height: 60vw;
+  height: 65vw;
   border-radius: 50vw 50vw 0 0;
   background-color: var(--clr-white);
   position: absolute;
@@ -36,7 +36,7 @@
 */
 @media screen and (min-width: 1024px) {
   .landing-wrapper {
-    background-image: url('../../images/main-page-bg__pc.png');
+    background-image: url('../../images/landing-page-bg__pc.png');
     background-size: auto 100%;
   }
 
