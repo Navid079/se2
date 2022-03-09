@@ -3,19 +3,18 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 95%;
+  height: 100%;
 }
 
-.login::before{
-  content: "";
-  height: 11vw;
+.login::before {
+  content: '';
 }
 
-.login__success{
+.login__success {
   font-size: 3vw;
   margin: 2vw 0;
   color: var(--clr-tertiary-5);
-  text-shadow: 0 0.1rem 0.3rem #DBA35340;
+  text-shadow: 0 0.1rem 0.3rem #dba35340;
   /* display: none; */
 }
 
@@ -32,7 +31,7 @@
 }
 
 .login__submit {
-  width: 20vw;
+  width: 25vw;
   height: 9vw;
   margin-bottom: -2vw;
   font-size: 4vw;
@@ -52,20 +51,19 @@
   .login {
     align-self: flex-end;
     width: 60%;
-    height: 85%;
+    height: 80%;
     margin-right: 5vh;
   }
 
-  .login::before{
-    content: "";
-    height: 11vh;
+  .login::before,
+  .login::after {
+    content: '';
   }
 
-  .login__success{
+  .login__success {
     font-size: 3vh;
     margin: 0;
   }
-  
 
   .login__input__icon {
     font-size: 4vh;
@@ -81,9 +79,8 @@
 
   .login__submit {
     align-self: center;
-    width: 14vh;
-    height: 6vh;
-    margin-bottom: -4vh;
+    width: 19vh;
+    height: 7vh;
     font-size: 3vh;
     text-shadow: 0 0.1rem 0.3rem #ffffff30;
   }
