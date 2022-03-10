@@ -1,0 +1,16 @@
+.profpic {
+  padding: 1vw;
+  width: 12vw;
+  height: 12vw;
+  font-size: 8vw;
+  color: var(--clr-txt-1);
+  background-color: white;
+  border: 1vw solid var(--clr-txt-1);
+  border-radius: 50%;
+  box-shadow: 0 0.2rem 0.4rem 0 #1b414840;
+}
+
+.profpic__icon {
+  text-shadow: 0 0.2rem 0.4rem #1b414840;
+
+}
