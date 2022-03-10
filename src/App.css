@@ -1,9 +1,10 @@
 :root {
   --clr-primary-5: #1b4148;
-  --clr-secondary-5: #d8d9d4;
+  --clr-secondary-5: #F3EBE3;
   --clr-tertiary-5: #dba353;
   --clr-txt-1: #746444;
   --clr-white: #fff;
+
   --clr-error: #dd2c31;
 }
 
@@ -17,5 +18,5 @@
 .App {
   width: 100%;
   height: 100vh;
-  background-color: var(--clr-secondary-5);
+  background-color: var(--clr-white);
 }
