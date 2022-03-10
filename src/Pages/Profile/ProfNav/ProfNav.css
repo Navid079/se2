@@ -1,0 +1,35 @@
+.profnav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100vw;
+  height: 15vw;
+  background-color: var(--clr-white);
+  
+  position: fixed;
+  top: 0;
+
+  z-index: 100;
+}
+
+.profnav__search{
+  width: 15vw;
+  
+  font-size: 4vw;
+  color: var(--clr-primary-5);
+}
+.profnav__text{
+  font-size: 3vw;
+  color: var(--clr-primary-5);
+}
+.profnav__img{
+  background-image: url("../../../images/navbar-colorful-books.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+  width: 15vw;
+  height: 100%;
+}
