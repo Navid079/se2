@@ -13,6 +13,7 @@ import Landing from './Pages/Landing/Landing';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Signup/Signup';
 import MainPage from './Pages/MainPage/MainPage';
+import Profile from './Pages/Profile/Profile';
 
 // Stylesheets
 import './App.css';
@@ -66,6 +67,7 @@ function App() {
               <Route exact path="signup" element={<Signup />} />
             </Route>
             <Route exact path="/home" element={<MainPage />} />
+            <Route exact path="/profile" element={<Profile />} />
           </Routes>
         </Router>
       </UserContextProvider>

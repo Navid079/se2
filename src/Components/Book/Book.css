@@ -1,0 +1,26 @@
+.book {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.book__img {
+  background-color: var(--clr-white);
+  width: 20vw;
+  height: 27vw;
+  border-radius: 3vw;
+  border: none;
+  margin: 2vw 0;
+}
+
+.book__title {
+  font-size: 4vw;
+  color: var(--clr-txt-1);
+}
+
+.book__price {
+  color: var(--clr-txt-1);
+  font-size: 4vw;
+}
