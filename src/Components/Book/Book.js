@@ -4,9 +4,9 @@ import './Book.css';
 import img from '../../images/navbar-colorful-books.png';
 
 export default function Book() {
-  const bookTitle = 'book title';
+  const bookTitle = 'عنوان کتاب';
   const bookImg = img;
-  const bookPrice = 'book Price';
+  const bookPrice = '20000';
   return (
     <div className="book">
       <img className="book__img" src={bookImg} />
