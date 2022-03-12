@@ -1,24 +1,29 @@
-.shelfs-row__header {
-  font-size: 3vh;
-}
-
-.shelfs-row__header-line {
-  height: 1.25vh;
-  background-color: black;
-}
-
-.shelfs-row__header {
+.shelf {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+
+  height: fit-content;
+  width: 85%;
+}
+.shelf__header {
+  font-size: 4vw;
+  color: var(--clr-primary-5);
+  text-align: center;
+  line-height: 10vw;
 }
 
-.shelfs {
-  margin: 2vh 3vh;
+.shelf__header-line {
+  height: 1vw;
+  border-style: solid;
+  color: var(--clr-primary-5);
+  background-color: var(--clr-primary-5);
 }
 
-.shelfs-row__book {
+.shelf__books {
+  margin: 0 5vw;
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 10vh;
-  justify-content: center;
+  grid-template-rows: auto;
+  grid-auto-flow: column;
+  column-gap: 30vw;
+  overflow: scroll;
 }

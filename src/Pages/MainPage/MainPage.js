@@ -12,9 +12,11 @@ import './MainPage.css';
 export default function MainPage() {
   return (
     <div className="main-page">
-      <Navbar />
-      <Shelf className="main-shelf" />
-      <Footer />
+      <Navbar className="main-page__nav" />
+      <Shelf className="main-shelf" title={'امروز بخوان'} />
+      <Shelf className="main-shelf" title={'تازه ها'} />
+      <Shelf className="main-shelf" title={'پیشنهادها'} />
+      <Footer className="main-page__footer" />
     </div>
   );
 }
