@@ -3,7 +3,7 @@ import React from 'react';
 import './Book.css';
 import img from '../../images/navbar-colorful-books.png';
 
-export default function Book() {
+export default function Book({ className }) {
   const bookTitle = 'عنوان کتاب';
   const bookImg = img;
   const bookPrice = '20000';
