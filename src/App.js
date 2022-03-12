@@ -12,6 +12,7 @@ import LandingWrapper from './Pages/LandingWrapper/LandingWrapper';
 import Landing from './Pages/Landing/Landing';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Signup/Signup';
+import MainPage from './Pages/MainPage/MainPage';
 
 // Stylesheets
 import './App.css';
@@ -29,7 +30,7 @@ function App() {
       if (!isLoggedIn) navigate('/');
     });
 
-    const signoutHandler = event => {
+    const signoutHandler = (event) => {
       dispatch({ type: 'LOGOUT' });
     };
 
@@ -64,7 +65,7 @@ function App() {
               <Route exact path="login" element={<Login />} />
               <Route exact path="signup" element={<Signup />} />
             </Route>
-            <Route exact path="/home" element={<DummyHome />} />
+            <Route exact path="/home" element={<MainPage />} />
           </Routes>
         </Router>
       </UserContextProvider>

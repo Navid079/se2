@@ -1,0 +1,57 @@
+.bottom__navbar {
+  background-color: #F3EBE3;
+  height:10%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 2.5vh 10vh;
+}
+
+.main__page {
+height: 100%;
+width: 100%;
+background-image: url('../../images/colorful-books-with-pink-background-arrangement-removebg-preview@2x.png');
+background-repeat: no-repeat;
+background-size: 10vh;
+background-position-y: -1vh; 
+
+
+}
+
+.top__menu {
+  display: inline;
+}
+
+
+.title {
+font-size: 1.75vh;
+margin-left:12vh ;
+}
+
+
+.navbar__items {
+ 
+ display: flex;
+ justify-content: space-between;
+ 
+}
+
+.item {
+ font-size: 4vh;
+}
+.item p {
+  font-size: 1.5vh;
+  margin-top: -1vh;
+  
+}
+.setting p {
+  margin-left: -0.5vh;
+}
+
+.search {
+ float: right;
+ margin-top: 1.5vh;
+ margin-right: 1.5vh; 
+
+}
+
