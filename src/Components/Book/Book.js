@@ -8,7 +8,7 @@ export default function Book() {
   const bookImg = img;
   const bookPrice = '20000';
   return (
-    <div className="book">
+    <div className={`book ${className}`}>
       <img className="book__img" src={bookImg} />
       <h3 className="book__title">{bookTitle}</h3>
       <h4 className="book__price">{bookPrice}</h4>

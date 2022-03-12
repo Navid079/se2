@@ -1,0 +1,29 @@
+.shelf {
+  display: flex;
+  flex-direction: column;
+
+  height: fit-content;
+  width: 85%;
+}
+.shelf__header {
+  font-size: 4vw;
+  color: var(--clr-primary-5);
+  text-align: center;
+  line-height: 10vw;
+}
+
+.shelf__header-line {
+  height: 1vw;
+  border-style: solid;
+  color: var(--clr-primary-5);
+  background-color: var(--clr-primary-5);
+}
+
+.shelf__books {
+  margin: 0 5vw;
+  display: grid;
+  grid-template-rows: auto;
+  grid-auto-flow: column;
+  column-gap: 30vw;
+  overflow: scroll;
+}
