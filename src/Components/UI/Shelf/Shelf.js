@@ -16,7 +16,7 @@ export default function Shelf() {
         <div className="shelfs-row__book">
           <Book />
           <Book />
-          <br/>
+          <br />
         </div>
       </div>
       <div className="shelfs-row">
@@ -25,7 +25,7 @@ export default function Shelf() {
         <div className="shelfs-row__book">
           <Book />
           <Book />
-          <br/>
+          <br />
         </div>
       </div>
       <div className="shelfs-row">
@@ -34,7 +34,7 @@ export default function Shelf() {
         <div className="shelfs-row__book">
           <Book />
           <Book />
-          <br/>
+          <br />
         </div>
       </div>
     </div>

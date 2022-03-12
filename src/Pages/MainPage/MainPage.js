@@ -12,10 +12,8 @@ import './MainPage.css';
 export default function MainPage() {
   return (
     <div className="main-page">
-      
-      <Navbar/>
-      <Shelf className='main-shelf' />
-      
+      <Navbar />
+      <Shelf className="main-shelf" />
       <Footer />
     </div>
   );
