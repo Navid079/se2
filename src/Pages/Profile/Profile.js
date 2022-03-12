@@ -1,6 +1,6 @@
 import React from 'react';
 import ProfPic from '../../Components/UI/ProfPic/ProfPic';
-import ProfNav from './ProfNav/ProfNav';
+import Navbar from './../../Components/UI/Navbar/Navbar';
 import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/UI/AuthorWorks/AuthorWorks';
 import Footer from '../../Components/UI/Footer/Footer';
@@ -12,7 +12,7 @@ import { FaEdit } from 'react-icons/fa';
 export default function Profile() {
   return (
     <div className="profile">
-      <ProfNav className="profile__nav" />
+      <Navbar className="profile__nav" />
       <Card className="profile-details">
         <div className="profile__wrapper">
           <ProfPic className="profile__pic" />
