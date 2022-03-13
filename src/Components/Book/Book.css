@@ -6,6 +6,11 @@
   justify-content: center;
 }
 
+.book:hover {
+  border: 0.4vh solid var(--clr-txt-1);
+  border-radius: 2vh;
+}
+
 .book__img {
   background-color: var(--clr-white);
   width: 20vw;
@@ -86,8 +91,8 @@
     border-radius: 3vh;
     margin: 0;
   }
-  
-  .book__container{
+
+  .book__container {
     width: 50%;
     margin: 2vh 0;
     display: flex;
