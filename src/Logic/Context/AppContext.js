@@ -9,3 +9,4 @@ const AppContext = createContext(INITIAL);
 const AppContextProvider = ({ children }) => {
   return <AppContext.Provider>{children}</AppContext.Provider>;
 };
+
