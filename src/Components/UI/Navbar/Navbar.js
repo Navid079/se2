@@ -5,7 +5,6 @@ import { FaSearch } from 'react-icons/fa';
 import './Navbar.css';
 
 export default function Navbar() {
-  // TODO: Add search component
   return (
     <nav className="navbar">
       <FaSearch className="navbar__search" />
