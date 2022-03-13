@@ -38,12 +38,14 @@ export default function Book({ className }) {
   return (
     <div className={`book ${className}`}>
       <img className="book__img" src={bookImg} alt="" />
-      <h3 className="book__title">{bookTitle}</h3>
-      <h4 className="book__price">{bookPrice}</h4>
-      <div className={`book__star-container ${starClass(stars)}`}>
-        {starComponents}
+      <div className="book__container">
+        <h3 className="book__title">{bookTitle}</h3>
+        <h4 className="book__price">{bookPrice}</h4>
+        <div className={`book__star-container ${starClass(stars)}`}>
+          {starComponents}
+        </div>
+        {bookState}
       </div>
-      {bookState}
     </div>
   );
 }
