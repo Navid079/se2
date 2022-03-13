@@ -1,11 +1,6 @@
 // Libraries
-import React, { useContext, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Components
 import LandingWrapper from './Pages/LandingWrapper/LandingWrapper';
@@ -36,7 +31,7 @@ function App() {
                 <Route exact path="signup" element={<Signup />} />
               </Route>
               <Route exact path="/app" element={<HomeWrapper />}>
-                <Route exact path="home" element={<MainPage />} />
+                <Route exact path="" element={<MainPage />} />
                 <Route exact path="profile" element={<Profile />} />
               </Route>
             </Routes>

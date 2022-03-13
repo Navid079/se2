@@ -1,9 +1,7 @@
 import React from 'react';
 import ProfPic from '../../Components/UI/ProfPic/ProfPic';
-import Navbar from './../../Components/UI/Navbar/Navbar';
 import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/UI/AuthorWorks/AuthorWorks';
-import Footer from '../../Components/UI/Footer/Footer';
 
 import './Profile.css';
 

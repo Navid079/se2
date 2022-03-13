@@ -1,15 +1,20 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 
 // Components
-import Navbar from './../../Components/UI/Navbar/Navbar';
 import Shelf from './../../Components/UI/Shelf/Shelf';
-import Footer from '../../Components/UI/Footer/Footer';
+import AppContext from '../../Logic/Context/AppContext';
 
 // Stylesheets
 import './MainPage.css';
 
 export default function MainPage() {
+  const { currentPage, dispatch } = useContext(AppContext);
+
+  if (currentPage !== '/app') {
+    dispatch({ type: 'CHANGE-PAGE', currentPage: '/app' });
+  }
+
   return (
     <div className="main-page">
       <Shelf className="main-shelf" title={'امروز بخوان'} />
