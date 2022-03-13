@@ -12,5 +12,25 @@
 
 .profpic__icon {
   text-shadow: 0 0.2rem 0.4rem #1b414840;
+}
 
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .profpic {
+    padding: 1.5vh;
+    width: 12vh;
+    height: 12vh;
+    font-size: 8vh;
+    border: 0.5vh solid var(--clr-txt-1);
+    border-radius: 50%;
+    box-shadow: 0 0.2rem 0.4rem 0 #1b414840;
+  }
+
+  .profpic__icon {
+    text-shadow: 0 0.2rem 0.4rem #1b414840;
+  }
 }
