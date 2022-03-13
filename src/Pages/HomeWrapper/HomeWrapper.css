@@ -1,0 +1,7 @@
+.home-wrapper__container::before,
+.home-wrapper__container::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 20vw;
+}

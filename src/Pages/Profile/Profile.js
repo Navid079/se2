@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProfPic from '../../Components/UI/ProfPic/ProfPic';
-import Navbar from './../../Components/UI/Navbar/Navbar';
 import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/UI/AuthorWorks/AuthorWorks';
-import Footer from '../../Components/UI/Footer/Footer';
-
+import AppContext from '../../Logic/Context/AppContext';
 import './Profile.css';
 
 import { FaEdit } from 'react-icons/fa';
 
 export default function Profile() {
+  const { currentPage, dispatch } = useContext(AppContext);
+  if (currentPage !== '/app/profile') {
+    dispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
+  }
+
   return (
     <div className="profile">
-      <Navbar className="profile__nav" />
       <Card className="profile-details">
         <div className="profile__wrapper">
           <ProfPic className="profile__pic" />
@@ -35,7 +37,7 @@ export default function Profile() {
         </p>
       </Card>
       <AuthorWorks className="profile__works" />
-      <Footer />
+
       {/* <MoreTools /> */}
     </div>
   );

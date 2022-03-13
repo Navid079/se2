@@ -24,7 +24,7 @@
   justify-content: space-evenly;
 }
 
-.footer-item:active {
+.footer-item--active {
   outline: 1vw solid var(--clr-primary-5);
   border-radius: 4vw;
 }

@@ -13,6 +13,7 @@ import { submitHandler } from './Handlers/EventHandlers';
 import Button from '../../Components/UI/Button/Button';
 import IconInput from '../../Components/UI/TextInput/IconInput';
 import UserContext from '../../Logic/Context/UserContext';
+import AppContext from '../../Logic/Context/AppContext';
 
 // Stylesheets
 import './Login.css';
@@ -22,6 +23,11 @@ export default function Login() {
   const states = useStates();
   const navigate = useNavigate();
   const { dispatch } = useContext(UserContext);
+  const { currentPage, dispatch: appDispatch } = useContext(AppContext);
+
+  if (currentPage !== '/login') {
+    appDispatch({ type: 'CHANGE-PAGE', currentPage: '/login' });
+  }
 
   return (
     <div className="login">
