@@ -12,7 +12,6 @@ import { FaEdit } from 'react-icons/fa';
 export default function Profile() {
   return (
     <div className="profile">
-      <Navbar className="profile__nav" />
       <Card className="profile-details">
         <div className="profile__wrapper">
           <ProfPic className="profile__pic" />
@@ -35,7 +34,7 @@ export default function Profile() {
         </p>
       </Card>
       <AuthorWorks className="profile__works" />
-      <Footer />
+      
       {/* <MoreTools /> */}
     </div>
   );

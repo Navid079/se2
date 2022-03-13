@@ -21,6 +21,7 @@ import './Assets/Stylesheets/Fonts.css';
 import './Assets/Stylesheets/Globals.css';
 import { UserContextProvider } from './Logic/Context/UserContext';
 import { AppContextProvider } from './Logic/Context/AppContext';
+import HomeWrapper from './Pages/HomeWrapper/HomeWrapper';
 
 function App() {
   return (
@@ -34,8 +35,10 @@ function App() {
                 <Route exact path="login" element={<Login />} />
                 <Route exact path="signup" element={<Signup />} />
               </Route>
-              <Route exact path="/home" element={<MainPage />} />
-              <Route exact path="/profile" element={<Profile />} />
+              <Route exact path="/app" element={<HomeWrapper />}>
+                <Route exact path="home" element={<MainPage />} />
+                <Route exact path="profile" element={<Profile />} />
+              </Route>
             </Routes>
           </Router>
         </AppContextProvider>
