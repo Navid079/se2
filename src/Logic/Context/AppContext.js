@@ -7,7 +7,7 @@ const INITIAL = {
 
 const AppContext = createContext(INITIAL);
 
-const AppContextProvider = ({ children }) => {
+export const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, INITIAL);
 
   return (
@@ -16,3 +16,5 @@ const AppContextProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
+
+export default AppContext;
