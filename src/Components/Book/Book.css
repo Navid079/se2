@@ -24,3 +24,32 @@
   color: var(--clr-txt-1);
   font-size: 3.5vw;
 }
+
+.book__star-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--clr-tertiary-5);
+  font-size: 2.5vw;
+  height: 6vw;
+}
+
+.book__star-container * {
+  margin: 0 0.1vw;
+}
+
+.book__star-3 {
+  width: 10vw;
+}
+.book__star-4 {
+  width: 6vw;
+}
+.book__star-5 {
+  width: 11vw;
+}
+.book__star-5 * {
+  margin: 0 0.5vw;
+}
