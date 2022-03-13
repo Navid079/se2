@@ -60,3 +60,34 @@
   border-width: 1px;
   background-color: var(--clr-txt-1);
 }
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .profile-edit__icon {
+    font-size: 5vh;
+  }
+  .profile-edit__text {
+    font-size: 3vh;
+    line-height: 6vh;
+  }
+
+  .profile-details{
+    width: 60%;
+  }
+
+  .profile-details__fullname,
+  .profile-details__username,
+  .profile-details__bio {
+    font-size: 3vh;
+    margin: 2vh 0;
+  }
+
+  .profile-details__hr {
+    width: 50%;
+    border-width: 0.2vh;
+  }
+}
