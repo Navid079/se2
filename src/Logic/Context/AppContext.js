@@ -1,4 +1,5 @@
-const { createContext } = require('react');
+import { createContext, useReducer } from 'react';
+import AppReducer from './AppReducer';
 
 const INITIAL = {
   currentPage: 'landing',
@@ -7,6 +8,11 @@ const INITIAL = {
 const AppContext = createContext(INITIAL);
 
 const AppContextProvider = ({ children }) => {
-  return <AppContext.Provider>{children}</AppContext.Provider>;
-};
+  const [state, dispatch] = useReducer(AppReducer, INITIAL);
 
+  return (
+    <AppContext.Provider value={{ ...state, dispatch }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
