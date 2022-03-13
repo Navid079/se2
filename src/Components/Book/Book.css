@@ -53,3 +53,17 @@
 .book__star-5 * {
   margin: 0 0.5vw;
 }
+
+.book__state {
+  /* margin: 3vw; */
+  /* width: 5vw; */
+  height: 10vw;
+  color: var(--clr-txt-1);
+}
+.book__edit {
+  font-size: 4vw;
+}
+
+.book__done {
+  font-size: 7vw;
+}
