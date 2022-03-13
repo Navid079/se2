@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaLock, FaPhoneAlt } from 'react-icons/fa';
 import { MdPerson, MdOutlinePersonPin } from 'react-icons/md';
@@ -13,6 +13,7 @@ import { submitHandler } from './Handlers/EventHandlers';
 // Components
 import Button from '../../Components/UI/Button/Button';
 import IconInput from '../../Components/UI/TextInput/IconInput';
+import AppContext from '../../Logic/Context/AppContext';
 
 // Stylesheets
 import './Signup.css';
@@ -21,6 +22,11 @@ export default function Signup() {
   const refs = useRefs();
   const states = useStates();
   const navigate = useNavigate();
+  const { currentPage, dispatch } = useContext(AppContext);
+
+  if (currentPage !== '/signup') {
+    dispatch({ type: 'CHANGE-PAGE', currentPage: '/signup' });
+  }
 
   return (
     <div className="signup">
@@ -31,7 +37,7 @@ export default function Signup() {
         reference={refs.fullNameInput}
         icon={<MdPerson className="icon signup__input__icon" />}
         error={states.fullNameError}
-        onChange={(e) => {
+        onChange={e => {
           if (states.fullNameError !== '') states.setFullNameError('');
         }}
       />
@@ -41,7 +47,7 @@ export default function Signup() {
         reference={refs.usernameInput}
         icon={<MdOutlinePersonPin className="icon signup__input__icon" />}
         error={states.usernameError}
-        onChange={(e) => {
+        onChange={e => {
           if (states.usernameError !== '') states.setUsernameError('');
         }}
       />
@@ -52,7 +58,7 @@ export default function Signup() {
         reference={refs.passwordInput}
         icon={<FaLock className="icon signup__input__icon" />}
         error={states.passwordError}
-        onChange={(e) => {
+        onChange={e => {
           if (states.passwordError !== '') states.setPasswordError('');
         }}
       />
@@ -62,7 +68,7 @@ export default function Signup() {
         reference={refs.phoneInput}
         icon={<FaPhoneAlt className="icon signup__input__icon" />}
         error={states.phoneError}
-        onChange={(e) => {
+        onChange={e => {
           if (states.phoneError !== '') states.setPhoneError('');
         }}
       />
@@ -70,7 +76,7 @@ export default function Signup() {
         <Button
           className="signup__submit"
           type="submit"
-          onClick={(e) => {
+          onClick={e => {
             submitHandler(refs, states, navigate);
           }}
         >
