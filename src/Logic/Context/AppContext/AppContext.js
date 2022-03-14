@@ -3,6 +3,8 @@ import AppReducer from './AppReducer';
 
 const INITIAL = {
   currentPage: '/',
+  lastShelfUpdate: '',
+  myBooksSynced: false,
 };
 
 const AppContext = createContext(INITIAL);
