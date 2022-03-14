@@ -18,7 +18,13 @@ const UserReducer = (state, action) => {
         phone: '',
         token: '',
         refresh: '',
+        avatar: '',
         isLoggedIn: false,
+      };
+    case 'SET-AVATAR':
+      return {
+        ...state,
+        avatar: action.avatar,
       };
     default:
       return state;

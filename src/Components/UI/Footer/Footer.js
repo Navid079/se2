@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import './Footer.css';
-import { MdPerson } from 'react-icons/md';
-import { FaHome } from 'react-icons/fa';
-import { MdSettings } from 'react-icons/md';
-import AppContext from '../../../Logic/Context/AppContext';
+// Libraries
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { MdPerson, MdSettings } from 'react-icons/md';
+import { FaHome } from 'react-icons/fa';
 
-export default function Footer({ className }) {
-  const { currentPage } = useContext(AppContext);
+// Stylesheets
+import './Footer.css';
+
+export default function Footer({ currentPage }) {
   return (
-    <footer className={`footer ${className || ''}`}>
+    <footer className="footer">
       <Link to="/app/profile" className="g-reset">
         <div
           className={`footer-item ${

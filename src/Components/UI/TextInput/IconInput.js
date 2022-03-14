@@ -27,7 +27,7 @@ const IconInput = ({
     <span
       className={`text-input__container ${
         error ? 'text-input__container--error' : ''
-      } ${className}`}
+      } ${className || ''}`}
       ref={containerRef}
     >
       {icon}
