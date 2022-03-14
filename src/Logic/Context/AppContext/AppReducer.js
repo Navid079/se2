@@ -5,6 +5,16 @@ const AppReducer = (state, action) => {
         ...state,
         currentPage: action.currentPage,
       };
+    case 'UPDATE-SHELF':
+      return {
+        ...state,
+        lastShelfUpdate: +new Date(),
+      };
+    case 'SYNC-MY-BOOKS':
+      return {
+        ...state,
+        myBooksSynced: true,
+      };
     default:
       return state;
   }
