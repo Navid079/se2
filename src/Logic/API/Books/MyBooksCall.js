@@ -2,17 +2,17 @@ import axios from 'axios';
 
 const api = process.env.REACT_APP_API_URL;
 
-const AvatarCall = async (jwt, dispatch) => {
+const MyBooksCall = async (jwt, dispatch) => {
   try {
-    const res = await axios.get(`${api}/avatar`, {
+    const res = await axios.get(`${api}/shelves/my`, {
       headers: {
         Authorization: jwt,
       },
     });
-    const avatar = Buffer.from(res.data, 'binary').toString('base64url');
-    dispatch({ type: 'SET-AVATAR', avatar });
+    const myBooks = res.data;
+    dispatch({ type: 'SET-MY-BOOKS', myBooks });
     return 0;
-  } catch (err) {
+  } catch (error) {
     const errorCode = err.response.data.errorCode;
     return errorCode;
   }
