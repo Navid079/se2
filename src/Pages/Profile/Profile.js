@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import ProfPic from '../../Components/Profile/ProfPic/ProfPic';
 import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
-import AppContext from '../../Logic/Context/AppContext';
-import UserContext from '../../Logic/Context/UserContext';
+import AppContext from '../../Logic/Context/AppContext/AppContext';
+import UserContext from '../../Logic/Context/UserContext/UserContext';
 import './Profile.css';
 
 import { FaEdit } from 'react-icons/fa';

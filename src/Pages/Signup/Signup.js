@@ -13,7 +13,7 @@ import { submitHandler } from './Handlers/EventHandlers';
 // Components
 import Button from '../../Components/UI/Button/Button';
 import IconInput from '../../Components/UI/TextInput/IconInput';
-import AppContext from '../../Logic/Context/AppContext';
+import AppContext from '../../Logic/Context/AppContext/AppContext';
 
 // Stylesheets
 import './Signup.css';

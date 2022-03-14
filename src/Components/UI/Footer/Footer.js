@@ -3,7 +3,7 @@ import './Footer.css';
 import { MdPerson } from 'react-icons/md';
 import { FaHome } from 'react-icons/fa';
 import { MdSettings } from 'react-icons/md';
-import AppContext from '../../../Logic/Context/AppContext';
+import AppContext from '../../../Logic/Context/AppContext/AppContext';
 import { Link } from 'react-router-dom';
 
 export default function Footer({ className }) {

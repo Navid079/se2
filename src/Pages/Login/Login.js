@@ -12,8 +12,8 @@ import { submitHandler } from './Handlers/EventHandlers';
 // Components
 import Button from '../../Components/UI/Button/Button';
 import IconInput from '../../Components/UI/TextInput/IconInput';
-import UserContext from '../../Logic/Context/UserContext';
-import AppContext from '../../Logic/Context/AppContext';
+import UserContext from '../../Logic/Context/UserContext/UserContext';
+import AppContext from '../../Logic/Context/AppContext/AppContext';
 
 // Stylesheets
 import './Login.css';

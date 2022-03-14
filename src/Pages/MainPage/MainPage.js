@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 
 // Components
 import Shelf from './../../Components/Home/Shelf/Shelf';
-import AppContext from '../../Logic/Context/AppContext';
+import AppContext from '../../Logic/Context/AppContext/AppContext';
 
 // Stylesheets
 import './MainPage.css';
