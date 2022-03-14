@@ -7,7 +7,7 @@ import './Avatar.css';
 
 export default function Avatar({ avatar }) {
   const avatarComponent = avatar ? (
-    <img src={avatar} className="avatar__image" />
+    <img src={avatar} className="avatar__image" alt="avatar" />
   ) : (
     <MdPerson className="avatar__icon" />
   );

@@ -1,5 +1,5 @@
 // Libraries
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaLock, FaPhoneAlt } from 'react-icons/fa';
 import { MdPerson, MdOutlinePersonPin } from 'react-icons/md';
@@ -24,9 +24,11 @@ export default function Signup() {
   const navigate = useNavigate();
   const { currentPage, dispatch } = useContext(AppContext);
 
-  if (currentPage !== '/signup') {
-    dispatch({ type: 'CHANGE-PAGE', currentPage: '/signup' });
-  }
+  useEffect(() => {
+    if (currentPage !== '/signup') {
+      dispatch({ type: 'CHANGE-PAGE', currentPage: '/signup' });
+    }
+  });
 
   return (
     <div className="signup">

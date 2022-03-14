@@ -8,11 +8,11 @@ export const submitHandler = async (refs, states, dispatch, navigate) => {
 
   let result = preCallValidator({ username, password });
   if (result === 0) {
-    console.log('API Call occured');
+    console.log('API Call occurred');
     result = await LoginCall({ username, password }, dispatch);
   }
   if (result === 0) {
-    navigate('/home');
+    navigate('/app');
   } else {
     const errorCode = result.toString(16);
     errorHandler(states, errorCode);

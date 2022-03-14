@@ -1,5 +1,5 @@
 // Libraries
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 // Components
 import Shelf from '../../Components/Home/Shelf/Shelf';
@@ -11,9 +11,12 @@ import './Home.css';
 
 export default function Home() {
   const { currentPage, dispatch } = useContext(AppContext);
-  if (currentPage !== '/app') {
-    dispatch({ type: 'CHANGE-PAGE', currentPage: '/app' });
-  }
+
+  useEffect(() => {
+    if (currentPage !== '/app') {
+      dispatch({ type: 'CHANGE-PAGE', currentPage: '/app' });
+    }
+  });
 
   const { shelves } = useContext(BookContext);
   const shelvesArray = shelves.map(shelf => (

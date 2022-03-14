@@ -1,5 +1,5 @@
 // Libraries
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FaLock } from 'react-icons/fa';
 import { MdPerson } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
@@ -25,9 +25,11 @@ export default function Login() {
   const { dispatch } = useContext(UserContext);
   const { currentPage, dispatch: appDispatch } = useContext(AppContext);
 
-  if (currentPage !== '/login') {
-    appDispatch({ type: 'CHANGE-PAGE', currentPage: '/login' });
-  }
+  useEffect(() => {
+    if (currentPage !== '/login') {
+      appDispatch({ type: 'CHANGE-PAGE', currentPage: '/login' });
+    }
+  });
 
   return (
     <div className="login">

@@ -10,7 +10,7 @@ export const submitHandler = async (refs, states, navigate) => {
 
   let result = preCallValidator({ fullName, username, password, phone });
   if (result === 0) {
-    console.log('API Call occured');
+    console.log('API Call occurred');
     result = await SignupCall({ fullName, username, password, phone });
   }
   if (result === 0) navigate('/');

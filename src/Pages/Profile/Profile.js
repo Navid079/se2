@@ -1,5 +1,5 @@
 // Libraries
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FaEdit } from 'react-icons/fa';
 
 // Components
@@ -14,9 +14,11 @@ import './Profile.css';
 
 export default function Profile() {
   const { currentPage, dispatch } = useContext(AppContext);
-  if (currentPage !== '/app/profile') {
-    dispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
-  }
+  useEffect(() => {
+    if (currentPage !== '/app/profile') {
+      dispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
+    }
+  });
 
   const { username, fullName, bio, avatar } = useContext(UserContext);
 

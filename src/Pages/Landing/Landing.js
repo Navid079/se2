@@ -1,5 +1,5 @@
 // Libraries
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBookOpen } from 'react-icons/fa';
 
@@ -13,9 +13,11 @@ import './Landing.css';
 export default function Landing() {
   const { currentPage, dispatch } = useContext(AppContext);
 
-  if (currentPage !== '/') {
-    dispatch({ type: 'CHANGE-PAGE', currentPage: '/' });
-  }
+  useEffect(() => {
+    if (currentPage !== '/') {
+      dispatch({ type: 'CHANGE-PAGE', currentPage: '/' });
+    }
+  });
 
   return (
     <div className="landing-page">
