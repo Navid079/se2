@@ -14,13 +14,13 @@ export default function Profile() {
     dispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
   }
 
-  const { username, fullName, bio } = useContext(UserContext);
+  const { username, fullName, bio, avatar } = useContext(UserContext);
 
   return (
     <div className="profile">
       <Card className="profile-details">
         <div className="profile__wrapper">
-          <ProfPic className="profile__pic" />
+          <ProfPic className="profile__pic" avatar={avatar} />
           <div className="profile-edit">
             <FaEdit className="profile-edit__icon" />
             <p className="profile-edit__text">ویرایش</p>
