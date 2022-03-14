@@ -1,13 +1,12 @@
+//Libraries
 import React from 'react';
-
-import './Book.css';
-import img from '../../images/navbar-colorful-books.png';
-import { FaStar } from 'react-icons/fa';
-import { FaPen } from 'react-icons/fa';
+import { FaStar, FaPen } from 'react-icons/fa';
 import { MdDone } from 'react-icons/md';
 
+//Stylesheets
+import './Book.css';
+
 export default function Book({
-  className,
   title,
   cover,
   price,
@@ -31,7 +30,7 @@ export default function Book({
     );
 
   return (
-    <div className={`book ${className}`}>
+    <div className="book">
       <img className="book__img" src={cover} alt="" />
       <div className="book__container">
         <h3 className="book__title">{title}</h3>

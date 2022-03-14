@@ -2,7 +2,7 @@ import { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
 
 const INITIAL = {
-  currentPage: 'landing',
+  currentPage: '/',
 };
 
 const AppContext = createContext(INITIAL);

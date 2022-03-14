@@ -11,7 +11,7 @@ import LandingWrapper from '../../Pages/LandingWrapper/LandingWrapper';
 import Landing from '../../Pages/Landing/Landing';
 import Login from '../../Pages/Login/Login';
 import Signup from '../../Pages/Signup/Signup';
-import MainPage from '../../Pages/MainPage/MainPage';
+import Home from '../../Pages/Home/Home';
 import Profile from '../../Pages/Profile/Profile';
 import HomeWrapper from '../../Pages/HomeWrapper/HomeWrapper';
 
@@ -25,7 +25,7 @@ export default function Router() {
           <Route exact path="signup" element={<Signup />} />
         </Route>
         <Route exact path="/app" element={<HomeWrapper />}>
-          <Route exact path="" element={<MainPage />} />
+          <Route exact path="" element={<Home />} />
           <Route exact path="profile" element={<Profile />} />
         </Route>
       </Routes>

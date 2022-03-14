@@ -1,4 +1,4 @@
-.profpic {
+.avatar {
   width: 12vw;
   height: 12vw;
   font-size: 8vw;
@@ -15,7 +15,7 @@
   border-radius: 50%;
 }
 
-.profpic__icon {
+.avatar__icon {
   text-shadow: 0 0.2rem 0.4rem #1b414840;
   margin: 1vw;
 }
@@ -26,7 +26,7 @@
 ==========================
 */
 @media screen and (min-width: 1024px) {
-  .profpic {
+  .avatar {
     width: 12vh;
     height: 12vh;
     font-size: 8vh;
@@ -35,7 +35,7 @@
     box-shadow: 0 0.2rem 0.4rem 0 #1b414840;
   }
 
-  .profpic__icon {
+  .avatar__icon {
     text-shadow: 0 0.2rem 0.4rem #1b414840;
     margin: 1.5vh;
   }

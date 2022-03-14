@@ -1,7 +1,8 @@
+// Libraries
 import React from 'react';
-
 import { FaSearch } from 'react-icons/fa';
 
+// Stylesheets
 import './Navbar.css';
 
 export default function Navbar() {

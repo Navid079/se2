@@ -1,12 +1,16 @@
+// Libraries
 import React, { useContext } from 'react';
-import ProfPic from '../../Components/Profile/ProfPic/ProfPic';
+import { FaEdit } from 'react-icons/fa';
+
+// Components
+import Avatar from '../../Components/Profile/Avatar/Avatar';
 import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
 import AppContext from '../../Logic/Context/AppContext/AppContext';
 import UserContext from '../../Logic/Context/UserContext/UserContext';
-import './Profile.css';
 
-import { FaEdit } from 'react-icons/fa';
+// Stylesheets
+import './Profile.css';
 
 export default function Profile() {
   const { currentPage, dispatch } = useContext(AppContext);
@@ -20,7 +24,7 @@ export default function Profile() {
     <div className="profile">
       <Card className="profile-details">
         <div className="profile__wrapper">
-          <ProfPic className="profile__pic" avatar={avatar} />
+          <Avatar className="profile__pic" avatar={avatar} />
           <div className="profile-edit">
             <FaEdit className="profile-edit__icon" />
             <p className="profile-edit__text">ویرایش</p>
