@@ -9,13 +9,15 @@ export default function AuthorWorks({ className }) {
     <Card className={`works ${className}`}>
       <h2 className="works__text">آثار</h2>
       <div className="works__books">
-        <Book className="works__book" />
-        <Book className="works__book" />
-        <Book className="works__book" />
-        <Book className="works__book" />
-        <Book className="works__book" />
-        <Book className="works__book" />
-        <Book className="works__book" />
+        <Book
+          className="works__book"
+          title="عنوان کتاب"
+          cover={require('../../../images/navbar-colorful-books.png')}
+          price="20000"
+          stars={5}
+          editable={true}
+          finished={false}
+        />
       </div>
     </Card>
   );
