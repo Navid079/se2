@@ -2,7 +2,14 @@ import { createContext, useReducer } from 'react';
 import BookReducer from './BookReducer';
 
 const INITIAL = {
-  myBooks: [],
+  myBooks: [
+    {
+      title: 'test',
+      price: '2000',
+      stars: 4,
+      finished: false,
+    },
+  ],
   shelves: [],
 };
 
