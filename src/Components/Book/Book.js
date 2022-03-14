@@ -12,28 +12,22 @@ export default function Book({ className }) {
   const bookPrice = '20000';
   const stars = 5;
   const starComponents = [];
+  const editable = false;
+  const finished = true;
+
   for (let i = 0; i < stars; i++) {
     starComponents.push(<FaStar className="book__star" />);
   }
-  const starClass = stars => {
-    if (stars <= 3) {
-      return 'book__star-3';
-    } else if (stars === 4) {
-      return 'book__star-4';
-    } else if (stars === 5) {
-      return 'book__star-5';
-    }
-  };
-  const editable = true;
-  const finished = false;
-  let bookState;
-  if (editable === true && finished === false) {
-    bookState = <FaPen className="book__state book__edit" />;
-  } else if (editable === false && finished === true) {
-    bookState = <MdDone className="book__state book__done" />;
-  } else if (editable === false && finished === false) {
-    bookState = '';
-  }
+  const starClass =
+    stars <= 3 ? 'book__star-3' : stars === 4 ? 'book__star-4' : 'book__star-5';
+  const bookState =
+    editable && !finished ? (
+      <FaPen className="book__state book__edit" />
+    ) : editable && finished ? (
+      <MdDone className="book__state book__done" />
+    ) : (
+      ''
+    );
 
   return (
     <div className={`book ${className}`}>
@@ -41,7 +35,7 @@ export default function Book({ className }) {
       <div className="book__container">
         <h3 className="book__title">{bookTitle}</h3>
         <h4 className="book__price">{bookPrice}</h4>
-        <div className={`book__star-container ${starClass(stars)}`}>
+        <div className={`book__star-container ${starClass}`}>
           {starComponents}
         </div>
         {bookState}
