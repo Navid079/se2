@@ -7,3 +7,19 @@
   padding: 4vw 4vw;
   margin: 3vw 0;
 }
+
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 50%;
+
+    border-radius: 3vh / 3vh;
+    padding: 4vh 4vh;
+    margin: 3vh 0;
+    }
+}

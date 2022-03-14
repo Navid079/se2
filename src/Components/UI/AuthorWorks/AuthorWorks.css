@@ -2,8 +2,26 @@
   font-size: 4vw;
   color: var(--clr-txt-1);
 }
-.works__books{
+.works__books {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 2vw;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .works {
+    width: 60%;
+  }
+  .works__text {
+    font-size: 4vh;
+  }
+  .works__books {
+    grid-template-columns: 30% 30% 30%;
+    gap: 5vh 3vh;
+  }
 }

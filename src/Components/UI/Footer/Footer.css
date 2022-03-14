@@ -39,3 +39,35 @@
   color: var(--clr-primary-5);
 }
 
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .footer {
+    width: 20vw;
+    height: 13vh;
+    top: 0;
+  }
+
+  .footer-item {
+    width: 8vh;
+    height: 8vh;
+  }
+
+  .footer-item--active {
+    outline: 0.5vh solid var(--clr-primary-5);
+    border-radius: 1vh;
+  }
+
+  .footer-item__icon {
+    font-size: 4vh;
+    color: var(--clr-primary-5);
+  }
+
+  .footer-item__title {
+    font-size: 2vh;
+    color: var(--clr-primary-5);
+  }
+}

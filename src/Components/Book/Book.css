@@ -6,6 +6,11 @@
   justify-content: center;
 }
 
+.book:hover {
+  border: 0.4vh solid var(--clr-txt-1);
+  border-radius: 2vh;
+}
+
 .book__img {
   background-color: var(--clr-white);
   width: 20vw;
@@ -66,4 +71,74 @@
 
 .book__done {
   font-size: 7vw;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .book {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 34vh;
+  }
+
+  .book__img {
+    width: 50%;
+    height: 26vh;
+    border-radius: 3vh;
+    margin: 0;
+  }
+
+  .book__container {
+    width: 50%;
+    margin: 2vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book__title {
+    font-size: 2.5vh;
+  }
+
+  .book__price {
+    font-size: 2.5vh;
+  }
+
+  .book__star-container {
+    font-size: 1.5vh;
+    height: 5vh;
+  }
+
+  .book__star-container * {
+    margin: 0 0.1vh;
+  }
+
+  .book__star-3 {
+    width: 9vh;
+  }
+  .book__star-4 {
+    width: 5vh;
+  }
+  .book__star-5 {
+    width: 8vh;
+  }
+  .book__star-5 * {
+    margin: 0 0.5vh;
+  }
+
+  .book__state {
+    height: 9vh;
+  }
+  .book__edit {
+    font-size: 3vh;
+  }
+
+  .book__done {
+    font-size: 6vh;
+  }
 }

@@ -35,3 +35,41 @@
 .shelf__books::-webkit-scrollbar {
   display: none;
 }
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .shelf {
+    flex-direction: row;
+    width: 90vw;
+  }
+
+  .shelf__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3vh;
+    width: 15%;
+    height: 34vh;
+    line-height: normal;
+  }
+
+  .shelf__container {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 85%;
+  }
+
+  .shelf__header-line {
+    height: 1vh;
+  }
+
+  .shelf__books {
+    margin: 2vh 5vh;
+    column-gap: 8vh;
+  }
+}
