@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import ProfPic from '../../Components/UI/ProfPic/ProfPic';
+import ProfPic from '../../Components/Profile/ProfPic/ProfPic';
 import Card from './../../Components/UI/Card/Card';
-import AuthorWorks from './../../Components/UI/AuthorWorks/AuthorWorks';
+import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
 import AppContext from '../../Logic/Context/AppContext';
 import './Profile.css';
 
