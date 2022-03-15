@@ -14,6 +14,12 @@
   z-index: 100;
 }
 
+.navbar__logout{
+  width: 15vw;
+  font-size: 4vw;
+  color: var(--clr-primary-5);
+}
+
 .navbar__search {
   width: 15vw;
 
@@ -51,6 +57,12 @@
     background-color: var(--clr-secondary-5);
   }
 
+  
+.navbar__logout{
+  width: 5vh;
+  font-size: 3vh;
+}
+
   .navbar__search {
     width: 5vh;
     font-size: 3vh;
@@ -60,6 +72,7 @@
     font-size: 3vh;
     width: 90%;
     text-align: center;
+    padding-right: 12vw;
   }
 
   .navbar__img {
