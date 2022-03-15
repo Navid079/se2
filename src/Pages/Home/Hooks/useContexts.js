@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import AppContext from '../../Logic/Context/AppContext/AppContext';
-import BookContext from '../../Logic/Context/BookContext/BookContext';
-import UserContext from '../../Logic/Context/UserContext/UserContext';
+import AppContext from '../../../Logic/Context/AppContext/AppContext';
+import BookContext from '../../../Logic/Context/BookContext/BookContext';
+import UserContext from '../../../Logic/Context/UserContext/UserContext';
 
 const useContexts = () => {
   const {

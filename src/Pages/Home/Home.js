@@ -28,7 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     if (currentPage !== '/app') {
-      dispatch({ type: 'CHANGE-PAGE', currentPage: '/app' });
+      appDispatch({ type: 'CHANGE-PAGE', currentPage: '/app' });
     }
     if (lastShelfUpdate === '') {
       updateShelf(jwt, bookDispatch, appDispatch);

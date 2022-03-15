@@ -34,7 +34,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (currentPage !== '/app/profile') {
-      dispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
+      appDispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
     }
     if (!myBooksSynced) {
       syncMyBooks(jwt, bookDispatch, appDispatch);

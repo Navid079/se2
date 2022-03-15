@@ -12,7 +12,7 @@ const MyBooksCall = async (jwt, dispatch) => {
     const myBooks = res.data;
     dispatch({ type: 'SET-MY-BOOKS', myBooks });
     return 0;
-  } catch (error) {
+  } catch (err) {
     const errorCode = err.response.data.errorCode;
     return errorCode;
   }
