@@ -19,6 +19,7 @@ export default function AuthorWorks() {
       price={book.price}
       stars={book.stars}
       finished={book.finished}
+      key={book._id}
       editable
     />
   ));

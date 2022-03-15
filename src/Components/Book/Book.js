@@ -16,7 +16,7 @@ export default function Book({
 }) {
   const starComponents = [];
   for (let i = 0; i < stars; i++) {
-    starComponents.push(<FaStar className="book__star" />);
+    starComponents.push(<FaStar className="book__star" key={i} />);
   }
   const starClass =
     stars <= 3 ? 'book__star-3' : stars === 4 ? 'book__star-4' : 'book__star-5';

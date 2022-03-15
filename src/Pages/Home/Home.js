@@ -36,7 +36,7 @@ export default function Home() {
   });
 
   const shelvesArray = shelves.map(shelf => (
-    <Shelf title={shelf.title} books={shelf.books} />
+    <Shelf title={shelf.title} books={shelf.books} key={shelf.title} />
   ));
 
   return <div className="home">{shelvesArray}</div>;

@@ -16,6 +16,7 @@ export default function Shelf({ title, books }) {
       price={book.price}
       stars={book.stars}
       author={book.author}
+      key={book._id}
     />
   ));
 
