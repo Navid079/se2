@@ -9,14 +9,14 @@ const useContexts = () => {
     lastShelfUpdate,
     dispatch: appDispatch,
   } = useContext(AppContext);
-  const { jwt } = useContext(UserContext);
+  const { token } = useContext(UserContext);
   const { shelves, dispatch: bookDispatch } = useContext(BookContext);
 
   return {
     currentPage,
     lastShelfUpdate,
     appDispatch,
-    jwt,
+    token,
     shelves,
     bookDispatch,
   };

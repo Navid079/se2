@@ -6,6 +6,8 @@ const INITIAL = {
   username: '',
   phone: '',
   avatar: '',
+  token: '',
+  refresh: '',
   isLoggedIn: false,
 };
 

@@ -9,7 +9,7 @@ const useContexts = () => {
     myBooksSynced,
     dispatch: appDispatch,
   } = useContext(AppContext);
-  const { username, fullName, bio, jwt, avatar } = useContext(UserContext);
+  const { username, fullName, bio, token, avatar } = useContext(UserContext);
   const { dispatch: bookDispatch } = useContext(BookContext);
 
   return {
@@ -19,7 +19,7 @@ const useContexts = () => {
     username,
     fullName,
     bio,
-    jwt,
+    token,
     avatar,
     bookDispatch,
   };

@@ -14,8 +14,8 @@ import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
 // Stylesheets
 import './Profile.css';
 
-const syncMyBooks = async (jwt, bookDispatch, appDispatch) => {
-  await MyBooksCall(jwt, bookDispatch);
+const syncMyBooks = async (token, bookDispatch, appDispatch) => {
+  await MyBooksCall(token, bookDispatch);
   appDispatch({ type: 'SYNC-MY-BOOKS' });
 };
 
@@ -27,7 +27,7 @@ export default function Profile() {
     username,
     fullName,
     bio,
-    jwt,
+    token,
     avatar,
     bookDispatch,
   } = useContexts();
@@ -37,7 +37,7 @@ export default function Profile() {
       appDispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
     }
     if (!myBooksSynced) {
-      syncMyBooks(jwt, bookDispatch, appDispatch);
+      syncMyBooks(token, bookDispatch, appDispatch);
     }
   });
 

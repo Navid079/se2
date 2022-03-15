@@ -11,8 +11,8 @@ import ShelfCall from './../../Logic/API/Books/ShelfCall';
 // Stylesheets
 import './Home.css';
 
-const updateShelf = async (jwt, bookDispatch, appDispatch) => {
-  await ShelfCall(jwt, bookDispatch);
+const updateShelf = async (token, bookDispatch, appDispatch) => {
+  await ShelfCall(token, bookDispatch);
   appDispatch({ type: 'UPDATE-SHELF' });
 };
 
@@ -21,7 +21,7 @@ export default function Home() {
     currentPage,
     lastShelfUpdate,
     appDispatch,
-    jwt,
+    token,
     shelves,
     bookDispatch,
   } = useContexts();
@@ -31,7 +31,7 @@ export default function Home() {
       appDispatch({ type: 'CHANGE-PAGE', currentPage: '/app' });
     }
     if (lastShelfUpdate === '') {
-      updateShelf(jwt, bookDispatch, appDispatch);
+      updateShelf(token, bookDispatch, appDispatch);
     }
   });
 
