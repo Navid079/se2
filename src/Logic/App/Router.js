@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   BrowserRouter as RouterComponent,
   Routes,
@@ -14,8 +14,14 @@ import Signup from '../../Pages/Signup/Signup';
 import Home from '../../Pages/Home/Home';
 import Profile from '../../Pages/Profile/Profile';
 import HomeWrapper from '../../Pages/HomeWrapper/HomeWrapper';
+import UserContext from '../Context/UserContext/UserContext';
 
 export default function Router() {
+  const userContext = useContext(UserContext);
+  window.onbeforeunload = () => {
+    localStorage.setItem('user-context', JSON.stringify(userContext));
+  };
+
   return (
     <RouterComponent>
       <Routes>

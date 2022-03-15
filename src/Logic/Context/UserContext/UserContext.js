@@ -1,15 +1,18 @@
 import { createContext, useReducer } from 'react';
 import UserReducer from './UserReducer';
 
-const INITIAL = {
-  fullName: '',
-  username: '',
-  phone: '',
-  avatar: '',
-  token: '',
-  refresh: '',
-  isLoggedIn: false,
-};
+let localBackup = localStorage.getItem('user-context');
+const INITIAL = localBackup
+  ? JSON.parse(localBackup)
+  : {
+      fullName: '',
+      username: '',
+      phone: '',
+      avatar: '',
+      token: '',
+      refresh: '',
+      isLoggedIn: false,
+    };
 
 const UserContext = createContext(INITIAL);
 
