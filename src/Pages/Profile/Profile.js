@@ -1,18 +1,18 @@
 // Libraries
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FaEdit } from 'react-icons/fa';
+
+// Hooks and Handlers
+import useContexts from './Hooks/useContexts';
 
 // Components
 import Avatar from '../../Components/Profile/Avatar/Avatar';
 import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
-import AppContext from '../../Logic/Context/AppContext/AppContext';
-import UserContext from '../../Logic/Context/UserContext/UserContext';
 import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
 
 // Stylesheets
 import './Profile.css';
-import BookContext from '../../Logic/Context/BookContext/BookContext';
 
 const syncMyBooks = async (jwt, bookDispatch, appDispatch) => {
   await MyBooksCall(jwt, bookDispatch);
@@ -23,10 +23,14 @@ export default function Profile() {
   const {
     currentPage,
     myBooksSynced,
-    dispatch: appDispatch,
-  } = useContext(AppContext);
-  const { username, fullName, bio, jwt, avatar } = useContext(UserContext);
-  const { dispatch: bookDispatch } = useContext(BookContext);
+    appDispatch,
+    username,
+    fullName,
+    bio,
+    jwt,
+    avatar,
+    bookDispatch,
+  } = useContexts();
 
   useEffect(() => {
     if (currentPage !== '/app/profile') {

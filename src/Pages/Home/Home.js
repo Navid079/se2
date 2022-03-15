@@ -1,13 +1,15 @@
 // Libraries
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
+
+// Hooks and Handlers
+import useContexts from './Hooks/useContexts';
 
 // Components
 import Shelf from '../../Components/Home/Shelf/Shelf';
+import ShelfCall from './../../Logic/API/Books/ShelfCall';
 
 // Stylesheets
 import './Home.css';
-import ShelfCall from './../../Logic/API/Books/ShelfCall';
-import useContexts from './Hooks/useContexts';
 
 const updateShelf = async (jwt, bookDispatch, appDispatch) => {
   await ShelfCall(jwt, bookDispatch);
