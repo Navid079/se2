@@ -15,6 +15,12 @@ const AppReducer = (state, action) => {
         ...state,
         myBooksSynced: true,
       };
+    case 'RESET':
+      return {
+        currentPage: '/',
+        lastShelfUpdate: '',
+        myBooksSynced: false,
+      };
     default:
       return state;
   }

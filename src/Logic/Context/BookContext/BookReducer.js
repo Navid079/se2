@@ -10,6 +10,11 @@ const BookReducer = (state, action) => {
         ...state,
         shelves: action.shelves,
       };
+    case 'RESET':
+      return {
+        myBooks: [],
+        shelves: [],
+      };
     default:
       return state;
   }

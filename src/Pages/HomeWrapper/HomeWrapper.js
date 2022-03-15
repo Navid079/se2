@@ -7,22 +7,30 @@ import Footer from '../../Components/UI/Footer/Footer';
 import Navbar from '../../Components/UI/Navbar/Navbar';
 import AppContext from '../../Logic/Context/AppContext/AppContext';
 import UserContext from '../../Logic/Context/UserContext/UserContext';
+import BookContext from '../../Logic/Context/BookContext/BookContext';
 
 // Stylesheets
 import './HomeWrapper.css';
 
 export default function HomeWrapper() {
-  const { currentPage } = useContext(AppContext);
-  const { isLoggedIn } = useContext(UserContext);
+  const { currentPage, dispatch: appDispatch } = useContext(AppContext);
+  const { isLoggedIn, dispatch } = useContext(UserContext);
+  const { dispatch: bookDispatch } = useContext(BookContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!isLoggedIn) navigate('/');
   });
 
+  const logoutHandler = () => {
+    dispatch({ type: 'LOGOUT' });
+    appDispatch({ type: 'RESET' });
+    bookDispatch({ type: 'RESET' });
+  };
+
   return (
     <div className="home-wrapper">
-      <Navbar />
+      <Navbar onLogout={logoutHandler} />
       <div className="home-wrapper__container">
         <Outlet />
       </div>

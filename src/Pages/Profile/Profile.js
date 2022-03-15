@@ -36,6 +36,7 @@ export default function Profile() {
     if (currentPage !== '/app/profile') {
       appDispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
     }
+    console.log(myBooksSynced);
     if (!myBooksSynced) {
       syncMyBooks(token, bookDispatch, appDispatch);
     }
