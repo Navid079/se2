@@ -1,0 +1,27 @@
+import { useContext } from 'react';
+import AppContext from '../../../Logic/Context/AppContext/AppContext';
+import BookContext from '../../../Logic/Context/BookContext/BookContext';
+import UserContext from '../../../Logic/Context/UserContext/UserContext';
+
+const useContexts = () => {
+  const {
+    currentPage,
+    myBooksSynced,
+    dispatch: appDispatch,
+  } = useContext(AppContext);
+  const { username, fullName, bio, jwt, avatar } = useContext(UserContext);
+  const { dispatch: bookDispatch } = useContext(BookContext);
+
+  return {
+    currentPage,
+    myBooksSynced,
+    appDispatch,
+    username,
+    fullName,
+    bio,
+    jwt,
+    avatar,
+    bookDispatch,
+  };
+};
+export default useContexts;

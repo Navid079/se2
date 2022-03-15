@@ -1,15 +1,15 @@
 // Libraries
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
+
+// Hooks and Handlers
+import useContexts from './Hooks/useContexts';
 
 // Components
 import Shelf from '../../Components/Home/Shelf/Shelf';
-import AppContext from '../../Logic/Context/AppContext/AppContext';
-import BookContext from '../../Logic/Context/BookContext/BookContext';
+import ShelfCall from './../../Logic/API/Books/ShelfCall';
 
 // Stylesheets
 import './Home.css';
-import ShelfCall from './../../Logic/API/Books/ShelfCall';
-import UserContext from '../../Logic/Context/UserContext/UserContext';
 
 const updateShelf = async (jwt, bookDispatch, appDispatch) => {
   await ShelfCall(jwt, bookDispatch);
@@ -20,10 +20,11 @@ export default function Home() {
   const {
     currentPage,
     lastShelfUpdate,
-    dispatch: appDispatch,
-  } = useContext(AppContext);
-  const { jwt } = useContext(UserContext);
-  const { shelves, dispatch: bookDispatch } = useContext(BookContext);
+    appDispatch,
+    jwt,
+    shelves,
+    bookDispatch,
+  } = useContexts();
 
   useEffect(() => {
     if (currentPage !== '/app') {
