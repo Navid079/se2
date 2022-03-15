@@ -8,19 +8,34 @@ import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
 import AppContext from '../../Logic/Context/AppContext/AppContext';
 import UserContext from '../../Logic/Context/UserContext/UserContext';
+import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
 
 // Stylesheets
 import './Profile.css';
+import BookContext from '../../Logic/Context/BookContext/BookContext';
+
+const syncMyBooks = async (jwt, bookDispatch, appDispatch) => {
+  await MyBooksCall(jwt, bookDispatch);
+  appDispatch({ type: 'SYNC-MY-BOOKS' });
+};
 
 export default function Profile() {
-  const { currentPage, dispatch } = useContext(AppContext);
+  const {
+    currentPage,
+    myBooksSynced,
+    dispatch: appDispatch,
+  } = useContext(AppContext);
+  const { username, fullName, bio, jwt, avatar } = useContext(UserContext);
+  const { dispatch: bookDispatch } = useContext(BookContext);
+
   useEffect(() => {
     if (currentPage !== '/app/profile') {
       dispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
     }
+    if (!myBooksSynced) {
+      syncMyBooks(jwt, bookDispatch, appDispatch);
+    }
   });
-
-  const { username, fullName, bio, avatar } = useContext(UserContext);
 
   return (
     <div className="profile">

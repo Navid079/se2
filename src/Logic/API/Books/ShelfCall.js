@@ -20,3 +20,5 @@ const ShelfCall = async (jwt, dispatch) => {
     return errorCode;
   }
 };
+
+export default ShelfCall;
