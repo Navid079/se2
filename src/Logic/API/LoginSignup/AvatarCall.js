@@ -17,3 +17,5 @@ const AvatarCall = async (jwt, dispatch) => {
     return errorCode;
   }
 };
+
+export default AvatarCall;
