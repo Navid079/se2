@@ -15,18 +15,18 @@ export default function HomeWrapper() {
   const { currentPage } = useContext(AppContext);
   const { isLoggedIn } = useContext(UserContext);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (!isLoggedIn) navigate('/');
   });
 
   return (
-    <>
+    <div className="home-wrapper">
       <Navbar />
       <div className="home-wrapper__container">
         <Outlet />
       </div>
       <Footer currentPage={currentPage} />
-    </>
+    </div>
   );
 }

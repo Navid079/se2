@@ -5,12 +5,10 @@ const BookReducer = (state, action) => {
         ...state,
         myBooks: action.myBooks,
       };
-    case 'ADD-SHELF':
-      let shelves = state.shelves;
-      shelves.push(action.shelf);
+    case 'SET-SHELVES':
       return {
         ...state,
-        shelves,
+        shelves: action.shelves,
       };
     default:
       return state;

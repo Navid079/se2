@@ -1,3 +1,7 @@
+.home-wrapper {
+  direction: rtl;
+}
+
 .home-wrapper__container::before,
 .home-wrapper__container::after {
   content: '';

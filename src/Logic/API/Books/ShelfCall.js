@@ -11,9 +11,7 @@ const ShelfCall = async (token, dispatch) => {
     });
 
     const shelves = res.data;
-    for (let shelf of shelves) {
-      dispatch({ type: 'ADD-SHELF', shelf });
-    }
+    dispatch({ type: 'SET-SHELVES', shelves });
     return 0;
   } catch (err) {
     const errorCode = err.response.data.errorCode;
