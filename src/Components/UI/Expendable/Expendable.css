@@ -1,0 +1,43 @@
+.expandable {
+  border-radius: 100%;
+  background-color: var(--clr-primary-5);
+  width: 12vw;
+  height: 12vw;
+  position: fixed;
+  right: 5vw;
+  bottom: 25vw;
+}
+
+.expandable-icon {
+  display: block;
+  margin: auto;
+  height: 100%;
+  font-size: 8vw;
+  color: var(--clr-white);
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .expandable {
+    width: 8vh;
+    height: 8vh;
+    right: 4vh;
+    bottom: 4vh;
+  }
+  
+  .expandable:hover {
+    transition: all 0.5s 0s ease-in-out;
+    width: 9vh;
+    height: 9vh;
+    right: 3.5vh;
+    bottom: 3.5vh;
+  }
+
+  .expandable-icon {
+    font-size: 5vh;
+  }
+}
