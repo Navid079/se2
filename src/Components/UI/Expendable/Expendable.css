@@ -7,6 +7,7 @@
   right: 5vw;
   bottom: 25vw;
 }
+
 .expandable-icon {
   display: block;
   margin: auto;
@@ -27,6 +28,15 @@
     right: 4vh;
     bottom: 4vh;
   }
+  
+  .expandable:hover {
+    transition: all 0.5s 0s ease-in-out;
+    width: 9vh;
+    height: 9vh;
+    right: 3.5vh;
+    bottom: 3.5vh;
+  }
+
   .expandable-icon {
     font-size: 5vh;
   }
