@@ -51,6 +51,7 @@
   color: var(--clr-primary-5);
   font-size: 4vw;
   margin: 2vw 0;
+  overflow-wrap: anywhere;
 }
 
 .profile-details__hr {
