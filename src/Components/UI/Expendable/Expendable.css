@@ -3,7 +3,7 @@
   background-color: var(--clr-primary-5);
   width: 12vw;
   height: 12vw;
-  position: absolute;
+  position: fixed;
   right: 5vw;
   bottom: 25vw;
 }
@@ -13,4 +13,21 @@
   height: 100%;
   font-size: 8vw;
   color: var(--clr-white);
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .expandable {
+    width: 8vh;
+    height: 8vh;
+    right: 4vh;
+    bottom: 4vh;
+  }
+  .expandable-icon {
+    font-size: 5vh;
+  }
 }
