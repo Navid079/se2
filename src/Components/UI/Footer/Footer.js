@@ -6,6 +6,7 @@ import { FaHome } from 'react-icons/fa';
 
 // Stylesheets
 import './Footer.css';
+import Expendable from '../Expendable/Expendable';
 
 export default function Footer({ currentPage }) {
   return (
@@ -40,6 +41,7 @@ export default function Footer({ currentPage }) {
           <p className="footer-item__title">تنظیمات</p>
         </div>
       </Link>
+      <Expendable />
     </footer>
   );
 }
