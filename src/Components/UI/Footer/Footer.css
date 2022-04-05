@@ -46,9 +46,10 @@
 */
 @media screen and (min-width: 1024px) {
   .footer {
-    width: 20vw;
+    width: 25vw;
     height: 13vh;
     top: 0;
+    margin-right: 2vh;
   }
 
   .footer-item {

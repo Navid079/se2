@@ -16,6 +16,20 @@
   color: var(--clr-white);
 }
 
+.expandable:active{
+  transition: all 0.2s 0s ease-in-out;
+  width: 14vw;
+  height: 14vw;
+  right: 4vw;
+  bottom: 24vw;
+}
+
+.expandable:hover .expandable-icon{
+  transition: all 0.2s 0s ease-in-out;
+  font-size: 9vw;
+}
+
+
 /* 
 ==========================
 =     PC Media Query     =
@@ -30,11 +44,15 @@
   }
   
   .expandable:hover {
-    transition: all 0.5s 0s ease-in-out;
+    transition: all 0.2s 0s ease-in-out;
     width: 9vh;
     height: 9vh;
     right: 3.5vh;
     bottom: 3.5vh;
+  }
+  .expandable:hover .expandable-icon{
+    transition: all 0.2s 0s ease-in-out;
+    font-size: 6vh;
   }
 
   .expandable-icon {
