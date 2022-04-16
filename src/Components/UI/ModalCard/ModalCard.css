@@ -1,0 +1,36 @@
+.modal-card {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #F3EBE380;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal__content {
+  width: 80%;
+  height: fit-content;
+  background-color: var(--clr-secondary-5);
+  border: 1vw solid var(--clr-primary-5);
+  border-radius: 3vw / 3vw;
+  padding: 4vw 4vw;
+  margin: 3vw 0;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .modal-content {
+    width: 50%;
+    border-width: 1vh;
+    border-radius: 3vh / 3vh;
+    padding: 4vh 4vh;
+    margin: 3vh 0;
+  }
+}
