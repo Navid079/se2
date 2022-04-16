@@ -35,6 +35,8 @@ export default function Home() {
     }
   });
 
+  console.log('rendering home');
+
   const shelvesArray = shelves.map(shelf => (
     <Shelf title={shelf.title} books={shelf.books} key={shelf.title} />
   ));

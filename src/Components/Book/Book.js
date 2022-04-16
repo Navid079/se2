@@ -36,6 +36,7 @@ export default function Book({
 
   useEffect(() => {
     if (!cover) {
+      console.log('cover call')
       CoverCall(id, dispatch);
     }
   });
