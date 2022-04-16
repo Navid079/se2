@@ -11,6 +11,7 @@ import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
 import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
 
+import AvatarCall from '../../Logic/API/LoginSignup/AvatarCall';
 // Stylesheets
 import './Profile.css';
 
@@ -30,6 +31,7 @@ export default function Profile() {
     token,
     avatar,
     bookDispatch,
+    userDispatch,
   } = useContexts();
 
   useEffect(() => {
@@ -39,6 +41,9 @@ export default function Profile() {
     console.log(myBooksSynced);
     if (!myBooksSynced) {
       syncMyBooks(token, bookDispatch, appDispatch);
+    }
+    if (!avatar) {
+      AvatarCall(token, userDispatch);
     }
   });
 

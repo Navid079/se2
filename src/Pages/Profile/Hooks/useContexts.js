@@ -9,7 +9,14 @@ const useContexts = () => {
     myBooksSynced,
     dispatch: appDispatch,
   } = useContext(AppContext);
-  const { username, fullName, bio, token, avatar } = useContext(UserContext);
+  const {
+    username,
+    fullName,
+    bio,
+    token,
+    avatar,
+    dispatch: userDispatch,
+  } = useContext(UserContext);
   const { dispatch: bookDispatch } = useContext(BookContext);
 
   return {
@@ -22,6 +29,7 @@ const useContexts = () => {
     token,
     avatar,
     bookDispatch,
+    userDispatch,
   };
 };
 export default useContexts;
