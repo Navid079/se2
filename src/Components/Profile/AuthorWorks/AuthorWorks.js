@@ -14,6 +14,7 @@ export default function AuthorWorks() {
   const booksArray = myBooks.map(book => (
     <Book
       className="works__book"
+      id={book._id}
       title={book.title}
       cover={book.cover}
       price={book.price}

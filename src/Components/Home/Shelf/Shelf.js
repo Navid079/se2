@@ -11,6 +11,7 @@ export default function Shelf({ title, books }) {
   const booksArray = books.map(book => (
     <Book
       className="shelf__book"
+      id={book._id}
       title={book.title}
       cover={book.cover}
       price={book.price}

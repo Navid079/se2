@@ -1,12 +1,15 @@
 //Libraries
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FaStar, FaPen } from 'react-icons/fa';
 import { MdDone } from 'react-icons/md';
+import CoverCall from '../../Logic/API/Books/CoverCall';
+import BookContext from '../../Logic/Context/BookContext/BookContext';
 
 //Stylesheets
 import './Book.css';
 
 export default function Book({
+  id,
   title,
   cover,
   price,
@@ -14,6 +17,8 @@ export default function Book({
   editable,
   finished,
 }) {
+  const { dispatch } = useContext(BookContext);
+
   const starComponents = [];
   for (let i = 0; i < stars; i++) {
     starComponents.push(<FaStar className="book__star" key={i} />);
@@ -28,6 +33,12 @@ export default function Book({
     ) : (
       ''
     );
+
+  useEffect(() => {
+    if (!cover) {
+      CoverCall(id, dispatch);
+    }
+  });
 
   return (
     <div className="book">
