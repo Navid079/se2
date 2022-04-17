@@ -17,7 +17,6 @@
   border: 1vw solid var(--clr-primary-5);
   border-radius: 3vw / 3vw;
   padding: 4vw 4vw;
-  margin: 3vw 0;
 }
 
 /* 
@@ -31,6 +30,5 @@
     border-width: 1vh;
     border-radius: 3vh / 3vh;
     padding: 4vh 4vh;
-    margin: 3vh 0;
   }
 }
