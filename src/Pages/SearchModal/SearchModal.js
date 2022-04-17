@@ -1,10 +1,13 @@
 // Libraries
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
-import SlideBar from "../../Components/UI/SlideBar/SlideBar";
 
 //Stylesheets
 import './SearchModal.css';
+
+//Components
+import Checkmark from '../../Components/UI/Checkmark/Checkmark';
+import DoubleSlider from './../../Components/UI/SlideBar/DoubleSlider';
 
 export default function SearchModal() {
   return (
@@ -22,31 +25,28 @@ export default function SearchModal() {
         <h3 className="filters__title">فیلترها</h3>
 
         <div className="filters-container">
-          <input type="checkbox" id="search-author" />
-          <label for="search-author">نام نویسنده</label>
-
-          <input type="checkbox" id="search-genre" />
-          <label for="search-genre">ژانر</label>
+          <Checkmark id="search-author" label="نام نویسنده" checked />
+          <Checkmark id="search-genre" label="ژانر" checked />
         </div>
+
         <hr />
         <div className="filters-container">
-          <input type="checkbox" id="search-book-title" />
-          <label for="search-book-title">عنوان کتاب</label>
-
-          <input type="checkbox" id="search-text" />
-          <label for="search-text">متن</label>
-
-          <input type="checkbox" id="search-finished" />
-          <label for="search-finished">فقط اتمام یافته ها</label>
+          <Checkmark id="search-book-title" label="عنوان کتاب" checked />
+          <Checkmark id="search-text" label="متن" checked />
+          <Checkmark id="search-finished" label="فقط اتمام یافته ها" />
         </div>
         <hr />
-
         <div className="filters-price-container">
-          <label for="search-price">قیمت</label>
-          <SlideBar />
-
-          <input type="checkbox" id="search-free" />
-          <label for="search-free">فقط رایگان ها</label>
+          <h3 className="filters__title">قیمت</h3>
+          <DoubleSlider
+            className="search-slider"
+            min={0}
+            max={100000}
+            start={1000}
+            end={50000}
+            step={1000}
+          />
+          <Checkmark id="search-free" label="فقط رایگان ها" />
         </div>
       </div>
     </div>
