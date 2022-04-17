@@ -62,3 +62,50 @@ textarea.edit-profile__input {
   border: 1vw solid var(--clr-primary-5);
   color: var(--clr-primary-5);
 }
+
+@media screen and (min-width: 1024px) {
+  .edit-profile {
+    height: 70vh;
+    width: 40vw;
+    border: 0.25vw solid var(--clr-primary-5);
+    border-radius: 0.75vw;
+  }
+
+  .edit-profile__avatar-text {
+    font-size: 1vw;
+    margin-top: 1vw;
+  }
+
+  .edit-profile__input-container {
+    width: 30vw;
+    margin-top: 4vh;
+  }
+
+  .edit-profile__input {
+    border-bottom: 0.25vw solid var(--clr-txt-1);
+    padding-bottom: 0.5vw;
+    margin-bottom: 1vw;
+    font-size: 1vw;
+  }
+
+  textarea.edit-profile__input {
+    height: 10vh;
+  }
+
+  .edit-profile__controls {
+    width: 30vw;
+  }
+
+  .edit-profile__control-button {
+    --btn-width: 9vw;
+    --btn-height: 3vw;
+    --btn-font-size: 1.5vw;
+    margin-top: 1vw;
+  }
+
+  .edit-profile__control-button--transparent {
+    background: transparent;
+    border: 0.25vw solid var(--clr-primary-5);
+    color: var(--clr-primary-5);
+  }
+}
