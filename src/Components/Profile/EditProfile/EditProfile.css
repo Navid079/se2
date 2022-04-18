@@ -4,9 +4,9 @@
   align-items: center;
   height: 70vh;
   width: 75vw;
-  border: 1vw solid var(--clr-primary-5);
+  /* border: 1vw solid var(--clr-primary-5);
   border-radius: 4vw;
-  background-color: var(--clr-secondary-5);
+  background-color: var(--clr-secondary-5); */
 }
 
 .edit-profile__avatar {
@@ -30,10 +30,11 @@
 }
 
 .edit-profile__input {
+  all:unset;
   direction: rtl;
-  border-bottom: 1vw solid var(--clr-txt-1);
-  padding-bottom: 2vw;
-  margin-bottom: 3vw;
+  border-bottom: 0.5vw solid var(--clr-txt-1);
+  padding-bottom: 1vw;
+  margin-bottom: 1.75vw;
   font-size: 3.5vw;
 }
 
@@ -45,7 +46,6 @@ textarea.edit-profile__input {
 
 .edit-profile__controls {
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   width: 55vw;
 }
@@ -67,8 +67,8 @@ textarea.edit-profile__input {
   .edit-profile {
     height: 70vh;
     width: 40vw;
-    border: 0.25vw solid var(--clr-primary-5);
-    border-radius: 0.75vw;
+    /* border: 0.25vw solid var(--clr-primary-5);
+    border-radius: 0.75vw; */
   }
 
   .edit-profile__avatar-text {

@@ -12,17 +12,17 @@ export default function EditProfile() {
         <p className="edit-profile__avatar-text">آپلود عکس</p>
       </div>
       <div className="edit-profile__input-container">
-        <input className="g-reset edit-profile__input" placeholder="نام کامل" />
+        <input className=" edit-profile__input" placeholder="نام کامل" />
         <input
-          className="g-reset edit-profile__input"
+          className=" edit-profile__input"
           placeholder="نام کاربری"
         />
         <input
-          className="g-reset edit-profile__input"
+          className=" edit-profile__input"
           placeholder="شماره تلفن"
         />
         <textarea
-          className="g-reset edit-profile__input"
+          className=" edit-profile__input"
           wrap="hard"
           placeholder="بیوگرافی"
         />
