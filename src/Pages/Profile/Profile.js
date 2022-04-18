@@ -50,6 +50,13 @@ export default function Profile() {
 
   const [showEdit, setShowEdit] = useState(false);
 
+  const profileEditHandler = (fullNameArg, usernameArg, phoneArg, bioArg) => {
+    console.log(fullNameArg);
+    console.log(usernameArg);
+    console.log(phoneArg);
+    console.log(bioArg);
+  };
+
   return (
     <div className="profile">
       <Card className="profile-details">
@@ -72,7 +79,10 @@ export default function Profile() {
       </Card>
       <AuthorWorks className="profile__works" />
       <ModalCard show={showEdit} onClose={() => setShowEdit(false)}>
-        <EditProfile onCancel={() => setShowEdit(false)} />
+        <EditProfile
+          onCancel={() => setShowEdit(false)}
+          onSave={profileEditHandler}
+        />
       </ModalCard>
     </div>
   );
