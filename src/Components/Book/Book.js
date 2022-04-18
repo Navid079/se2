@@ -4,6 +4,7 @@ import { FaStar, FaPen } from 'react-icons/fa';
 import { MdDone } from 'react-icons/md';
 import CoverCall from '../../Logic/API/Books/CoverCall';
 import BookContext from '../../Logic/Context/BookContext/BookContext';
+import { urlPrefexer } from '../../util/base64Utility';
 
 //Stylesheets
 import './Book.css';
@@ -18,6 +19,7 @@ export default function Book({
   finished,
 }) {
   const { dispatch } = useContext(BookContext);
+  const coverUrl = urlPrefexer(cover);
 
   const starComponents = [];
   for (let i = 0; i < stars; i++) {
@@ -34,16 +36,9 @@ export default function Book({
       ''
     );
 
-  useEffect(() => {
-    if (!cover) {
-      console.log('cover call')
-      CoverCall(id, dispatch);
-    }
-  });
-
   return (
     <div className="book">
-      <img className="book__img" src={cover} alt="" />
+      <img className="book__img" src={coverUrl} alt="" />
       <div className="book__container">
         <h3 className="book__title">{title}</h3>
         <h4 className="book__price">{price}</h4>
