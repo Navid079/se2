@@ -72,7 +72,7 @@ export default function Profile() {
       </Card>
       <AuthorWorks className="profile__works" />
       <ModalCard show={showEdit} onClose={() => setShowEdit(false)}>
-        <EditProfile />
+        <EditProfile onCancel={() => setShowEdit(false)} />
       </ModalCard>
     </div>
   );
