@@ -11,10 +11,21 @@ export default function EditProfile({ onCancel, onSave, defaults }) {
   const bioRef = useRef();
 
   const saveHandler = () => {
-    const fullName = fullNameRef.current.value;
-    const username = usernameRef.current.value;
-    const phone = phoneRef.current.value;
-    const bio = bioRef.current.value;
+    const fullName =
+      fullNameRef.current.value === defaults.fullName
+        ? ''
+        : fullNameRef.current.value;
+
+    const username =
+      usernameRef.current.value === defaults.username
+        ? ''
+        : usernameRef.current.value;
+
+    const phone =
+      phoneRef.current.value === defaults.phone ? '' : phoneRef.current.value;
+
+    const bio =
+      bioRef.current.value === defaults.bio ? '' : bioRef.current.value;
 
     try {
       onSave(fullName, username, phone, bio);
