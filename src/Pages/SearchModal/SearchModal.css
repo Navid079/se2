@@ -7,13 +7,24 @@
   color: var(--clr-primary-5);
 }
 
+.search__icon{
+  font-size: 3vw;
+  width: 5vw;
+  height: 5vw;
+  margin: -2vw 2vw;
+}
+
 .filters__title {
   font-size: 4vw;
   margin-bottom: 5vw;
 }
-
 .search-input {
   width: 100%;
+}
+.search__input {
+  all: unset;
+  height: 5vw;
+  font-size: 4vw;
 }
 
 .search-input hr {
@@ -68,13 +79,25 @@
     margin-bottom: 4vh;
   }
 
+  .search__icon{
+    font-size: 3vh;
+    width: 3vh;
+    height: 3vh;
+    margin: -1vh 1vh;
+  }
+
+  .search__input {
+    height: 5vh;
+    font-size: 3vh;
+  }
+
   .search-input hr {
-    height: 1vh;
-    margin: 4vh 0;
+    height: 0.5vh;
+    margin: 2.5vh 0;
   }
 
   .search__filters hr {
-    height: .5vh;
+    height: 0.5vh;
     margin: 2vh 0;
   }
 

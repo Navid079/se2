@@ -15,7 +15,7 @@ export default function SearchModal() {
       <div className="search-input">
         <FaSearch className="search__icon" />
         <input
-          className="search__input g-reset"
+          className="search__input"
           placeholder="جست و جو کنید."
           type="search"
         />
@@ -26,12 +26,12 @@ export default function SearchModal() {
 
         <div className="filters-container">
           <Checkmark id="search-author" label="نام نویسنده" checked />
-          <Checkmark id="search-genre" label="ژانر" checked />
+          <Checkmark id="search-book-title" label="عنوان کتاب" checked />
         </div>
 
         <hr />
         <div className="filters-container">
-          <Checkmark id="search-book-title" label="عنوان کتاب" checked />
+          <Checkmark id="search-genre" label="ژانر" checked />
           <Checkmark id="search-text" label="متن" checked />
           <Checkmark id="search-finished" label="فقط اتمام یافته ها" />
         </div>
