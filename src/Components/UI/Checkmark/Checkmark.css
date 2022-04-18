@@ -59,3 +59,36 @@
   line-height: 7vw;
   margin-right: 6vw;
 }
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .checkmark-container {
+    height: 7vh;
+  }
+
+  .checkmark {
+    height: 3vh;
+    width: 3vh;
+    outline: 0.5vh solid var(--clr-primary-5);
+    border-radius: 0.5vh;
+    top: 0.5vh;
+  }
+
+  .checkmark-container .checkmark::after {
+    left: 1vh;
+    width: 0.7vh;
+    height: 2vh;
+    border: 0.4vh solid var(--clr-primary-5);
+    border-width: 0 0.4vh 0.4vh 0;
+  }
+
+  .checkmark-container label {
+    font-size: 3vh;
+    line-height: 4.5vh;
+    margin-right: 5vh;
+  }
+}
