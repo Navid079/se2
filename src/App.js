@@ -9,13 +9,15 @@ import Router from "./Logic/App/Router";
 import './App.css';
 import './Assets/Stylesheets/Fonts.css';
 import './Assets/Stylesheets/Globals.css';
+import EditProfile from './Components/Profile/EditProfile/EditProfile';
 
 function App() {
   return (
     <div className="App">
-      <Context>
+      <EditProfile/>
+      {/* <Context>
         <Router />
-      </Context>
+      </Context> */}
     </div>
   );
 }

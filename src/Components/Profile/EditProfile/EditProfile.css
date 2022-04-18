@@ -1,0 +1,111 @@
+.edit-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+  width: 75vw;
+  border: 1vw solid var(--clr-primary-5);
+  border-radius: 4vw;
+  background-color: var(--clr-secondary-5);
+}
+
+.edit-profile__avatar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vh;
+  align-items: center;
+}
+
+.edit-profile__avatar-text {
+  color: var(--clr-txt-1);
+  font-size: 3vw;
+  margin-top: 3vw;
+}
+
+.edit-profile__input-container {
+  width: 55vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vh;
+}
+
+.edit-profile__input {
+  direction: rtl;
+  border-bottom: 1vw solid var(--clr-txt-1);
+  padding-bottom: 2vw;
+  margin-bottom: 3vw;
+  font-size: 3.5vw;
+}
+
+textarea.edit-profile__input {
+  word-wrap: break-word;
+  text-wrap: unrestricted;
+  height: 15vh;
+}
+
+.edit-profile__controls {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 55vw;
+}
+
+.edit-profile__control-button {
+  --btn-width: 18vw;
+  --btn-height: 5.5vw;
+  --btn-font-size: 3vw;
+  margin-top: 10vw;
+}
+
+.edit-profile__control-button--transparent {
+  background: transparent;
+  border: 1vw solid var(--clr-primary-5);
+  color: var(--clr-primary-5);
+}
+
+@media screen and (min-width: 1024px) {
+  .edit-profile {
+    height: 70vh;
+    width: 40vw;
+    border: 0.25vw solid var(--clr-primary-5);
+    border-radius: 0.75vw;
+  }
+
+  .edit-profile__avatar-text {
+    font-size: 1vw;
+    margin-top: 1vw;
+  }
+
+  .edit-profile__input-container {
+    width: 30vw;
+    margin-top: 4vh;
+  }
+
+  .edit-profile__input {
+    border-bottom: 0.25vw solid var(--clr-txt-1);
+    padding-bottom: 0.5vw;
+    margin-bottom: 1vw;
+    font-size: 1vw;
+  }
+
+  textarea.edit-profile__input {
+    height: 10vh;
+  }
+
+  .edit-profile__controls {
+    width: 30vw;
+  }
+
+  .edit-profile__control-button {
+    --btn-width: 9vw;
+    --btn-height: 3vw;
+    --btn-font-size: 1.5vw;
+    margin-top: 1vw;
+  }
+
+  .edit-profile__control-button--transparent {
+    background: transparent;
+    border: 0.25vw solid var(--clr-primary-5);
+    color: var(--clr-primary-5);
+  }
+}
