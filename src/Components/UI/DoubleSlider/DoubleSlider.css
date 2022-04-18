@@ -11,6 +11,8 @@
 
 .noUi-horizontal {
   height: 1vw !important;
+  width: 80%;
+  right: -5vw;
 }
 .noUi-base {
   background: var(--clr-txt-1) !important;
@@ -40,15 +42,15 @@
   left: unset !important;
   right: -1vw !important;
 }
-/* 
+/*
 .noUi-tooltip {
   bottom: unset !important;
   border: none !important;
   background: unset !important;
   color: unset !important;
   font-size: 4vw;
-  font-family: "Shabnam" !important;
-} */
+  font-family: 'Shabnam' !important;
+}*/
 
 /* 
 ==========================
@@ -61,13 +63,15 @@
   }
 
   .noUi-horizontal {
-    height: 1vh !important;
+    height: 0.5vh !important;
+    width: 60%;
+    right: -10vh;
   }
 
   .noUi-handle {
-    width: 3vh !important;
-    height: 3vh !important;
-    top: -1.2vh !important;
+    width: 2vh !important;
+    height: 2vh !important;
+    top: -1vh !important;
   }
 
   .noUi-origin {
