@@ -56,6 +56,7 @@
 
 .checkmark-container label {
   font-size: 4vw;
+  font-weight: bold;
   line-height: 7vw;
   margin-right: 6vw;
 }
