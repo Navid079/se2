@@ -4,7 +4,7 @@ import { FaStar, FaPen } from 'react-icons/fa';
 import { MdDone } from 'react-icons/md';
 import CoverCall from '../../Logic/API/Books/CoverCall';
 import BookContext from '../../Logic/Context/BookContext/BookContext';
-import { urlPrefexer } from '../../util/base64Utility';
+import { urlPrefixer } from '../../util/base64Utility';
 
 //Stylesheets
 import './Book.css';
@@ -19,7 +19,7 @@ export default function Book({
   finished,
 }) {
   const { dispatch } = useContext(BookContext);
-  const coverUrl = urlPrefexer(cover);
+  const coverUrl = urlPrefixer(cover);
 
   const starComponents = [];
   for (let i = 0; i < stars; i++) {
