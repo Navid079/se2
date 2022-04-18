@@ -12,6 +12,7 @@ const useContexts = () => {
   const {
     username,
     fullName,
+    phone,
     bio,
     token,
     avatar,
@@ -25,6 +26,7 @@ const useContexts = () => {
     appDispatch,
     username,
     fullName,
+    phone,
     bio,
     token,
     avatar,

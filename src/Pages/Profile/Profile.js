@@ -29,6 +29,7 @@ export default function Profile() {
     appDispatch,
     username,
     fullName,
+    phone,
     bio,
     token,
     avatar,
@@ -90,6 +91,7 @@ export default function Profile() {
         <EditProfile
           onCancel={() => setShowEdit(false)}
           onSave={profileEditHandler}
+          defaults={{ fullName, username, phone, bio }}
         />
       </ModalCard>
     </div>

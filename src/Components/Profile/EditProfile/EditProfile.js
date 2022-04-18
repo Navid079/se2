@@ -4,7 +4,7 @@ import Avatar from '../Avatar/Avatar';
 
 import './EditProfile.css';
 
-export default function EditProfile({ onCancel, onSave }) {
+export default function EditProfile({ onCancel, onSave, defaults }) {
   const fullNameRef = useRef();
   const usernameRef = useRef();
   const phoneRef = useRef();
@@ -31,22 +31,26 @@ export default function EditProfile({ onCancel, onSave }) {
         <input
           className="edit-profile__input"
           placeholder="نام کامل"
+          defaultValue={defaults.fullName}
           ref={fullNameRef}
         />
         <input
           className="edit-profile__input"
           placeholder="نام کاربری"
+          defaultValue={defaults.username}
           ref={usernameRef}
         />
         <input
           className="edit-profile__input"
           placeholder="شماره تلفن"
+          defaultValue={defaults.phone}
           ref={phoneRef}
         />
         <textarea
           className="edit-profile__input"
           wrap="hard"
           placeholder="بیوگرافی"
+          defaultValue={defaults.bio}
           ref={bioRef}
         />
       </div>
