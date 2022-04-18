@@ -49,3 +49,28 @@
   font-size: 4vw;
   font-family: "Shabnam" !important;
 } */
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .noUi-target {
+    border-radius: 1vh !important;
+  }
+
+  .noUi-horizontal {
+    height: 1vh !important;
+  }
+
+  .noUi-handle {
+    width: 3vh !important;
+    height: 3vh !important;
+    top: -1.2vh !important;
+  }
+
+  .noUi-origin {
+    right: -1vh !important;
+  }
+}
