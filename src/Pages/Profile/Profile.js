@@ -51,7 +51,7 @@ export default function Profile() {
 
   const [showEdit, setShowEdit] = useState(false);
 
-  const profileEditHandler = (fullNameArg, usernameArg, phoneArg, bioArg) => {
+  const profileEditHandler = async (fullNameArg, usernameArg, phoneArg, bioArg) => {
     const user = {
       fullName: fullNameArg || undefined,
       username: usernameArg || undefined,
@@ -59,7 +59,8 @@ export default function Profile() {
       bio: bioArg || undefined,
     };
 
-    EditProfileCall(user, userDispatch);
+    await EditProfileCall(user, userDispatch);
+    setShowEdit(false);
   };
 
   return (
