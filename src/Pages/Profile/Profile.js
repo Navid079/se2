@@ -13,9 +13,9 @@ import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
 import ModalCard from '../../Components/UI/ModalCard/ModalCard';
 import EditProfile from '../../Components/Profile/EditProfile/EditProfile';
 import EditProfileCall from '../../Logic/API/Profile/EditProfileCall';
-import AvatarCall from '../../Logic/API/LoginSignup/AvatarCall';
 // Stylesheets
 import './Profile.css';
+import { urlPrefixer } from '../../util/base64Utility';
 
 const syncMyBooks = async (token, bookDispatch, appDispatch) => {
   await MyBooksCall(token, bookDispatch);
@@ -43,12 +43,10 @@ export default function Profile() {
     if (!myBooksSynced) {
       syncMyBooks(token, bookDispatch, appDispatch);
     }
-    if (!avatar) {
-      AvatarCall(token, userDispatch);
-    }
   });
 
   const [showEdit, setShowEdit] = useState(false);
+  const avatarUrl = urlPrefixer(avatar);
 
   const profileEditHandler = async (
     fullNameArg,
@@ -71,7 +69,7 @@ export default function Profile() {
     <div className="profile">
       <Card className="profile-details">
         <div className="profile__wrapper">
-          <Avatar className="profile__pic" avatar={avatar} />
+          <Avatar className="profile__pic" avatar={avatarUrl} />
           <div className="profile-edit" onClick={() => setShowEdit(true)}>
             <FaEdit className="profile-edit__icon" />
             <p className="profile-edit__text">ویرایش</p>
