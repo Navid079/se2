@@ -53,6 +53,46 @@
   align-items: baseline;
 }
 
-.search-slider{
-  margin-top: 2vw ;
+.search-slider {
+  margin-top: 2vw;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .filters__title {
+    font-size: 3vh;
+    margin-bottom: 4vh;
+  }
+
+  .search-input hr {
+    height: 1vh;
+    margin: 4vh 0;
+  }
+
+  .search__filters hr {
+    height: .5vh;
+    margin: 2vh 0;
+  }
+
+  .filters-container {
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-rows: auto auto;
+    /* align-items: center; */
+  }
+
+  .filters-price-container {
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 50% auto;
+    align-items: baseline;
+  }
+
+  .search-slider {
+    margin-top: 2vh;
+  }
 }
