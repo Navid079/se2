@@ -7,7 +7,7 @@ import './SearchModal.css';
 
 //Components
 import Checkmark from '../../Components/UI/Checkmark/Checkmark';
-import DoubleSlider from './../../Components/UI/SlideBar/DoubleSlider';
+import DoubleSlider from './../../Components/UI/DoubleSlider/DoubleSlider';
 
 export default function SearchModal() {
   return (
