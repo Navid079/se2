@@ -1,0 +1,94 @@
+.checkmark-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 10vw;
+}
+
+.checkmark-container input {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 1.5vw;
+  right: 0;
+  height: 4vw;
+  width: 4vw;
+  background-color: var(--clr-secondary-5);
+  outline: 0.5vw solid var(--clr-primary-5);
+  border-radius: 0.5vw;
+}
+
+.checkmark-container:hover ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkmark-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark-container .checkmark::after {
+  left: 1.2vw;
+  top: 0vw;
+  width: 1vw;
+  height: 2.5vw;
+  border: 1vw solid var(--clr-primary-5);
+  border-width: 0 0.5vw 0.5vw 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+.checkmark-container label {
+  font-size: 4vw;
+  line-height: 7vw;
+  margin-right: 6vw;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .checkmark-container {
+    height: 7vh;
+  }
+
+  .checkmark {
+    height: 3vh;
+    width: 3vh;
+    outline: 0.5vh solid var(--clr-primary-5);
+    border-radius: 0.5vh;
+    top: 0.5vh;
+  }
+
+  .checkmark-container .checkmark::after {
+    left: 1vh;
+    width: 0.7vh;
+    height: 2vh;
+    border: 0.4vh solid var(--clr-primary-5);
+    border-width: 0 0.4vh 0.4vh 0;
+  }
+
+  .checkmark-container label {
+    font-size: 3vh;
+    line-height: 4.5vh;
+    margin-right: 5vh;
+  }
+}

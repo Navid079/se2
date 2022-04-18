@@ -11,7 +11,7 @@
   position: fixed;
   bottom: 0;
 
-  z-index: 100;
+  z-index: 0;
 }
 
 .footer-item {
@@ -50,6 +50,7 @@
     height: 13vh;
     top: 0;
     margin-right: 2vh;
+    z-index: 99;
   }
 
   .footer-item {
