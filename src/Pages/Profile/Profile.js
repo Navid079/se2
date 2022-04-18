@@ -1,5 +1,5 @@
 // Libraries
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaEdit } from 'react-icons/fa';
 
 // Hooks and Handlers
@@ -10,6 +10,9 @@ import Avatar from '../../Components/Profile/Avatar/Avatar';
 import Card from './../../Components/UI/Card/Card';
 import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
 import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
+import ModalCard from '../../Components/UI/ModalCard/ModalCard';
+import EditProfile from '../../Components/Profile/EditProfile/EditProfile';
+import EditProfileCall from '../../Logic/API/Profile/EditProfileCall';
 
 import AvatarCall from '../../Logic/API/LoginSignup/AvatarCall';
 // Stylesheets
@@ -46,12 +49,26 @@ export default function Profile() {
     }
   });
 
+  const [showEdit, setShowEdit] = useState(false);
+
+  const profileEditHandler = async (fullNameArg, usernameArg, phoneArg, bioArg) => {
+    const user = {
+      fullName: fullNameArg || undefined,
+      username: usernameArg || undefined,
+      phone: phoneArg || undefined,
+      bio: bioArg || undefined,
+    };
+
+    await EditProfileCall(user, userDispatch);
+    setShowEdit(false);
+  };
+
   return (
     <div className="profile">
       <Card className="profile-details">
         <div className="profile__wrapper">
           <Avatar className="profile__pic" avatar={avatar} />
-          <div className="profile-edit">
+          <div className="profile-edit" onClick={() => setShowEdit(true)}>
             <FaEdit className="profile-edit__icon" />
             <p className="profile-edit__text">ویرایش</p>
           </div>
@@ -67,6 +84,12 @@ export default function Profile() {
         <p className="profile-details__bio">{bio}</p>
       </Card>
       <AuthorWorks className="profile__works" />
+      <ModalCard show={showEdit} onClose={() => setShowEdit(false)}>
+        <EditProfile
+          onCancel={() => setShowEdit(false)}
+          onSave={profileEditHandler}
+        />
+      </ModalCard>
     </div>
   );
 }
