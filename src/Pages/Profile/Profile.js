@@ -29,6 +29,7 @@ export default function Profile() {
     appDispatch,
     username,
     fullName,
+    phone,
     bio,
     token,
     avatar,
@@ -52,13 +53,15 @@ export default function Profile() {
     fullNameArg,
     usernameArg,
     phoneArg,
-    bioArg
+    bioArg,
+    avatarArg
   ) => {
     const user = {
       fullName: fullNameArg || undefined,
       username: usernameArg || undefined,
       phone: phoneArg || undefined,
       bio: bioArg || undefined,
+      avatar: avatarArg || undefined, 
     };
 
     await EditProfileCall(user, token, userDispatch);
@@ -90,6 +93,7 @@ export default function Profile() {
         <EditProfile
           onCancel={() => setShowEdit(false)}
           onSave={profileEditHandler}
+          defaults={{ fullName, username, phone, bio, avatar }}
         />
       </ModalCard>
     </div>

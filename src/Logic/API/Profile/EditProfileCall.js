@@ -7,7 +7,7 @@ const EditProfileCall = async (user, jwt, dispatch) => {
     const res = await axios.put(`${api}/profile/edit`, user, {
       headers: { Authorization: jwt },
     });
-    dispatch({ type: 'LOGIN', user: res.data });
+    dispatch({ type: 'UPDATE', user: res.data });
     return 0;
   } catch (err) {
     const errorCode = err.response.data.errorCode;

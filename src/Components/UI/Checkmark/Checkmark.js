@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Checkmark.css';
 
 export default function Checkmark({ id, label, checked }) {
-  console.log('checkmark');
   return (
     <div className="checkmark-container">
       <label for={id}>

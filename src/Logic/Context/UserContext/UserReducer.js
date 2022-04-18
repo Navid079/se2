@@ -25,6 +25,11 @@ const UserReducer = (state, action) => {
         bio: '',
         isLoggedIn: false,
       };
+    case 'UPDATE':
+      return {
+        ...state,
+        ...action.user,
+      };
     default:
       return state;
   }
