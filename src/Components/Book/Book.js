@@ -1,9 +1,7 @@
 //Libraries
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { FaStar, FaPen } from 'react-icons/fa';
 import { MdDone } from 'react-icons/md';
-import CoverCall from '../../Logic/API/Books/CoverCall';
-import BookContext from '../../Logic/Context/BookContext/BookContext';
 import { urlPrefixer } from '../../util/base64Utility';
 
 //Stylesheets
@@ -18,7 +16,6 @@ export default function Book({
   editable,
   finished,
 }) {
-  const { dispatch } = useContext(BookContext);
   const coverUrl = urlPrefixer(cover);
 
   const starComponents = [];
