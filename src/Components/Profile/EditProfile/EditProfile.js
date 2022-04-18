@@ -1,6 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Button from '../../UI/Button/Button';
 import Avatar from '../Avatar/Avatar';
+import {
+  urlPrefixer,
+  urlRemover,
+  imageResizerBase64,
+} from '../../../util/base64Utility';
 
 import './EditProfile.css';
 
@@ -9,6 +14,8 @@ export default function EditProfile({ onCancel, onSave, defaults }) {
   const usernameRef = useRef();
   const phoneRef = useRef();
   const bioRef = useRef();
+  const [avatar, setAvatar] = useState(defaults.avatar);
+  const fileUploader = useRef();
 
   const saveHandler = () => {
     const fullName =
@@ -27,16 +34,37 @@ export default function EditProfile({ onCancel, onSave, defaults }) {
     const bio =
       bioRef.current.value === defaults.bio ? '' : bioRef.current.value;
 
+    const avatarData = avatar === defaults.avatar ? '' : avatar;
+
     try {
-      onSave(fullName, username, phone, bio);
+      onSave(fullName, username, phone, bio, avatarData);
     } catch {}
+  };
+
+  const avatarUploadHandler = () => {
+    fileUploader.current.click();
+  };
+
+  const fileSelectHandler = async event => {
+    const file = await imageResizerBase64(event.target.files[0]);
+    setAvatar(urlRemover(file));
   };
 
   return (
     <div className="edit-profile">
-      <div className="edit-profile__avatar">
-        <Avatar />
+      <div
+        className="g-pointer edit-profile__avatar"
+        onClick={avatarUploadHandler}
+      >
+        <Avatar avatar={urlPrefixer(avatar)} />
         <p className="edit-profile__avatar-text">آپلود عکس</p>
+        <input
+          type="file"
+          accept="image/jpg, image/jpeg, image/png, image/bmp"
+          style={{ display: 'none' }}
+          ref={fileUploader}
+          onChange={fileSelectHandler}
+        />
       </div>
       <div className="edit-profile__input-container">
         <input
