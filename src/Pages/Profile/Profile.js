@@ -13,7 +13,6 @@ import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
 import ModalCard from '../../Components/UI/ModalCard/ModalCard';
 import EditProfile from '../../Components/Profile/EditProfile/EditProfile';
 import EditProfileCall from '../../Logic/API/Profile/EditProfileCall';
-
 import AvatarCall from '../../Logic/API/LoginSignup/AvatarCall';
 // Stylesheets
 import './Profile.css';
@@ -51,7 +50,12 @@ export default function Profile() {
 
   const [showEdit, setShowEdit] = useState(false);
 
-  const profileEditHandler = async (fullNameArg, usernameArg, phoneArg, bioArg) => {
+  const profileEditHandler = async (
+    fullNameArg,
+    usernameArg,
+    phoneArg,
+    bioArg
+  ) => {
     const user = {
       fullName: fullNameArg || undefined,
       username: usernameArg || undefined,
@@ -59,7 +63,7 @@ export default function Profile() {
       bio: bioArg || undefined,
     };
 
-    await EditProfileCall(user, userDispatch);
+    await EditProfileCall(user, token, userDispatch);
     setShowEdit(false);
   };
 
