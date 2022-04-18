@@ -9,6 +9,7 @@ const INITIAL = localBackup
       username: '',
       phone: '',
       avatar: '',
+      bio: '',
       token: '',
       refresh: '',
       isLoggedIn: false,
