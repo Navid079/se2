@@ -12,6 +12,7 @@ import AuthorWorks from './../../Components/Profile/AuthorWorks/AuthorWorks';
 import MyBooksCall from '../../Logic/API/Books/MyBooksCall';
 import ModalCard from '../../Components/UI/ModalCard/ModalCard';
 import EditProfile from '../../Components/Profile/EditProfile/EditProfile';
+import EditProfileCall from '../../Logic/API/Profile/EditProfileCall';
 
 import AvatarCall from '../../Logic/API/LoginSignup/AvatarCall';
 // Stylesheets
@@ -51,10 +52,14 @@ export default function Profile() {
   const [showEdit, setShowEdit] = useState(false);
 
   const profileEditHandler = (fullNameArg, usernameArg, phoneArg, bioArg) => {
-    console.log(fullNameArg);
-    console.log(usernameArg);
-    console.log(phoneArg);
-    console.log(bioArg);
+    const user = {
+      fullName: fullNameArg || undefined,
+      username: usernameArg || undefined,
+      phone: phoneArg || undefined,
+      bio: bioArg || undefined,
+    };
+
+    EditProfileCall(user, userDispatch);
   };
 
   return (
