@@ -4,13 +4,16 @@
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: #F3EBE380;
+  background-color: #f3ebe380;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 .modal__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   height: fit-content;
   background-color: var(--clr-secondary-5);
