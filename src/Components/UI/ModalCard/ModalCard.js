@@ -4,7 +4,7 @@ import './ModalCard.css';
 export default function ModalCard({ show, onClose, children }) {
   useEffect(() => {
     const closeOnEscapeKeyDown = e => {
-      if ((e.charCode || e.keyCode) === 27) {
+      if (show && (e.charCode || e.keyCode) === 27) {
         onClose();
       }
     };

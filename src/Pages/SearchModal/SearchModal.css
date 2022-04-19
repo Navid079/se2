@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: flex-start;
   color: var(--clr-primary-5);
+  width: 100%;
 }
 
 .search__icon{

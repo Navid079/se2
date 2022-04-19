@@ -19,7 +19,7 @@ export const imageResizerBase64 = imageFile =>
       'JPEG',
       60,
       0,
-      uri => resolve(uri),
+      result => resolve(result),
       'base64'
     );
   });

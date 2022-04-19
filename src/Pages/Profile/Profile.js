@@ -85,7 +85,6 @@ export default function Profile() {
         <p className="profile-details__username">{username}</p>
         <hr className="profile-details__hr" />
 
-        {/* FIXME: wrap bio in container */}
         <p className="profile-details__bio">{bio}</p>
       </Card>
       <AuthorWorks className="profile__works" />
