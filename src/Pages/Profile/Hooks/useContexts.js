@@ -16,6 +16,7 @@ const useContexts = () => {
     bio,
     token,
     avatar,
+    isLoggedIn,
     dispatch: userDispatch,
   } = useContext(UserContext);
   const { dispatch: bookDispatch } = useContext(BookContext);
@@ -30,6 +31,7 @@ const useContexts = () => {
     bio,
     token,
     avatar,
+    isLoggedIn,
     bookDispatch,
     userDispatch,
   };

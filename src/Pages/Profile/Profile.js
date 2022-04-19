@@ -33,6 +33,7 @@ export default function Profile() {
     bio,
     token,
     avatar,
+    isLoggedIn,
     bookDispatch,
     userDispatch,
   } = useContexts();
@@ -41,7 +42,7 @@ export default function Profile() {
     if (currentPage !== '/app/profile') {
       appDispatch({ type: 'CHANGE-PAGE', currentPage: '/app/profile' });
     }
-    if (!myBooksSynced) {
+    if (isLoggedIn && !myBooksSynced) {
       syncMyBooks(token, bookDispatch, appDispatch);
     }
   });
@@ -61,7 +62,7 @@ export default function Profile() {
       username: usernameArg || undefined,
       phone: phoneArg || undefined,
       bio: bioArg || undefined,
-      avatar: avatarArg || undefined, 
+      avatar: avatarArg || undefined,
     };
 
     await EditProfileCall(user, token, userDispatch);
