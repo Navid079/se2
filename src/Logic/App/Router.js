@@ -15,6 +15,7 @@ import Home from '../../Pages/Home/Home';
 import Profile from '../../Pages/Profile/Profile';
 import HomeWrapper from '../../Pages/HomeWrapper/HomeWrapper';
 import UserContext from '../Context/UserContext/UserContext';
+import BookView from '../../Pages/BookView/BookView';
 
 export default function Router() {
   const userContext = useContext(UserContext);
@@ -33,6 +34,7 @@ export default function Router() {
         <Route exact path="/app" element={<HomeWrapper />}>
           <Route exact path="" element={<Home />} />
           <Route exact path="profile" element={<Profile />} />
+          <Route exact path="viewBook/:bookId" element={<BookView />}></Route>
         </Route>
       </Routes>
     </RouterComponent>
