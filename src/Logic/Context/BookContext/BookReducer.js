@@ -11,6 +11,7 @@ const BookReducer = (state, action) => {
         shelves: action.shelves,
       };
     case 'RESET':
+      console.log('reset')
       return {
         myBooks: [],
         shelves: [],

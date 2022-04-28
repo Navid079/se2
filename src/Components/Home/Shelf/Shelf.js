@@ -1,5 +1,6 @@
 // Libraries
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Components
 import Book from '../../Book/Book';
@@ -8,6 +9,12 @@ import Book from '../../Book/Book';
 import './Shelf.css';
 
 export default function Shelf({ title, books }) {
+  const navigate = useNavigate();
+
+  const bookClickHandler = id => {
+    navigate(`/app/viewBook/${id}`);
+  };
+
   const booksArray = books.map(book => (
     <Book
       className="shelf__book"
@@ -18,6 +25,7 @@ export default function Shelf({ title, books }) {
       stars={book.stars}
       author={book.author}
       key={book._id}
+      onClick={bookClickHandler}
     />
   ));
 

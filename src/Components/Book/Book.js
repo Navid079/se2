@@ -15,6 +15,7 @@ export default function Book({
   stars,
   editable,
   finished,
+  onClick,
 }) {
   const coverUrl = urlPrefixer(cover);
 
@@ -34,7 +35,7 @@ export default function Book({
     );
 
   return (
-    <div className="book">
+    <div className="book" onClick={e => onClick(id)}>
       <img className="book__img" src={coverUrl} alt="" />
       <div className="book__container">
         <h3 className="book__title">{title}</h3>
