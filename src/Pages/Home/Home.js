@@ -1,20 +1,20 @@
 // Libraries
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 // Hooks and Handlers
-import useContexts from './Hooks/useContexts';
+import useContexts from "./Hooks/useContexts";
 
 // Components
-import Shelf from '../../Components/Home/Shelf/Shelf';
-import ShelfCall from './../../Logic/API/Books/ShelfCall';
+import Shelf from "../../Components/Home/Shelf/Shelf";
+import ShelfCall from "./../../Logic/API/Books/ShelfCall";
 
 // Stylesheets
-import './Home.css';
-import BookView from './../BookView/BookView';
+import "./Home.css";
+import BookView from "./../BookView/BookView";
 
 const updateShelf = async (token, bookDispatch, appDispatch) => {
   await ShelfCall(token, bookDispatch);
-  appDispatch({ type: 'UPDATE-SHELF' });
+  appDispatch({ type: "UPDATE-SHELF" });
 };
 
 export default function Home() {
@@ -28,29 +28,17 @@ export default function Home() {
   } = useContexts();
 
   useEffect(() => {
-    if (currentPage !== '/app') {
-      appDispatch({ type: 'CHANGE-PAGE', currentPage: '/app' });
+    if (currentPage !== "/app") {
+      appDispatch({ type: "CHANGE-PAGE", currentPage: "/app" });
     }
-    if (lastShelfUpdate === '') {
+    if (lastShelfUpdate === "") {
       updateShelf(token, bookDispatch, appDispatch);
     }
   });
 
-  const shelvesArray = shelves.map(shelf => (
+  const shelvesArray = shelves.map((shelf) => (
     <Shelf title={shelf.title} books={shelf.books} key={shelf.title} />
   ));
 
-  return (
-    <div className="home">
-      <BookView
-        name="این داستان تمام شدنی نیست"
-        price="رایگان"
-        author="اسما توانگر"
-        status="اتمام یافته"
-        chapters="2"
-        stars={3}
-      />
-      {/* {shelvesArray} */}
-    </div>
-  );
+  return <div className="home">{shelvesArray}</div>;
 }
