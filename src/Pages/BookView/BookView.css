@@ -188,4 +188,8 @@
   .book-view__actions-add {
     right: 37%;
   }
+  .book-view__details-stars{
+    font-size: 4vh;
+    width: 15vh;
+  }
 }
