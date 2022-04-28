@@ -39,6 +39,7 @@
   border-right: 1vw solid var(--clr-txt-1);
   text-shadow: 0 3px 6px #1b414866;
   position: relative;
+  /* box-shadow: inset 9px 0px 18px -12px var(--clr-txt-1),inset -9px 0px 18px -12px var(--clr-txt-1); */
 }
 
 .book-view__details::before,
@@ -57,7 +58,7 @@
   right: -2vw;
 }
 
-.book-view__details *{
+.book-view__details * {
   display: flex;
   align-items: center;
 }
@@ -101,4 +102,95 @@
 
 .book-view__actions-add {
   right: 25vw;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .book-view {
+    width: 100%;
+    height: 100%;
+    gap: 0 2vh;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 50vh;
+    margin-bottom: 0;
+    margin-top: 10vh;
+  }
+
+  .book-view__cover {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .book-view__cover img {
+    width: 65%;
+    height: fit-content;
+    margin: auto;
+  }
+
+  .book-view__details {
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 4vh;
+    margin: 0 10vh;
+    border-bottom: 0.5vh solid var(--clr-txt-1);
+    border-left: 0.5vh solid var(--clr-txt-1);
+    border-right: 0.5vh solid var(--clr-txt-1);
+    border-top: none;
+    margin-left: 30%;
+  }
+
+  .book-view__details::before,
+  .book-view__details::after {
+    width: 3vh;
+    height: 3vh;
+    top: 48vh;
+  }
+  .book-view__details::before {
+    left: -2vh;
+  }
+  .book-view__details::after {
+    right: -2vh;
+  }
+
+  .book-view__details-price {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .book-view__details-name {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .book-view__details-author {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .book-view__details-status {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .book-view__details-chapters {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .book-view__details-stars {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+
+  .book-view__actions-chapters,
+  .book-view__actions-add {
+    bottom: 3vh;
+    height: 9vh;
+    width: 30vh;
+    font-size: 4vh;
+  }
+  .book-view__actions-chapters {
+    right: 56%;
+    left: unset;
+    border: 0.8vh solid var(--clr-primary-5);
+  }
+
+  .book-view__actions-add {
+    right: 37%;
+  }
+  .book-view__details-stars {
+    font-size: 4vh;
+    width: 15vh;
+  }
 }
