@@ -24,8 +24,8 @@ export default function HomeWrapper() {
 
   const logoutHandler = () => {
     dispatch({ type: 'LOGOUT' });
-    appDispatch({ type: 'RESET' });
     bookDispatch({ type: 'RESET' });
+    appDispatch({ type: 'RESET' });
   };
 
   return (
