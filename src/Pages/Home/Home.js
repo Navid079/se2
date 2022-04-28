@@ -10,6 +10,7 @@ import ShelfCall from './../../Logic/API/Books/ShelfCall';
 
 // Stylesheets
 import './Home.css';
+import BookView from './../BookView/BookView';
 
 const updateShelf = async (token, bookDispatch, appDispatch) => {
   await ShelfCall(token, bookDispatch);
@@ -35,10 +36,21 @@ export default function Home() {
     }
   });
 
-
   const shelvesArray = shelves.map(shelf => (
     <Shelf title={shelf.title} books={shelf.books} key={shelf.title} />
   ));
 
-  return <div className="home">{shelvesArray}</div>;
+  return (
+    <div className="home">
+      <BookView
+        name="این داستان تمام شدنی نیست"
+        price="رایگان"
+        author="اسما توانگر"
+        status="اتمام یافته"
+        chapters="2"
+        stars={3}
+      />
+      {/* {shelvesArray} */}
+    </div>
+  );
 }

@@ -15,13 +15,13 @@
 }
 
 .navbar__logout{
-  width: 15vw;
+  width: 8vw;
   font-size: 4vw;
   color: var(--clr-primary-5);
 }
 
 .navbar__search {
-  width: 15vw;
+  width: 8vw;
 
   font-size: 4vw;
   color: var(--clr-primary-5);
