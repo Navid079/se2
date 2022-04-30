@@ -11,13 +11,16 @@ export default function Book({
   id,
   title,
   cover,
-  price,
-  stars,
+  chapters,
   editable,
   finished,
   onClick,
 }) {
   const coverUrl = urlPrefixer(cover);
+
+  const price = chapters.reduce((value, item) => value + item.price, 0);
+  const stars =
+    chapters.reduce((value, item) => value + item.stars, 0) / chapters.length;
 
   const starComponents = [];
   for (let i = 0; i < stars; i++) {
