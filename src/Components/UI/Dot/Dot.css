@@ -10,6 +10,5 @@
 .dots-container {
   display: flex;
   justify-content: space-between;
-  width: 39vw;
   margin-top: 1vw;
 }

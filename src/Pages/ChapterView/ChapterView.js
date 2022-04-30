@@ -1,6 +1,7 @@
 import React from 'react';
 import './ChapterView.css';
 import number2persian from './../../util/numberToPersian';
+import Dot from '../../Components/UI/Dot/Dot';
 
 export default function ChapterView({ title, chapter, children }) {
   return (
@@ -16,7 +17,7 @@ export default function ChapterView({ title, chapter, children }) {
             فصل {number2persian(chapter)}
           </h4>
         </div>
-        <div className="chapter-view__scroll"></div>
+        <Dot count={10} />
         <div className="chapter-view__text">{children}</div>
       </div>
     </div>

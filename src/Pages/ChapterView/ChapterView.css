@@ -28,12 +28,15 @@
 }
 
 .chapter-view__text {
-  height: calc(100vh - 75vw);
+  height: calc(100vmax - 85vmin);
   font-size: 5vmin;
   overflow: scroll;
+  margin-top: 6vmin;
 }
 
 /* Hide scrollbar */
 .chapter-view__text::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+
