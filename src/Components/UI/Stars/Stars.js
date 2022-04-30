@@ -4,6 +4,8 @@ import { FaStar } from 'react-icons/fa';
 import './Stars.css';
 
 export default function Stars({ className, stars }) {
+  stars = Math.round(stars)
+
   const starComponents = [];
   for (let i = 0; i < stars; i++) {
     starComponents.push(<FaStar className="book__star" key={i} />);
