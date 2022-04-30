@@ -21,8 +21,7 @@ export default function Shelf({ title, books }) {
       id={book._id}
       title={book.title}
       cover={book.cover}
-      price={book.price}
-      stars={book.stars}
+      chapters={book.chapters}
       author={book.author}
       key={book._id}
       onClick={bookClickHandler}

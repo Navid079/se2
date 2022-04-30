@@ -17,8 +17,7 @@ export default function AuthorWorks() {
       id={book._id}
       title={book.title}
       cover={book.cover}
-      price={book.price}
-      stars={book.stars}
+      chapters={book.chapters}
       finished={book.finished}
       key={book._id}
       editable
