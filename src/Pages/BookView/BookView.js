@@ -21,7 +21,15 @@ export default function BookView() {
     }
   }
 
-  console.log(foundBook)
+  if(!foundBook) {
+    return <h1>404 - Not Found!</h1>
+  }
+
+  const stars =
+    foundBook.chapters.reduce((value, item) => value + item.stars, 0) /
+    foundBook.chapters.length;
+
+  const finished = foundBook.finished ? 'اتمام یافته' : 'ناتمام'
 
   const coverUrl = urlPrefixer(foundBook.cover);
   return (
@@ -33,9 +41,11 @@ export default function BookView() {
         <p className="book-view__details-name">{foundBook.title}</p>
         <p className="book-view__details-price">{foundBook.price}</p>
         <p className="book-view__details-author">{foundBook.author.fullName}</p>
-        <p className="book-view__details-status">اتمام یافته</p>
-        <p className="book-view__details-chapters">{3} فصل</p>
-        <Stars className="book-view__details-stars" stars={foundBook.stars} />
+        <p className="book-view__details-status">{finished}</p>
+        <p className="book-view__details-chapters">
+          {foundBook.chapters.length} فصل
+        </p>
+        <Stars className="book-view__details-stars" stars={stars} />
       </div>
       <Button className="book-view__actions-add">افزودن</Button>
       <Button className="book-view__actions-chapters">فصل ها</Button>
