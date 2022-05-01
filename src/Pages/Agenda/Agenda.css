@@ -1,3 +1,17 @@
 .agenda {
   overflow-y: scroll;
 }
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+
+
+
+
+
+  
+}

@@ -14,9 +14,8 @@ export default function AgendaItem({ title, pages, chapter, price, stars }) {
         <div className="agenda-item__middle-details">
           {title} ({pages} صفحه)
         </div>
-        <div className="agenda-item__middle-dots">
-          <Dot count={7} />
-        </div>
+        <Dot className="agenda-item__middle-dots" count={7} />
+        <Dot className="agenda-item__middle-dots-pc" count={13} />
         <Button className="agenda-item__read">خواندن</Button>
       </div>
       <div className="agenda-item__price">رایگان</div>
