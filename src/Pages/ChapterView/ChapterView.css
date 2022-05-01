@@ -39,4 +39,20 @@
   display: none; /* Chrome, Safari and Opera */
 }
 
+.chapter-view__navigate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  margin-top: 7vmin;
+}
+.chapter-view__navigate * {
+  text-decoration: none;
+  color: var(--clr-primary-5);
+  font-size: 4vmin;
+}
 
+.chapter-view__navigate *:hover {
+  
+}

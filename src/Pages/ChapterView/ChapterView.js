@@ -2,6 +2,7 @@ import React from 'react';
 import './ChapterView.css';
 import number2persian from './../../util/numberToPersian';
 import Dot from '../../Components/UI/Dot/Dot';
+import { Link } from 'react-router-dom';
 
 export default function ChapterView({ title, chapter, children }) {
   return (
@@ -19,6 +20,10 @@ export default function ChapterView({ title, chapter, children }) {
         </div>
         <Dot count={10} />
         <div className="chapter-view__text">{children}</div>
+      </div>
+      <div className="chapter-view__navigate">
+        <Link to="">&lt; فصل بعد</Link>
+        <Link to="">فصل قبل &gt;</Link>
       </div>
     </div>
   );
