@@ -31,6 +31,7 @@
 .agenda-item__read {
   width: 17vw;
   font-size: 2.75vw;
+  cursor: pointer;
 }
 
 .agenda-item__price {
