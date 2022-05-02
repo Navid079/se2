@@ -36,7 +36,7 @@ export default function Router() {
           <Route exact path="" element={<Home />} />
           <Route exact path="profile" element={<Profile />} />
           <Route exact path="viewBook/:bookId" element={<BookView />} />
-          <Route exact path="agenda" element={<Agenda/>} />
+          <Route exact path="agenda/:bookId" element={<Agenda/>} />
         </Route>
       </Routes>
     </RouterComponent>

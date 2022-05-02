@@ -33,7 +33,7 @@ export default function HomeWrapper() {
     <div className="home-wrapper">
       <Navbar onLogout={logoutHandler} />
       <div className="home-wrapper__container">
-        <ChapterView title="فلسفه تنهایی" chapter="20">
+        {/* <ChapterView title="فلسفه تنهایی" chapter="20">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
           ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
@@ -45,8 +45,8 @@ export default function HomeWrapper() {
           شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای
           اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده
           قرار گیرد.
-        </ChapterView>
-        {/* <Outlet /> */}
+        </ChapterView> */}
+        <Outlet />
       </div>
       <Footer currentPage={currentPage} />
     </div>
