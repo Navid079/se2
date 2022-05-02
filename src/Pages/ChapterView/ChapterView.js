@@ -18,7 +18,8 @@ export default function ChapterView({ title, chapter, children }) {
             فصل {number2persian(chapter)}
           </h4>
         </div>
-        <Dot count={10} />
+        <Dot count={15} className="dots-mobile" />
+        <Dot count={48} className="dots-pc" />
         <div className="chapter-view__text">{children}</div>
       </div>
       <div className="chapter-view__navigate">
