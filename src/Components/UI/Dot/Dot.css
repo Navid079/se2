@@ -10,9 +10,7 @@
 .dot__container {
   display: flex;
   justify-content: space-between;
-  margin-top: 1vw;
-  margin-left: 2vh;
-  margin-right: 2vh;
+  align-items: center;
 }
 
 /* 
@@ -26,7 +24,7 @@
   }
 
   .dot {
-    height: 2.5vh;
-    width: 2.5vh;
+    height: 1.5vh;
+    width: 1.5vh;
   }
 }

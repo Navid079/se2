@@ -20,6 +20,7 @@
     height: 15vh;
   }
   .home-wrapper__container::after {
-    height: 5vh;
+    /* height: 5vh; */
+    height: 0;
   }
 }
