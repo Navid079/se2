@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import AgendaItem from '../../Components/BookView/AgendaItem/AgendaItem';
 import BookContext from '../../Logic/Context/BookContext/BookContext';
-import findBook from '../../util/findBook';
+import { findBook } from '../../util/findBook';
 
 // Stylesheets
 import './Agenda.css';
@@ -24,6 +24,9 @@ export default function Agenda() {
         title={chapter.title}
         price={chapter.price}
         stars={chapter.stars}
+        bookId={foundBook._id}
+        chapterId={chapter._id}
+        chapterNumber={chapter.chapterNumber}
         pages={10}
       />
     );
