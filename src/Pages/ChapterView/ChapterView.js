@@ -17,6 +17,8 @@ export default function ChapterView() {
     return <h1>404 - Not Found!</h1>;
   }
 
+  console.log(chapter);
+
   return (
     <div className="chapter-view">
       <div className="chapter-view__content">
@@ -33,7 +35,7 @@ export default function ChapterView() {
         </div>
         <Dot count={15} className="dots-mobile" />
         <Dot count={48} className="dots-pc" />
-        <div className="chapter-view__text"></div>
+        <div className="chapter-view__text">{chapter.text}</div>
       </div>
       <div className="chapter-view__navigate">
         <Link to="">&lt; فصل بعد</Link>
