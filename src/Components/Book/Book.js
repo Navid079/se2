@@ -12,6 +12,7 @@ export default function Book({
   id,
   title,
   cover,
+  author,
   chapters,
   editable,
   finished,
@@ -38,6 +39,7 @@ export default function Book({
       <div className="book__container">
         <h3 className="book__title">{title}</h3>
         <h4 className="book__price">{price}</h4>
+        {author ? <h4 className='book__price'>{author.username}@</h4> : ''}
         <Stars stars={stars} />
         {bookState}
       </div>
