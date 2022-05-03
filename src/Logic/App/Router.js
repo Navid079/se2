@@ -17,6 +17,7 @@ import HomeWrapper from '../../Pages/HomeWrapper/HomeWrapper';
 import UserContext from '../Context/UserContext/UserContext';
 import BookView from '../../Pages/BookView/BookView';
 import Agenda from '../../Pages/Agenda/Agenda';
+import ChapterView from '../../Pages/ChapterView/ChapterView';
 
 export default function Router() {
   const userContext = useContext(UserContext);
@@ -37,6 +38,7 @@ export default function Router() {
           <Route exact path="profile" element={<Profile />} />
           <Route exact path="viewBook/:bookId" element={<BookView />} />
           <Route exact path="agenda/:bookId" element={<Agenda/>} />
+          <Route exact path="viewChapter/:bookId/:chapterId" element={<ChapterView/>} />
         </Route>
       </Routes>
     </RouterComponent>

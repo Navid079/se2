@@ -5,7 +5,7 @@ import './BookView.css';
 import { urlPrefixer } from './../../util/base64Utility';
 import { useNavigate, useParams } from 'react-router-dom';
 import BookContext from '../../Logic/Context/BookContext/BookContext';
-import findBook from '../../util/findBook';
+import { findBook } from '../../util/findBook';
 
 export default function BookView() {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ export default function BookView() {
       <Button className="book-view__actions-add">افزودن</Button>
       <Button
         className="book-view__actions-chapters"
-        onClick={(e) => navigate(`/app/agenda/${bookId}`)}
+        onClick={e => navigate(`/app/agenda/${bookId}`)}
       >
         فصل ها
       </Button>

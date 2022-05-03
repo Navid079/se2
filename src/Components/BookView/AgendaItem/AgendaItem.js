@@ -1,5 +1,6 @@
 // Libraries
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button';
 import Dot from '../../UI/Dot/Dot';
 import Stars from '../../UI/Stars/Stars';
@@ -7,7 +8,14 @@ import Stars from '../../UI/Stars/Stars';
 // Stylesheets
 import './AgendaItem.css';
 
-export default function AgendaItem({ title, pages, price, stars }) {
+export default function AgendaItem({
+  title,
+  pages,
+  price,
+  stars,
+  bookId,
+  chapterId,
+}) {
   const priceLabel = price === 0 ? 'رایگان' : price + ' تومان';
   return (
     <div className="agenda-item">
@@ -18,7 +26,9 @@ export default function AgendaItem({ title, pages, price, stars }) {
         </div>
         <Dot className="agenda-item__middle-dots" count={7} />
         <Dot className="agenda-item__middle-dots-pc" count={13} />
-        <Button className="agenda-item__read">خواندن</Button>
+        <Link to={`/app/viewChapter/${bookId}/${chapterId}`}>
+          <Button className="agenda-item__read">خواندن</Button>
+        </Link>
       </div>
       <div className="agenda-item__price">{priceLabel}</div>
       <Stars stars={stars} />
