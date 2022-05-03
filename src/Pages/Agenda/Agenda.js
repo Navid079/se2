@@ -26,6 +26,7 @@ export default function Agenda() {
         stars={chapter.stars}
         bookId={foundBook._id}
         chapterId={chapter._id}
+        chapterNumber={chapter.chapterNumber}
         pages={10}
       />
     );

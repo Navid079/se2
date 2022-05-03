@@ -25,7 +25,8 @@ export default function ChapterView() {
             className="chapter-view__icon"
             src={require('../../images/book.png')}
           />
-          <h3 className="chapter-view__title">کتاب {chapter.title}</h3>
+          <h3 className="chapter-view__title">کتاب {book.title}</h3>
+          {/* TODO: Add Chapter title */}
           <h4 className="chapter-view__chapter">
             فصل {number2persian(chapter.chapterNumber)}
           </h4>
