@@ -1,6 +1,6 @@
 :root {
   --clr-primary-5: #1b4148;
-  --clr-secondary-5: #F3EBE3;
+  --clr-secondary-5: #f3ebe3;
   --clr-tertiary-5: #dba353;
   --clr-txt-1: #746444;
   --clr-white: #fff;
@@ -12,6 +12,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:not(.font-deny, .font-deny *) {
   font-family: 'Shabnam';
 }
 
