@@ -5,6 +5,7 @@ import Dot from '../../Components/UI/Dot/Dot';
 import { Link, useParams } from 'react-router-dom';
 import { findBook, findChapter } from '../../util/findBook';
 import BookContext from '../../Logic/Context/BookContext/BookContext';
+import textParser from '../../util/textParser';
 
 export default function ChapterView() {
   const { bookId, chapterId } = useParams();
@@ -35,7 +36,7 @@ export default function ChapterView() {
         </div>
         <Dot count={15} className="dots-mobile" />
         <Dot count={48} className="dots-pc" />
-        <div className="chapter-view__text">{chapter.text}</div>
+        <div className="g-scrollbar chapter-view__text">{textParser(chapter.text)}</div>
       </div>
       <div className="chapter-view__navigate">
         <Link to="">&lt; فصل بعد</Link>

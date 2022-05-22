@@ -7,6 +7,10 @@
   text-shadow: 0 3px 6px #1b414866;
 }
 
+.agenda-item__stars {
+  width: 60vw;
+}
+
 .agenda-item *{
   margin: 1vh;
 }

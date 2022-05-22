@@ -5,3 +5,12 @@
 .g-pointer {
   cursor: pointer;
 }
+
+.g-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.g-scrollbar::-webkit-scrollbar {
+  display: none;
+}

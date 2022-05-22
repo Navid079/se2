@@ -30,12 +30,15 @@ export default function AgendaItem({
         </div>
         <Dot className="agenda-item__middle-dots" count={7} />
         <Dot className="agenda-item__middle-dots-pc" count={13} />
-        <Link to={`/app/viewChapter/${bookId}/${chapterId}`}>
+        <Link
+          className="g-reset"
+          to={`/app/viewChapter/${bookId}/${chapterId}`}
+        >
           <Button className="agenda-item__read">خواندن</Button>
         </Link>
       </div>
       <div className="agenda-item__price">{priceLabel}</div>
-      <Stars stars={stars} />
+      <Stars className="agenda-item__stars" stars={stars} />
       <hr className="agenda-item__line" />
     </div>
   );

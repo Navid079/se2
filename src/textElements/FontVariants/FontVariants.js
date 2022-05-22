@@ -16,8 +16,8 @@ export function Underline({ children }) {
 
 export function Colored({ children, color }) {
   return (
-    <p className="fv-colored" style={{ color }}>
+    <span className="fv-colored" style={{ color }}>
       {children}
-    </p>
+    </span>
   );
 }
