@@ -10,8 +10,6 @@ import ShelfCall from './../../Logic/API/Books/ShelfCall';
 
 // Stylesheets
 import './Home.css';
-import BookView from './../BookView/BookView';
-import Formula from '../../textElements/Formula/Formula';
 
 const updateShelf = async (token, bookDispatch, appDispatch) => {
   await ShelfCall(token, bookDispatch);
@@ -41,10 +39,5 @@ export default function Home() {
     <Shelf title={shelf.title} books={shelf.books} key={shelf.title} />
   ));
 
-  return (
-    <div className="home">
-      <Formula>{'$$\\int_1^3{x^2}=4$$'}</Formula>
-      {shelvesArray}
-    </div>
-  );
+  return <div className="home">{shelvesArray}</div>;
 }
