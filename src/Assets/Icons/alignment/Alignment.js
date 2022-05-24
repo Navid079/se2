@@ -5,7 +5,7 @@ import { ReactComponent as AlignRight } from './alignRight.svg';
 import { ReactComponent as TextLtr } from './textLtr.svg';
 import { ReactComponent as TextRtl } from './textRtl.svg';
 
-export default {
+const exp = {
   AlignCenter,
   AlignJustify,
   AlignLeft,
@@ -13,3 +13,5 @@ export default {
   TextLtr,
   TextRtl,
 };
+
+export default exp;

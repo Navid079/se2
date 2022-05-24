@@ -3,9 +3,11 @@ import { ReactComponent as Italic } from './italic.svg';
 import { ReactComponent as StrikeThrough } from './strikeThrough.svg';
 import { ReactComponent as Underline } from './underline.svg';
 
-export default {
+const exp = {
   Bold,
   Italic,
   StrikeThrough,
   Underline,
 };
+
+export default exp;
