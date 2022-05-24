@@ -5,6 +5,7 @@ import {
   Underline,
 } from '../textElements/FontVariants/FontVariants';
 import Code from '../textElements/Code/Code';
+import Formula from '../textElements/Formula/Formula';
 
 const textParser = (jsText, result = []) => {
   console.log(jsText);
@@ -34,6 +35,9 @@ const textParser = (jsText, result = []) => {
         break;
       case 'newline':
         component = <br />;
+        break;
+      case 'formula':
+        component = <Formula>{value}</Formula>
         break;
       default:
         break;
