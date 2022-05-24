@@ -1,10 +1,13 @@
 import { createContext, useReducer } from 'react';
 import BookReducer from './BookReducer';
 
-const INITIAL = {
-  myBooks: [],
-  shelves: [],
-};
+const localBackup = localStorage.getItem('book-context');
+const INITIAL = localBackup
+  ? JSON.parse(localBackup)
+  : {
+      myBooks: [],
+      shelves: [],
+    };
 
 const BookContext = createContext(INITIAL);
 

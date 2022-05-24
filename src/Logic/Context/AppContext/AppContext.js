@@ -1,11 +1,14 @@
 import { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
 
-const INITIAL = {
-  currentPage: '/',
-  lastShelfUpdate: '',
-  myBooksSynced: false,
-};
+const localBackup = localStorage.getItem('app-context');
+const INITIAL = localBackup
+  ? JSON.parse(localBackup)
+  : {
+      currentPage: '/',
+      lastShelfUpdate: '',
+      myBooksSynced: false,
+    };
 
 const AppContext = createContext(INITIAL);
 

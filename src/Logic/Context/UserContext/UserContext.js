@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react';
 import UserReducer from './UserReducer';
 
-let localBackup = localStorage.getItem('user-context');
+const localBackup = localStorage.getItem('user-context');
 const INITIAL = localBackup
   ? JSON.parse(localBackup)
   : {

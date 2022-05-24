@@ -1,29 +1,32 @@
 const AppReducer = (state, action) => {
+  let retr;
   switch (action.type) {
     case 'CHANGE-PAGE':
-      return {
+      retr = {
         ...state,
         currentPage: action.currentPage,
       };
     case 'UPDATE-SHELF':
-      return {
+      retr = {
         ...state,
         lastShelfUpdate: +new Date(),
       };
     case 'SYNC-MY-BOOKS':
-      return {
+      retr = {
         ...state,
         myBooksSynced: true,
       };
     case 'RESET':
-      return {
+      retr = {
         currentPage: '/',
         lastShelfUpdate: '',
         myBooksSynced: false,
       };
     default:
-      return state;
+      retr = state;
   }
+  localStorage.setItem('app-context', retr);
+  return retr;
 };
 
 export default AppReducer;
