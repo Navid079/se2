@@ -6,18 +6,22 @@ const BookReducer = (state, action) => {
         ...state,
         myBooks: action.myBooks,
       };
+      break;
     case 'SET-SHELVES':
       retr = {
         ...state,
         shelves: action.shelves,
       };
+      break;
     case 'RESET':
       retr = {
         myBooks: [],
         shelves: [],
       };
+      break;
     default:
       retr = state;
+      break;
   }
   localStorage.setItem('book-context', retr);
   return retr;
