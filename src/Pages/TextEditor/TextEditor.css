@@ -6,12 +6,6 @@
   padding-bottom: 0.1vmin;
 }
 
-.editor__toolbar {
-  background-color: var(--clr-tertiary-5);
-  border-top-left-radius: 5vmin;
-  border-top-right-radius: 5vmin;
-  height: 5rem;
-}
 .editor__content {
   height: calc(100vmax - 85vmin);
   margin: 1vmin;

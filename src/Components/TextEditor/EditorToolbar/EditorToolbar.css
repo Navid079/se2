@@ -1,0 +1,47 @@
+.editor-toolbar {
+  background-color: var(--clr-tertiary-5);
+  border-top-left-radius: 5vmin;
+  border-top-right-radius: 5vmin;
+  height: 5rem;
+  direction: ltr;
+  padding: 2vmin;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15% 5%;
+}
+
+.editor-toolbar__icon-group * {
+  height: fit-content;
+  /* width: fit-content; */
+  width: 5.5vmin;
+}
+
+.editor-toolbar__font-size {
+  width: 15vmin;
+}
+
+.text-style-h1 {
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.text-style-h2 {
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.text-style-h3 {
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}

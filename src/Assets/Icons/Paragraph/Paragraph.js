@@ -1,11 +1,11 @@
-import { ReactComponent as orderedList } from './orderedList.svg';
-import { ReactComponent as unorderedList } from './unorderedList.svg';
-import { ReactComponent as blockQuote } from './blockquote.svg';
+import { ReactComponent as OrderedList } from './orderedList.svg';
+import { ReactComponent as UnorderedList } from './unorderedList.svg';
+import { ReactComponent as BlockQuote } from './blockquote.svg';
 
 const exp = {
-  orderedList,
-  unorderedList,
-  blockQuote,
+  OrderedList,
+  UnorderedList,
+  BlockQuote,
 };
 
 export default exp;
