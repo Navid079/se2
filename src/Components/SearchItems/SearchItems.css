@@ -1,0 +1,48 @@
+.search-items__bookname {
+  font-size: 1.5vh;
+  font-weight: bold;
+  color: var(--clr-primary-5);
+  width: 16vh;
+  word-wrap: break-word;
+}
+
+.search-items__authorname {
+  font-size: 1vh;
+  color: var(--clr-primary-5);
+}
+
+.search-items__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin-top: 1vh;
+  margin-right: 1vh;
+}
+
+.search-items {
+  display: flex;
+  justify-content: space-between;
+  background-color: #74644415;
+  border-radius: 2vh;
+  margin-top: 2vh;
+  padding: 0.75vh 0.75vh;
+}
+
+.search-items:hover {
+  outline: 0.75vh solid var(--clr-white);
+}
+
+.search-items__image {
+  width: 7.5vh;
+  height: 8vh;
+  border-radius: 1vh;
+}
+
+.search-item__details {
+  display: flex;
+  padding-right: 0.5vh;
+}
+
+.search-item__stars {
+  align-self: center;
+}

@@ -19,6 +19,7 @@ import BookView from '../../Pages/BookView/BookView';
 import Agenda from '../../Pages/Agenda/Agenda';
 import ChapterView from '../../Pages/ChapterView/ChapterView';
 import TextEditor from './../../Pages/TextEditor/TextEditor';
+import SearchResult from '../../Components/SearchResult/SearchResult';
 
 export default function Router() {
   const userContext = useContext(UserContext);
