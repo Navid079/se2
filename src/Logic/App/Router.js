@@ -19,12 +19,17 @@ import BookView from '../../Pages/BookView/BookView';
 import Agenda from '../../Pages/Agenda/Agenda';
 import ChapterView from '../../Pages/ChapterView/ChapterView';
 import TextEditor from './../../Pages/TextEditor/TextEditor';
-import SearchResult from '../../Components/SearchResult/SearchResult';
+import BookContext from '../Context/BookContext/BookContext';
+import AppContext from '../Context/AppContext/AppContext';
 
 export default function Router() {
   const userContext = useContext(UserContext);
+  const bookContext = useContext(BookContext);
+  const appContext = useContext(AppContext);
   window.onbeforeunload = () => {
     localStorage.setItem('user-context', JSON.stringify(userContext));
+    localStorage.setItem('book-context', JSON.stringify(bookContext));
+    localStorage.setItem('app-context', JSON.stringify(appContext));
   };
 
   return (
