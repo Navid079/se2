@@ -1,6 +1,6 @@
 //Libraries
 import React from 'react';
-import { FaStar, FaPen } from 'react-icons/fa';
+import { FaPen } from 'react-icons/fa';
 import { MdDone } from 'react-icons/md';
 import { urlPrefixer } from '../../util/base64Utility';
 import Stars from '../UI/Stars/Stars';

@@ -37,7 +37,7 @@ const textParser = (jsText, result = []) => {
         component = <br />;
         break;
       case 'formula':
-        component = <Formula>{value}</Formula>
+        component = <Formula display={item.display}>{value}</Formula>
         break;
       default:
         break;

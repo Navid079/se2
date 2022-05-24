@@ -1,4 +1,7 @@
 .formula {
   direction: ltr;
+}
+
+.formula__display {
   font-size: 5vmin;
 }
