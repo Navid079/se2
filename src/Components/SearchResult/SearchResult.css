@@ -1,21 +1,14 @@
-.search-result {
-    display: flex;
-    align-items: center;
-    height: 20vh;
-}
-
-
 .search {
     display: flex;
     justify-content: center;
     border-bottom: 0.4vh solid var(--clr-primary-5);
-
-    
+    padding-bottom: 1vh;    
 }
 
 .search-input {
     background: transparent;
     border: none;
+    outline: none;
     
 }
 
@@ -31,9 +24,4 @@
     font-size: 3.5vh;
     margin-left: 0.1vh;
     color: var(--clr-primary-5);
-}
-
-.search-border{
-    color: var(--clr-primary-5);
-    
 }
