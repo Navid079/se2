@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 //Stylesheets
@@ -9,7 +9,33 @@ import './SearchModal.css';
 import Checkmark from '../../Components/UI/Checkmark/Checkmark';
 import DoubleSlider from './../../Components/UI/DoubleSlider/DoubleSlider';
 
-export default function SearchModal() {
+export default function SearchModal({ onSubmit }) {
+  const authorFilter = useRef();
+  const titleFilter = useRef();
+  const genreFilter = useRef();
+  const textFilter = useRef();
+  const finishedFilter = useRef();
+  const freeFilter = useRef();
+
+  let minPrice = 1000;
+  let maxPrice = 50000;
+
+  const inputKeyPressHandler = event => {
+    if ((event.which !== 13 && event.keyCode !== 13) || !onSubmit) return;
+    const filters = {
+      author: authorFilter.current.checked,
+      title: titleFilter.current.checked,
+      genre: genreFilter.current.checked,
+      text: textFilter.current.checked,
+      finished: finishedFilter.current.checked,
+      free: freeFilter.current.checked,
+    };
+
+    const key = event.target.value;
+
+    onSubmit(key, filters, { minPrice, maxPrice });
+  };
+
   return (
     <div className="search-modal">
       <div className="search-input">
@@ -18,6 +44,7 @@ export default function SearchModal() {
           className="search__input"
           placeholder="جست و جو کنید."
           type="search"
+          onKeyPress={inputKeyPressHandler}
         />
         <hr />
       </div>
@@ -25,15 +52,39 @@ export default function SearchModal() {
         <h3 className="filters__title">فیلترها</h3>
 
         <div className="filters-container">
-          <Checkmark id="search-author" label="نام نویسنده" checked />
-          <Checkmark id="search-book-title" label="عنوان کتاب" checked />
+          <Checkmark
+            id="search-author"
+            label="نام نویسنده"
+            checked
+            reference={authorFilter}
+          />
+          <Checkmark
+            id="search-book-title"
+            label="عنوان کتاب"
+            checked
+            reference={titleFilter}
+          />
         </div>
 
         <hr />
         <div className="filters-container">
-          <Checkmark id="search-genre" label="ژانر" checked />
-          <Checkmark id="search-text" label="متن" checked />
-          <Checkmark id="search-finished" label="فقط اتمام یافته ها" />
+          <Checkmark
+            id="search-genre"
+            label="ژانر"
+            checked
+            reference={genreFilter}
+          />
+          <Checkmark
+            id="search-text"
+            label="متن"
+            checked
+            reference={textFilter}
+          />
+          <Checkmark
+            id="search-finished"
+            label="فقط اتمام یافته ها"
+            reference={finishedFilter}
+          />
         </div>
         <hr />
         <div className="filters-price-container">
@@ -45,8 +96,15 @@ export default function SearchModal() {
             start={1000}
             end={50000}
             step={1000}
+            onUpdate={(handle, values, positions) => {
+              [minPrice, maxPrice] = values;
+            }}
           />
-          <Checkmark id="search-free" label="فقط رایگان ها" />
+          <Checkmark
+            id="search-free"
+            label="فقط رایگان ها"
+            reference={freeFilter}
+          />
         </div>
       </div>
     </div>

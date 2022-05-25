@@ -1,28 +1,44 @@
 // Libraries
 import React from 'react';
-import {IoCloseSharp} from 'react-icons/io5';
-import {FaSearch} from 'react-icons/fa';
+import { IoCloseSharp } from 'react-icons/io5';
+import { FaSearch } from 'react-icons/fa';
 
 //Components
-import SearchItems from '../SearchItems/SearchItems';
+import SearchItem from '../SearchItem/SearchItem';
 
 // Stylesheets
 import './SearchResult.css';
 
-export default function SearchResult() {
+export default function SearchResult({ result, onSearch }) {
+  const resultComponents =
+    result && result.length ? (
+      result.map(item => (
+        <SearchItem
+          bookId={item._id}
+          author={item.author}
+          cover={item.cover}
+          name={item.title}
+          stars={item.stars}
+          key={item._id}
+        />
+      ))
+    ) : (
+      <h1>متاسفانه نتیجه ای برای جستجوی شما پیدا نشد</h1>
+    );
+
   return (
-    <div className='search-result'> 
-    <div className='search'>
-        <FaSearch className='search-icon'/>
-        <input className='search-input' placeholder='جست و جو کنید'></input>
-        <IoCloseSharp className='search-close'/>   
+    <div className="search-result">
+      <div className="search-input">
+        <FaSearch className="search__icon" />
+        <input
+          className="search__input"
+          placeholder="جست و جو کنید"
+          type="search"
+          onClick={onSearch}
+        />
+        <hr />
+      </div>
+      {resultComponents}
     </div>
-    
-    <SearchItems/>
-    <SearchItems/>
-    <SearchItems/>
-    
-    
-    </div>
-  )
+  );
 }

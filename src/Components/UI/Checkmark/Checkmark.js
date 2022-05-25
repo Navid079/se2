@@ -1,11 +1,16 @@
 import React from 'react';
 import './Checkmark.css';
 
-export default function Checkmark({ id, label, checked }) {
+export default function Checkmark({ id, label, checked, reference }) {
   return (
     <div className="checkmark-container">
       <label for={id}>
-        <input type="checkbox" id={id} defaultChecked={checked} />
+        <input
+          ref={reference}
+          type="checkbox"
+          id={id}
+          defaultChecked={checked}
+        />
         <span class="checkmark"></span>
         {label}
       </label>

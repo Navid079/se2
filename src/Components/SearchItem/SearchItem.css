@@ -1,14 +1,22 @@
 .search-items__bookname {
   font-size: 1.5vh;
+  line-height: 1.7vh;
   font-weight: bold;
   color: var(--clr-primary-5);
-  width: 16vh;
+  width: 10vh;
   word-wrap: break-word;
+  max-height: 3.4vh;
+  overflow: hidden;
 }
 
 .search-items__authorname {
   font-size: 1vh;
   color: var(--clr-primary-5);
+  width: 10vh;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 1.1vh;
+  line-height: 1.2vh;
 }
 
 .search-items__text {
@@ -26,6 +34,7 @@
   border-radius: 2vh;
   margin-top: 2vh;
   padding: 0.75vh 0.75vh;
+  width: 30vh;
 }
 
 .search-items:hover {
