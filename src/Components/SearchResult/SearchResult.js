@@ -38,7 +38,51 @@ export default function SearchResult({ result, onSearch }) {
         />
         <hr />
       </div>
-      {resultComponents}
+      {/* <div>{resultComponents}</div> */}
+      <div className="search-result__results">
+        <SearchItem
+          author="نویسنده"
+          cover={require('../../images/cover.png')}
+          name="اسم کتاب"
+          stars="1"
+        />
+        <SearchItem
+          author="نویسنده"
+          cover={require('../../images/cover.png')}
+          name="اسم کتاب 2"
+          stars="2"
+        />
+        <SearchItem
+          author="نویسنده"
+          cover={require('../../images/cover.png')}
+          name="اسم کتاب 3"
+          stars="3"
+        />
+        <SearchItem
+          author="نویسنده"
+          cover={require('../../images/cover.png')}
+          name="اسم کتاب 4"
+          stars="4"
+        />
+        <SearchItem
+          author="نویسنده"
+          cover={require('../../images/cover.png')}
+          name="اسم کتاب 5"
+          stars="5"
+        />
+        <SearchItem
+          author="نویسنده"
+          cover={require('../../images/cover.png')}
+          name="اسم کتاب 6"
+          stars="2"
+        />
+        <SearchItem
+          author="نویسنده"
+          cover={require('../../images/cover.png')}
+          name="اسم کتاب 7"
+          stars="4"
+        />
+      </div>
     </div>
   );
 }

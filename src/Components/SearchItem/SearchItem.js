@@ -15,8 +15,8 @@ export default function SearchItems({ bookId, author, cover, name, stars }) {
         <div className="search-item__details">
           <img className="search-items__image" src={cover} />
           <div className="search-items__text">
-            <h1 className="search-items__bookname">{name}</h1>
-            <h3 className="search-items__authorname">{author}</h3>
+            <h1 className="search-items__book-name">{name}</h1>
+            <h3 className="search-items__author-name">{author}</h3>
           </div>
         </div>
         <Stars className="search-item__stars" stars={stars} />

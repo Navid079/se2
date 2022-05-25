@@ -1,57 +1,60 @@
-.search-items__bookname {
-  font-size: 1.5vh;
-  line-height: 1.7vh;
-  font-weight: bold;
-  color: var(--clr-primary-5);
-  width: 10vh;
-  word-wrap: break-word;
-  max-height: 3.4vh;
-  overflow: hidden;
+.search-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 4vmin;
+  padding: 2vmin;
+  background-color: #74644415;
 }
 
-.search-items__authorname {
-  font-size: 1vh;
-  color: var(--clr-primary-5);
-  width: 10vh;
-  word-wrap: break-word;
-  overflow: hidden;
-  max-height: 1.1vh;
-  line-height: 1.2vh;
+.search-items:hover {
+  outline: 1vmin solid var(--clr-white);
+  outline-offset: -1vmin;
+}
+
+.search-item__details {
+  display: flex;
+  align-items: center;
+  column-gap: 5%;
+  width: 80%;
+}
+
+.search-items__image {
+  width: 25%;
+  height: 14vmin;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 2vmin;
 }
 
 .search-items__text {
   display: flex;
   flex-direction: column;
-  gap: 1vh;
-  margin-top: 1vh;
-  margin-right: 1vh;
+  gap: 1vmax;
+  width: 70%;
+  color: var(--clr-primary-5);
 }
 
-.search-items {
-  display: flex;
-  justify-content: space-between;
-  background-color: #74644415;
-  border-radius: 2vh;
-  margin-top: 2vh;
-  padding: 0.75vh 0.75vh;
-  width: 30vh;
+.search-items__book-name {
+  font-size: 4vmin;
+  font-weight: bold;
+  word-wrap: break-word;
+  --search-txt-line-hight-book: 4vmin;
+  line-height: var(--search-txt-line-hight-book);
+  max-height: calc(2 * var(--search-txt-line-hight-book));
+  overflow: hidden;
 }
 
-.search-items:hover {
-  outline: 0.75vh solid var(--clr-white);
-}
-
-.search-items__image {
-  width: 7.5vh;
-  height: 8vh;
-  border-radius: 1vh;
-}
-
-.search-item__details {
-  display: flex;
-  padding-right: 0.5vh;
+.search-items__author-name {
+  font-size: 3vmin;
+  word-wrap: break-word;
+  --search-txt-line-hight-author: 3vmin;
+  line-height: var(--search-txt-line-hight-author);
+  max-height: calc(2 * var(--search-txt-line-hight-author));
+  overflow: hidden;
 }
 
 .search-item__stars {
-  align-self: center;
+  width: 20%;
 }
