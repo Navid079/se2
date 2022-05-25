@@ -28,14 +28,15 @@ export default function SearchResult({ result, onSearch }) {
 
   return (
     <div className="search-result">
-      <div className="search">
-        <FaSearch className="search-icon" />
+      <div className="search-input">
+        <FaSearch className="search__icon" />
         <input
-          className="search-input"
+          className="search__input"
           placeholder="جست و جو کنید"
+          type="search"
           onClick={onSearch}
         />
-        <IoCloseSharp className="search-close" />
+        <hr />
       </div>
       {resultComponents}
     </div>
