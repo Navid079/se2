@@ -55,6 +55,40 @@
   overflow: hidden;
 }
 
-.search-item__stars {
+.search-item__stars-container {
   width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --star-size: 3vmin;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .search-items {
+    border-radius: 3vmin;
+    padding: 2vmin 3vmin;
+    background-color: #74644415;
+  }
+
+  .search-items:hover {
+    outline: 0.75vmin solid var(--clr-white);
+    outline-offset: -0.75vmin;
+  }
+
+  .search-item__details {
+    column-gap: 7%;
+    width: 80%;
+  }
+
+  .search-items__image {
+    width: 20%;
+  }
+  .search-item__stars {
+    --star-size: 2.5vmin;
+  }
 }

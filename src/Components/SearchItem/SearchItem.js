@@ -19,7 +19,9 @@ export default function SearchItems({ bookId, author, cover, name, stars }) {
             <h3 className="search-items__author-name">{author}</h3>
           </div>
         </div>
-        <Stars className="search-item__stars" stars={stars} />
+        <div className="search-item__stars-container">
+          <Stars className="search-item__stars" stars={stars} />
+        </div>
       </div>
     </Link>
   );
