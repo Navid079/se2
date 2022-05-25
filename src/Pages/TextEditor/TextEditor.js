@@ -5,10 +5,10 @@ import './TextEditor.css';
 export default function TextEditor() {
   return (
     <div className="editor">
-      <div className="editor__toolbar">
-        <EditorToolbar />
+      <EditorToolbar />
+      <div tabIndex={1} className="editor__content">
+        <span className="caret">|</span>
       </div>
-      <div className="editor__content"></div>
     </div>
   );
 }
