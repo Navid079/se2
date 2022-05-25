@@ -9,7 +9,22 @@ import SearchItem from '../SearchItem/SearchItem';
 // Stylesheets
 import './SearchResult.css';
 
-export default function SearchResult() {
+export default function SearchResult({ result }) {
+  const resultComponents = result ? (
+    result.map(item => (
+      <SearchItem
+        bookId={item._id}
+        author={item.author}
+        cover={item.cover}
+        name={item.title}
+        stars={item.stars}
+        key={item._id}
+      />
+    ))
+  ) : (
+    <h1>متاسفانه نتیجه ای برای جستجوی شما پیدا نشد</h1>
+  );
+
   return (
     <div className="search-result">
       <div className="search">
@@ -17,24 +32,7 @@ export default function SearchResult() {
         <input className="search-input" placeholder="جست و جو کنید"></input>
         <IoCloseSharp className="search-close" />
       </div>
-      <SearchItem
-        cover={require('../../images/cover.png')}
-        name="این داستان تمام شدنی نیست"
-        author="اسما توانگررررررررررررررررررررررررررررررررررررررررررررررررررررررذذذذذذذذذذذذ"
-        stars={2}
-      />
-      <SearchItem
-        cover={require('../../images/cover.png')}
-        name="این داستان تمام شدنی نیست"
-        author="اسما توانگر"
-        stars={3}
-      />
-      <SearchItem
-        cover={require('../../images/cover.png')}
-        name="این داستان تمام شدنی نیست"
-        author="اسما توانگر"
-        stars={5}
-      />
+      {resultComponents}
     </div>
   );
 }
