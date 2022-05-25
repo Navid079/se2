@@ -2,23 +2,40 @@
   background-color: var(--clr-tertiary-5);
   border-top-left-radius: 5vmin;
   border-top-right-radius: 5vmin;
-  height: 5rem;
+  height: fit-content;
   direction: ltr;
   padding: 2vmin;
 
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 15% 5%;
+  column-gap: 5%;
+}
+
+.editor-toolbar__icon-group {
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .editor-toolbar__icon-group * {
   height: fit-content;
   /* width: fit-content; */
-  width: 5.5vmin;
+  width: 1.1rem;
+  margin: 2vmin 0vmin;
 }
 
+.editor-toolbar__font-size,
+.editor-toolbar__text-style {
+  height: 1.5rem;
+}
 .editor-toolbar__font-size {
   width: 15vmin;
+}
+.editor-toolbar__text-style {
+  width: 35vmin;
 }
 
 .text-style-h1 {
@@ -29,6 +46,7 @@
   margin-inline-end: 0px;
   font-weight: bold;
 }
+
 .text-style-h2 {
   font-size: 1.5em;
   margin-block-start: 0.83em;
@@ -37,6 +55,7 @@
   margin-inline-end: 0px;
   font-weight: bold;
 }
+
 .text-style-h3 {
   font-size: 1.17em;
   margin-block-start: 1em;
@@ -44,4 +63,36 @@
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .editor-toolbar {
+    border-top-left-radius: 2vmin;
+    border-top-right-radius: 2vmin;
+    padding: 0.7rem;
+
+    justify-content: unset;
+    column-gap: 2%;
+  }
+
+  .editor-toolbar__icon-group * {
+    width: 1.5rem;
+    margin: 0 0.2vmin;
+  }
+
+  .editor-toolbar__font-size,
+  .editor-toolbar__text-style {
+    height: 1.5rem;
+  }
+  .editor-toolbar__font-size {
+    width: 5vmax;
+  }
+  .editor-toolbar__text-style {
+    width: 10vmax;
+  }
 }

@@ -6,8 +6,8 @@ export default function TextEditor() {
   return (
     <div className="editor">
       <EditorToolbar />
-      <div className="editor__content">
-        
+      <div tabIndex={1} className="editor__content">
+        <span className="caret">|</span>
       </div>
     </div>
   );
