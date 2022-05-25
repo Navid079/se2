@@ -6,17 +6,46 @@
   padding-bottom: 0.1vmin;
 }
 
-.editor__toolbar {
-  background-color: var(--clr-tertiary-5);
-  border-top-left-radius: 5vmin;
-  border-top-right-radius: 5vmin;
-  height: 5rem;
-}
 .editor__content {
   height: calc(100vmax - 85vmin);
   margin: 1vmin;
-  padding: 2vmin 5vmin;
+  padding: 1.5vmin 2vmin;
   border: 1px solid var(--clr-txt-1);
   border-radius: 1vmin 1vmin 5vmin 5vmin;
   overflow: scroll;
+}
+
+.caret {
+  visibility: hidden;
+}
+
+.editor__content:focus .caret {
+  visibility: visible;
+  animation: blink-animation 1s steps(2, start) infinite !important;
+}
+
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .editor {
+    width: 95%;
+    border-radius: 2vmin;
+    padding-bottom: 0.1vmin;
+  }
+
+  .editor__content {
+    height: 60vmin;
+    padding: 1vmax 1.5vmax;
+    border-radius: 0.5vmin 0.5vmin 2vmin 2vmin;
+  }
 }
