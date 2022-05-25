@@ -9,7 +9,7 @@ import SearchItem from '../SearchItem/SearchItem';
 // Stylesheets
 import './SearchResult.css';
 
-export default function SearchResult({ result, onSearch }) {
+export default function SearchResult({ result, onSearch, onSelect }) {
   const resultComponents =
     result && result.length ? (
       result.map(item => (
@@ -20,6 +20,7 @@ export default function SearchResult({ result, onSearch }) {
           name={item.title}
           stars={item.stars}
           key={item._id}
+          onSelect={onSelect}
         />
       ))
     ) : (

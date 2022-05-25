@@ -1,5 +1,5 @@
 // Libraries
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 //Stylesheets
@@ -16,6 +16,8 @@ export default function SearchModal({ onSubmit }) {
   const textFilter = useRef();
   const finishedFilter = useRef();
   const freeFilter = useRef();
+
+  const inputRef = useRef();
 
   let minPrice = 1000;
   let maxPrice = 50000;
@@ -36,6 +38,10 @@ export default function SearchModal({ onSubmit }) {
     onSubmit(key, filters, { minPrice, maxPrice });
   };
 
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+
   return (
     <div className="search-modal">
       <div className="search-input">
@@ -45,6 +51,7 @@ export default function SearchModal({ onSubmit }) {
           placeholder="جست و جو کنید."
           type="search"
           onKeyPress={inputKeyPressHandler}
+          ref={inputRef}
         />
         <hr />
       </div>
@@ -55,7 +62,6 @@ export default function SearchModal({ onSubmit }) {
           <Checkmark
             id="search-author"
             label="نام نویسنده"
-            checked
             reference={authorFilter}
           />
           <Checkmark
@@ -68,18 +74,8 @@ export default function SearchModal({ onSubmit }) {
 
         <hr />
         <div className="filters-container">
-          <Checkmark
-            id="search-genre"
-            label="ژانر"
-            checked
-            reference={genreFilter}
-          />
-          <Checkmark
-            id="search-text"
-            label="متن"
-            checked
-            reference={textFilter}
-          />
+          <Checkmark id="search-genre" label="ژانر" reference={genreFilter} />
+          <Checkmark id="search-text" label="متن" reference={textFilter} />
           <Checkmark
             id="search-finished"
             label="فقط اتمام یافته ها"
@@ -103,6 +99,7 @@ export default function SearchModal({ onSubmit }) {
           <Checkmark
             id="search-free"
             label="فقط رایگان ها"
+            checked
             reference={freeFilter}
           />
         </div>

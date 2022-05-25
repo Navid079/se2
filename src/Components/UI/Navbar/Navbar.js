@@ -53,7 +53,14 @@ export default function Navbar({ onLogout }) {
           setSearchResult([]);
         }}
       >
-        <SearchResult result={searchResult} onSearch={resultSearchHandler} />
+        <SearchResult
+          result={searchResult}
+          onSearch={resultSearchHandler}
+          onSelect={() => {
+            setSearchResultShow(false);
+            setSearchResult([]);
+          }}
+        />
       </ModalCard>
     </nav>
   );

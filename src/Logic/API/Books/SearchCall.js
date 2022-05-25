@@ -13,7 +13,7 @@ const SearchCall = async (token, key, filters, priceRange) => {
     const res = await axios.get(
       `${api}/search?type=book&key=${key}${
         filters ? `&filters=${filtersParams}` : ''
-      }${free ? '' : `&minPrice=${priceRange.min}&maxPrice=${priceRange.max}`}`,
+      }${free ? '' : `&minPrice=${priceRange.minPrice}&maxPrice=${priceRange.maxPrice}`}`,
       {
         headers: {
           Authorization: token,
