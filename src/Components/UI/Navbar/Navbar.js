@@ -23,7 +23,14 @@ export default function Navbar({ onLogout }) {
   const searchSubmitHandler = async (key, filters, priceRange) => {
     const result = await SearchCall(token, key, filters, priceRange);
     setSearchResult(result);
+    setSearchShow(false);
     setSearchResultShow(true);
+  };
+
+  const resultSearchHandler = () => {
+    setSearchResultShow(false);
+    setSearchShow(true);
+    setSearchResult([]);
   };
 
   return (
@@ -41,9 +48,12 @@ export default function Navbar({ onLogout }) {
       </ModalCard>
       <ModalCard
         show={searchResultShow}
-        onClose={() => setSearchResultShow(false)}
+        onClose={() => {
+          setSearchResultShow(false);
+          setSearchResult([]);
+        }}
       >
-        <SearchResult result={searchResult} />
+        <SearchResult result={searchResult} onSearch={resultSearchHandler} />
       </ModalCard>
     </nav>
   );

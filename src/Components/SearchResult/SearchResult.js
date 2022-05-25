@@ -9,7 +9,7 @@ import SearchItem from '../SearchItem/SearchItem';
 // Stylesheets
 import './SearchResult.css';
 
-export default function SearchResult({ result }) {
+export default function SearchResult({ result, onSearch }) {
   const resultComponents =
     result && result.length ? (
       result.map(item => (
@@ -30,7 +30,11 @@ export default function SearchResult({ result }) {
     <div className="search-result">
       <div className="search">
         <FaSearch className="search-icon" />
-        <input className="search-input" placeholder="جست و جو کنید"></input>
+        <input
+          className="search-input"
+          placeholder="جست و جو کنید"
+          onClick={onSearch}
+        />
         <IoCloseSharp className="search-close" />
       </div>
       {resultComponents}
