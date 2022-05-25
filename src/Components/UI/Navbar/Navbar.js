@@ -9,6 +9,7 @@ import './Navbar.css';
 import ModalCard from './../ModalCard/ModalCard';
 import SearchModal from './../../../Pages/SearchModal/SearchModal';
 import { useState } from 'react';
+import SearchResult from '../../SearchResult/SearchResult';
 
 export default function Navbar({ onLogout }) {
   const [show, setShow] = useState(false);
@@ -22,6 +23,9 @@ export default function Navbar({ onLogout }) {
 
       <ModalCard show={show} onClose={() => setShow(false)}>
         <SearchModal />
+      </ModalCard>
+      <ModalCard show>
+        <SearchResult />
       </ModalCard>
     </nav>
   );

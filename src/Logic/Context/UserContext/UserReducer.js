@@ -1,7 +1,8 @@
 const UserReducer = (state, action) => {
+  let retr;
   switch (action.type) {
     case 'LOGIN':
-      return {
+      retr = {
         ...state,
         username: action.user.username,
         fullName: action.user.fullName,
@@ -12,9 +13,9 @@ const UserReducer = (state, action) => {
         refresh: action.user.refresh,
         isLoggedIn: true,
       };
+      break;
     case 'LOGOUT':
-      localStorage.clear();
-      return {
+      retr = {
         ...state,
         username: '',
         fullName: '',
@@ -25,14 +26,20 @@ const UserReducer = (state, action) => {
         bio: '',
         isLoggedIn: false,
       };
+      localStorage.clear();
+      return retr;
     case 'UPDATE':
-      return {
+      retr = {
         ...state,
         ...action.user,
       };
+      break;
     default:
-      return state;
+      retr = state;
+      break;
   }
+  localStorage.setItem('user-context', retr);
+  return retr;
 };
 
 export default UserReducer;

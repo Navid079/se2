@@ -1,0 +1,27 @@
+.search {
+    display: flex;
+    justify-content: center;
+    border-bottom: 0.4vh solid var(--clr-primary-5);
+    padding-bottom: 1vh;    
+}
+
+.search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    
+}
+
+.search-icon {
+    margin-left: 1.5vh;
+    margin-top: 1vh;
+    font-size: 4vw;
+    color: var(--clr-primary-5);
+    width: 4vh;
+}
+
+.search-close {
+    font-size: 3.5vh;
+    margin-left: 0.1vh;
+    color: var(--clr-primary-5);
+}
