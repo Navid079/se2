@@ -8,10 +8,10 @@
 }
 
 .agenda-item__stars {
-  width: 60vw;
+  --star-size: 3vmin;
 }
 
-.agenda-item *{
+.agenda-item :not(.agenda-item__stars, .agenda-item__stars *) {
   margin: 1vh;
 }
 
