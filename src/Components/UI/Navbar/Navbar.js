@@ -9,9 +9,9 @@ import './Navbar.css';
 import ModalCard from './../ModalCard/ModalCard';
 import SearchModal from './../../../Pages/SearchModal/SearchModal';
 import { useState } from 'react';
-import SearchResult from '../../SearchResult/SearchResult';
 import UserContext from '../../../Logic/Context/UserContext/UserContext';
 import SearchCall from '../../../Logic/API/Books/SearchCall';
+import SearchResult from "../../../Pages/SearchResult/SearchResult";
 
 export default function Navbar({ onLogout }) {
   const [searchShow, setSearchShow] = useState(false);

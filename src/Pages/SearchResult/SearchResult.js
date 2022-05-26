@@ -4,7 +4,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 import { FaSearch } from 'react-icons/fa';
 
 //Components
-import SearchItem from '../SearchItem/SearchItem';
+import SearchItem from '../../Components/SearchItem/SearchItem';
 
 // Stylesheets
 import './SearchResult.css';
