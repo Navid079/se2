@@ -1,0 +1,72 @@
+.text-input__container {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  width: var(--txt-inp-width);
+  height: var(--txt-inp-height);
+  border: 1vw solid var(--clr-primary-5);
+  border-radius: 4vw;
+  background-color: transparent;
+}
+
+.text-input__container--error {
+  border-color: var(--clr-error);
+}
+
+.text-input {
+  all: unset;
+  border: none;
+  border-radius: 100px;
+  background-color: transparent;
+  text-align: center;
+  padding: 0 0.5rem; 
+  font-size: var(--txt-inp-font-size);
+  width: 100%;
+}
+
+.text-input::placeholder {
+  text-align: right;
+  font-size: var(--txt-inp-font-size);
+  color: var(--clr-primary-5);
+  opacity: 80%;
+}
+
+.text-input__error {
+  position: absolute;
+  transform: translateY(250%);
+  width: 150%;
+  height: 50%;
+  font-size: 2.5vw;
+  text-align: end;
+  padding-right: 2.5vw;
+  color: var(--clr-error);
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .text-input__container {
+    border: 0.8vh solid var(--clr-primary-5);
+    border-radius: 4vh;
+  }
+
+  .text-input__container:focus {
+    border: 0.8vh solid var(--clr-tertiary-5);
+  }
+
+  .text-input__container--error {
+    border-color: var(--clr-error);
+  }
+
+  .text-input__error {
+    transform: translateY(165%);
+    width: 150%;
+    height: 70%;
+    padding-right: 3vh;
+    font-size: 2.1vh;
+    text-align: end;
+  }
+}
