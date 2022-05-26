@@ -10,7 +10,7 @@
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  column-gap: 5%;
+  column-gap: 2vmin;
 }
 
 .editor-toolbar__icon-group {
@@ -27,9 +27,20 @@
   margin: 2vmin 0vmin;
 }
 
+.editor-toolbar__color-container {
+  width: 1.5rem;
+}
+
+.editor-toolbar__color {
+  opacity: 0;
+  width: 100%;
+}
+
 .editor-toolbar__font-size,
-.editor-toolbar__text-style {
+.editor-toolbar__text-style,
+.editor-toolbar__color-container {
   height: 1.5rem;
+  border: none;
 }
 .editor-toolbar__font-size {
   width: 15vmin;
@@ -85,10 +96,6 @@
     margin: 0 0.2vmin;
   }
 
-  .editor-toolbar__font-size,
-  .editor-toolbar__text-style {
-    height: 1.5rem;
-  }
   .editor-toolbar__font-size {
     width: 5vmax;
   }

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icons from '../../../Assets/Icons/Icons';
 import './EditorToolbar.css';
 
 export default function EditorToolbar() {
+  const [textColor, setTextColor] = useState('#746444');
   return (
     <div className="editor-toolbar">
       <div className="editor-toolbar__icon-group">
@@ -30,6 +31,21 @@ export default function EditorToolbar() {
         <Icons.Symbols />
         <Icons.InsertLink />
       </div>
+
+      <span
+        className="editor-toolbar__color-container"
+        style={{ backgroundColor: textColor }}
+      >
+        <input
+          value={textColor}
+          className="editor-toolbar__color"
+          type="color"
+          onChange={e => {
+            setTextColor(e.target.value);
+          }}
+        />
+      </span>
+
       <select name="fontsize" className="editor-toolbar__font-size">
         <option value="8">8pt</option>
         <option value="9">9pt</option>
@@ -50,9 +66,15 @@ export default function EditorToolbar() {
 
       <select name="text-style" className="editor-toolbar__text-style">
         <option value="simple">Normal text</option>
-        <option className="text-style-h1" value="h1">Heading 1</option>
-        <option className="text-style-h2" value="h2">Heading 2</option>
-        <option className="text-style-h3" value="h3">Heading 3</option>
+        <option className="text-style-h1" value="h1">
+          Heading 1
+        </option>
+        <option className="text-style-h2" value="h2">
+          Heading 2
+        </option>
+        <option className="text-style-h3" value="h3">
+          Heading 3
+        </option>
       </select>
     </div>
   );
