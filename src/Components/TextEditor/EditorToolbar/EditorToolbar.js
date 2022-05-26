@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Icons from '../../../Assets/Icons/Icons';
 import './EditorToolbar.css';
 
-export default function EditorToolbar() {
-  const [bold, setBold] = useState(false);
-  const [italic, setItalic] = useState(false);
-  const [strike, setStrike] = useState(false);
-  const [underline, setUnderline] = useState(false);
+export default function EditorToolbar({
+  boldState,
+  italicState,
+  strikeState,
+  underlineState,
+  alignmentState,
+  directionState,
+  textColorState,
+}) {
+  const [bold, setBold] = boldState;
+  const [italic, setItalic] = italicState;
+  const [strike, setStrike] = strikeState;
+  const [underline, setUnderline] = underlineState;
 
-  const [alignment, setAlignment] = useState('left');
-  const [direction, setDirection] = useState('rtl');
+  const [alignment, setAlignment] = alignmentState;
+  const [direction, setDirection] = directionState;
 
-  const [textColor, setTextColor] = useState('#746444');
+  const [textColor, setTextColor] = textColorState;
   return (
     <div className="editor-toolbar">
       <div className="editor-toolbar__icon-group">

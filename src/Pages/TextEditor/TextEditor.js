@@ -9,6 +9,14 @@ const jsonText = ['|'];
 export default function TextEditor() {
   const caretRef = useRef();
 
+  const boldState = useState(false);
+  const italicState = useState(false);
+  const strikeState = useState(false);
+  const underlineState = useState(false);
+  const alignmentState = useState('left');
+  const directionState = useState('rtl');
+  const textColorState = useState('#746444');
+
   const caretComponent = (
     <span className="caret" ref={caretRef}>
       |
@@ -37,7 +45,15 @@ export default function TextEditor() {
 
   return (
     <div className="editor">
-      <EditorToolbar />
+      <EditorToolbar
+        boldState={boldState}
+        italicState={italicState}
+        strikeState={strikeState}
+        underlineState={underlineState}
+        alignmentState={alignmentState}
+        directionState={directionState}
+        textColorState={textColorState}
+      />
       <div tabIndex={1} className="editor__content" onKeyDown={typeHandler}>
         {componentText}
       </div>
