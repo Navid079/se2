@@ -17,7 +17,7 @@ export default function SearchItems({ bookId, author, cover, name, stars, onSele
     <Link className="g-reset" to={`/app/viewbook/${bookId}`} onClick={onSelect}>
       <div className="search-items">
         <div className="search-item__details">
-          <img className="search-items__image" src={coverUrl} />
+          <img className="search-items__image" src={coverUrl} alt='book cover' />
           <div className="search-items__text">
             <h1 className="search-items__book-name">{name}</h1>
             <h3 className="search-items__author-name">{author.fullname}</h3>
