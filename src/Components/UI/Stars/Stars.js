@@ -8,12 +8,12 @@ export default function Stars({ className, stars }) {
 
   const starComponents = [];
   for (let i = 0; i < stars; i++) {
-    starComponents.push(<FaStar className="book__star" key={i} />);
+    starComponents.push(<FaStar className="star" key={i} />);
   }
   const starClass =
-    stars <= 3 ? 'book__star-3' : stars === 4 ? 'book__star-4' : 'book__star-5';
+    stars <= 3 ? 'star-3' : stars === 4 ? 'star-4' : 'star-5';
 
   return (
-    <div className={`book__star-container ${className} ${starClass}`}>{starComponents}</div>
+    <div className={`star-container ${className} ${starClass}`}>{starComponents}</div>
   );
 }

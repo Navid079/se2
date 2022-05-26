@@ -6,8 +6,20 @@
 .search-result__results {
   overflow: scroll;
   min-height: fit-content;
-  max-height: 50vh;
+  max-height: 50vmax;
   display: flex;
   flex-direction: column;
   row-gap: 2vmax;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .search-result__results {
+    max-height: 50vmin;
+    row-gap: 3vmax;
+  }
 }
