@@ -3,11 +3,16 @@ import Icons from '../../../Assets/Icons/Icons';
 import './EditorToolbar.css';
 
 export default function EditorToolbar() {
+  const [bold, setBold] = useState(false);
+
   const [textColor, setTextColor] = useState('#746444');
   return (
     <div className="editor-toolbar">
       <div className="editor-toolbar__icon-group">
-        <Icons.Bold />
+        <Icons.Bold
+          className={bold ? 'editor-toolbar__enabled' : undefined}
+          onClick={e => setBold(!bold)}
+        />
         <Icons.Italic />
         <Icons.StrikeThrough />
         <Icons.Underline />

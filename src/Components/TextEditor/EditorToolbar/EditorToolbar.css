@@ -76,6 +76,10 @@
   font-weight: bold;
 }
 
+.editor-toolbar__enabled {
+  fill: var(--clr-primary-5);
+}
+
 /* 
 ==========================
 =     PC Media Query     =
