@@ -80,6 +80,10 @@
   fill: var(--clr-primary-5);
 }
 
+.editor-toolbar__disabled {
+  fill: #74644480;
+}
+
 /* 
 ==========================
 =     PC Media Query     =

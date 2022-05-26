@@ -4,6 +4,12 @@ import './EditorToolbar.css';
 
 export default function EditorToolbar() {
   const [bold, setBold] = useState(false);
+  const [italic, setItalic] = useState(false);
+  const [strike, setStrike] = useState(false);
+  const [underline, setUnderline] = useState(false);
+
+  const [alignment, setAlignment] = useState('left');
+  const [direction, setDirection] = useState('rtl');
 
   const [textColor, setTextColor] = useState('#746444');
   return (
@@ -13,28 +19,62 @@ export default function EditorToolbar() {
           className={bold ? 'editor-toolbar__enabled' : undefined}
           onClick={e => setBold(!bold)}
         />
-        <Icons.Italic />
-        <Icons.StrikeThrough />
-        <Icons.Underline />
+        <Icons.Italic
+          className={italic ? 'editor-toolbar__enabled' : undefined}
+          onClick={e => setItalic(!italic)}
+        />
+        <Icons.StrikeThrough
+          className={strike ? 'editor-toolbar__enabled' : undefined}
+          onClick={e => setStrike(!strike)}
+        />
+        <Icons.Underline
+          className={underline ? 'editor-toolbar__enabled' : undefined}
+          onClick={e => setUnderline(!underline)}
+        />
       </div>
       <div className="editor-toolbar__icon-group">
-        <Icons.AlignLeft />
-        <Icons.AlignCenter />
-        <Icons.AlignRight />
-        <Icons.AlignJustify />
-        <Icons.TextRtl />
-        <Icons.TextLtr />
+        <Icons.AlignLeft
+          className={
+            alignment === 'left' ? 'editor-toolbar__enabled' : undefined
+          }
+          onClick={e => setAlignment('left')}
+        />
+        <Icons.AlignCenter
+          className={
+            alignment === 'center' ? 'editor-toolbar__enabled' : undefined
+          }
+          onClick={e => setAlignment('center')}
+        />
+        <Icons.AlignRight
+          className={
+            alignment === 'right' ? 'editor-toolbar__enabled' : undefined
+          }
+          onClick={e => setAlignment('right')}
+        />
+        <Icons.AlignJustify className="editor-toolbar__disabled" />
+        <Icons.TextRtl
+          className={
+            direction === 'rtl' ? 'editor-toolbar__enabled' : undefined
+          }
+          onClick={e => setDirection('rtl')}
+        />
+        <Icons.TextLtr
+          className={
+            direction === 'ltr' ? 'editor-toolbar__enabled' : undefined
+          }
+          onClick={e => setDirection('ltr')}
+        />
       </div>
       <div className="editor-toolbar__icon-group">
-        <Icons.UnorderedList />
-        <Icons.OrderedList />
-        <Icons.BlockQuote />
+        <Icons.UnorderedList className="editor-toolbar__disabled" />
+        <Icons.OrderedList className="editor-toolbar__disabled" />
+        <Icons.BlockQuote className="editor-toolbar__disabled" />
       </div>
       <div className="editor-toolbar__icon-group">
-        <Icons.InsertImage />
-        <Icons.CodeView />
-        <Icons.Symbols />
-        <Icons.InsertLink />
+        <Icons.InsertImage className="editor-toolbar__disabled" />
+        <Icons.CodeView className="editor-toolbar__disabled" />
+        <Icons.Symbols className="editor-toolbar__disabled" />
+        <Icons.InsertLink className="editor-toolbar__disabled" />
       </div>
 
       <span
