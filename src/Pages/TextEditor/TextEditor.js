@@ -24,9 +24,16 @@ export default function TextEditor() {
       switch (key) {
         case 'Backspace':
           if (caretLocation !== 0) {
+            if (jsonText[caretLocation - 1].type === 'newline') {
+              jsonText.splice(caretLocation - 1, 1);
+              break;
+            }
             jsonText[caretLocation - 1].value = jsonText[
               caretLocation - 1
             ].value.slice(0, -1);
+            if (jsonText[caretLocation - 1].value === '') {
+              jsonText.splice(caretLocation - 1, 1);
+            }
           }
           break;
         case 'Enter':
@@ -45,6 +52,7 @@ export default function TextEditor() {
         jsonText[caretLocation - 1].value += key;
       }
     }
+
     caretLocation = jsonText.indexOf('|');
 
     const components = textParser(jsonText.filter(item => item !== '|'));
