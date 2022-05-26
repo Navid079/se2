@@ -21,6 +21,7 @@ import ChapterView from '../../Pages/ChapterView/ChapterView';
 import TextEditor from './../../Pages/TextEditor/TextEditor';
 import BookContext from '../Context/BookContext/BookContext';
 import AppContext from '../Context/AppContext/AppContext';
+import AddBook from "../../Pages/AddBook/AddBook";
 
 export default function Router() {
   const userContext = useContext(UserContext);
@@ -51,6 +52,7 @@ export default function Router() {
             element={<ChapterView />}
           />
           <Route exact path="editor" element={<TextEditor />} />
+          <Route exact path="add" element={<AddBook />} />
         </Route>
       </Routes>
     </RouterComponent>

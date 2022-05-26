@@ -1,0 +1,43 @@
+.add-book {
+  background: linear-gradient(#ffffff45, #ffffff45),
+    url('../../images/adbook-l.png');
+  background-position: 75%;
+  background-size: cover;
+  width: 80vmin;
+  height: calc(100vmax - 65vmin);
+  margin: auto;
+  margin-top: 2vmin;
+  border-radius: 3vmin;
+  padding: 4vmin;
+  color: var(--clr-primary-5);
+}
+
+.add-book__cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 1vmax;
+  height: 85%;
+}
+
+.add-book__cover-image {
+  width: 18vmax;
+  height: 25vmax;
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-primary-5);
+  border-radius: 1vmax;
+  outline: none;
+}
+
+.add-book__title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2vh;
+}
+.add-book__title-input{
+  background-color: var(--clr-white) !important;
+  --txt-inp-width: 30vmax;
+  --txt-inp-height: 7vmax;
+}
