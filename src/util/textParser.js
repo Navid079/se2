@@ -8,8 +8,6 @@ import Code from '../textElements/Code/Code';
 import Formula from '../textElements/Formula/Formula';
 
 const textParser = (jsText, result = []) => {
-  console.log(jsText);
-
   for (let item of jsText) {
     let { type, value } = item;
     if (value && typeof value !== 'string') value = textParser(value);
