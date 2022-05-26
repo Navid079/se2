@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react';
 import EditorToolbar from '../../Components/TextEditor/EditorToolbar/EditorToolbar';
 import './TextEditor.css';
 import textParser from '../../util/textParser';
+import { printableKeys, specialKeys } from './TextEditorTools';
 
 const jsonText = ['|'];
+
 export default function TextEditor() {
   const caretRef = useRef();
 
@@ -21,40 +23,12 @@ export default function TextEditor() {
     let caretLocation = jsonText.indexOf('|');
 
     if (key.length > 1) {
-      switch (key) {
-        case 'Backspace':
-          if (caretLocation !== 0) {
-            if (jsonText[caretLocation - 1].type === 'newline') {
-              jsonText.splice(caretLocation - 1, 1);
-              break;
-            }
-            jsonText[caretLocation - 1].value = jsonText[
-              caretLocation - 1
-            ].value.slice(0, -1);
-            if (jsonText[caretLocation - 1].value === '') {
-              jsonText.splice(caretLocation - 1, 1);
-            }
-          }
-          break;
-        case 'Enter':
-          jsonText.splice(caretLocation, 0, { type: 'newline' });
-          break;
-        default:
-          break;
-      }
+      specialKeys(caretLocation, key, jsonText);
     } else {
-      if (
-        caretLocation === 0 ||
-        jsonText[caretLocation - 1].type === 'newline'
-      ) {
-        jsonText.splice(caretLocation, 0, { type: 'simple', value: key });
-      } else {
-        jsonText[caretLocation - 1].value += key;
-      }
+      printableKeys(caretLocation, key, jsonText);
     }
 
     caretLocation = jsonText.indexOf('|');
-
     const components = textParser(jsonText.filter(item => item !== '|'));
     components.splice(caretLocation, 0, caretComponent);
 
