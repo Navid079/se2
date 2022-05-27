@@ -1,5 +1,3 @@
-let x = 1;
-
 class TextNode {
   constructor(type, value, parent, options) {
     this.type = type;
@@ -73,6 +71,20 @@ class TextTree {
     } else {
       this.caret.value = [new TextNode('simple', this.caret.value, this.caret)];
       const node = new TextNode('colored', '', this.caret, { color });
+      this.caret.value.push(node);
+      this.caret = node;
+    }
+  }
+  changeSize(size) {
+    if (this.caret.type === 'size' && !this.caret.value) {
+      this.caret.size = size;
+    } else if (typeof this.caret.value === 'object') {
+      const node = new TextNode('size', '', this.caret, { size });
+      this.caret.value.push(node);
+      this.caret = node;
+    } else {
+      this.caret.value = [new TextNode('simple', this.caret.value, this.caret)];
+      const node = new TextNode('size', '', this.caret, { size });
       this.caret.value.push(node);
       this.caret = node;
     }

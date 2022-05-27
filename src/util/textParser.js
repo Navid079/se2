@@ -2,6 +2,7 @@ import {
   Bold,
   Colored,
   Italic,
+  Size,
   Strike,
   Underline,
 } from '../textElements/FontVariants/FontVariants';
@@ -37,6 +38,9 @@ const textParser = (jsText, result = []) => {
         break;
       case 'newline':
         component = <br />;
+        break;
+      case 'size':
+        component = <Size size={item.size}>{value}</Size>;
         break;
       case 'formula':
         component = <Formula display={item.display}>{value}</Formula>;

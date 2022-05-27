@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import Icons from '../../../Assets/Icons/Icons';
 import './EditorToolbar.css';
 
-export default function EditorToolbar({ onStateChange, onColorChange }) {
+export default function EditorToolbar({
+  onStateChange,
+  onColorChange,
+  onFontSizeChange,
+}) {
   const [bold, setBold] = useState(false);
   const [italic, setItalic] = useState(false);
   const [strike, setStrike] = useState(false);
@@ -105,7 +109,12 @@ export default function EditorToolbar({ onStateChange, onColorChange }) {
         />
       </span>
 
-      <select name="fontsize" className="editor-toolbar__font-size">
+      <select
+        name="fontsize"
+        className="editor-toolbar__font-size"
+        defaultValue={12}
+        onChange={e => onFontSizeChange(e.target.value)}
+      >
         <option value="8">8pt</option>
         <option value="9">9pt</option>
         <option value="12">12pt</option>
