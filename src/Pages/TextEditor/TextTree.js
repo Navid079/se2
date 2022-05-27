@@ -47,12 +47,22 @@ class Tree {
       }
     }
   }
+
+  parse(node = this.root) {
+    let value;
+    if (typeof node.value === 'object') {
+      value = node.value
+        .map(item => this.parse(item))
+        .filter(item => item !== null);
+    } else if (node.value) {
+      value = node.value;
+    } else {
+      return null;
+    }
+    if (node.type === 'root') {
+      return value;
+    } else {
+      return { type: node.type, value };
+    }
+  }
 }
-
-const textRoot = ['|'];
-
-const addNode = (node, parent) => {};
-
-const removeNode = position => {
-  textRoot.splice(position, 1);
-};
