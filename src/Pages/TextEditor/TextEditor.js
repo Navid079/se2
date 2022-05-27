@@ -6,9 +6,16 @@ import TextTree from './TextTree';
 const textTree = new TextTree();
 
 export default function TextEditor() {
-  const toolbarStateHandler = state => {};
   let jsonText = textTree.parse();
   const [componentText, setComponentText] = useState(textParser(jsonText));
+
+  const toolbarStateHandler = state => {
+    console.log(state)
+    const [type, command] = state.split(' ');
+    return command === '1'
+      ? textTree.addFormatting('', type)
+      : textTree.removeFormatting(type);
+  };
 
   const typeHandler = event => {
     event.preventDefault();

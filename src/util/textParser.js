@@ -2,6 +2,7 @@ import {
   Bold,
   Colored,
   Italic,
+  Strike,
   Underline,
 } from '../textElements/FontVariants/FontVariants';
 import Code from '../textElements/Code/Code';
@@ -22,6 +23,9 @@ const textParser = (jsText, result = []) => {
       case 'italic':
         component = <Italic>{value}</Italic>;
         break;
+      case 'strike':
+        component = <Strike>{value}</Strike>;
+        break;
       case 'underline':
         component = <Underline>{value}</Underline>;
         break;
@@ -39,6 +43,7 @@ const textParser = (jsText, result = []) => {
         break;
       case 'caret':
         component = <span className="caret">|</span>;
+        break;
       default:
         break;
     }

@@ -19,28 +19,28 @@ export default function EditorToolbar({ onStateChange }) {
           className={bold ? 'editor-toolbar__enabled' : undefined}
           onClick={e => {
             setBold(!bold);
-            if (onStateChange) onStateChange(bold ? 'bold 1' : 'bold 0');
+            if (onStateChange) onStateChange(bold ? 'bold 0' : 'bold 1');
           }}
         />
         <Icons.Italic
           className={italic ? 'editor-toolbar__enabled' : undefined}
           onClick={e => {
             setItalic(!italic);
-            if (onStateChange) onStateChange(italic ? 'italic 1' : 'italic 0');
+            if (onStateChange) onStateChange(italic ? 'italic 0' : 'italic 1');
           }}
         />
         <Icons.StrikeThrough
           className={strike ? 'editor-toolbar__enabled' : undefined}
           onClick={e => {
             setStrike(!strike);
-            if (onStateChange) onStateChange(strike ? 'strike 1' : 'strike 0');
+            if (onStateChange) onStateChange(strike ? 'strike 0' : 'strike 1');
           }}
         />
         <Icons.Underline
           className={underline ? 'editor-toolbar__enabled' : undefined}
           onClick={e => {
             setUnderline(!underline);
-            if (onStateChange) onStateChange(underline ? 'underline 1' : 'underline 0');
+            if (onStateChange) onStateChange(underline ? 'underline 0' : 'underline 1');
           }}
         />
       </div>

@@ -73,9 +73,9 @@ class TextTree {
         formatsToSave.push(this.caret.type);
         this.caret = this.caret.parent;
       }
-      while (formatsToSave) {
-        const format = formatsToSave.pop();
-        this.addFormatting(format, '');
+      this.caret = this.caret.parent;
+      for (let format of formatsToSave) {
+        this.addFormatting('', format);
       }
     }
   }
