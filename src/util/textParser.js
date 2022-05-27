@@ -12,7 +12,8 @@ import Formula from '../textElements/Formula/Formula';
 const textParser = (jsText, result = []) => {
   for (let item of jsText) {
     let { type, value } = item;
-    if (value && typeof value !== 'string') value = textParser(value);
+    if (value && typeof value !== 'string' && type !== 'code')
+      value = textParser(value);
     let component;
     switch (type) {
       case 'simple':

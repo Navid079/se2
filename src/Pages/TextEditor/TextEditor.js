@@ -25,6 +25,11 @@ export default function TextEditor() {
     textTree.changeSize(size);
   };
 
+  const addCodeHandler = () => {
+    console.log('first')
+    textTree.addCode();
+  };
+
   const typeHandler = event => {
     event.preventDefault();
     const key = event.key;
@@ -59,6 +64,7 @@ export default function TextEditor() {
         onStateChange={toolbarStateHandler}
         onColorChange={colorChangeHandler}
         onFontSizeChange={fontSizeChangeHandler}
+        onAddCode={addCodeHandler}
       />
       <div tabIndex={1} className="editor__content" onKeyDown={typeHandler}>
         {componentText}

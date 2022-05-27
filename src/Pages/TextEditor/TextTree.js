@@ -61,6 +61,24 @@ class TextTree {
     }
   }
 
+  addCode() {
+    if (typeof this.caret.value === 'object') {
+      const node = new TextNode('code', '', this.caret);
+      this.caret.value.push(node);
+      this.caret = node;
+    } else if (this.caret.value) {
+      this.caret.value = [new TextNode('simple', this.caret.value, this.caret)];
+      const node = new TextNode('code', '', this.caret);
+      this.caret.value.push(node);
+      this.caret = node;
+    } else {
+      this.caret.value = [];
+      const node = new TextNode('code', '', this.caret);
+      this.caret.value.push(node);
+      this.caret = node;
+    }
+  }
+
   changeColor(color) {
     if (this.caret.type === 'colored' && !this.caret.value) {
       this.caret.color = color;
@@ -91,6 +109,11 @@ class TextTree {
   }
 
   newLine() {
+    if (this.caret.type === 'code') {
+      this.caret.value += '\n';
+      return;
+    }
+
     const node = new TextNode('newline', undefined, this.caret);
 
     if (typeof this.caret.value === 'object') {

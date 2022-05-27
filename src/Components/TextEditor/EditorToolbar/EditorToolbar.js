@@ -6,6 +6,7 @@ export default function EditorToolbar({
   onStateChange,
   onColorChange,
   onFontSizeChange,
+  onAddCode,
 }) {
   const [bold, setBold] = useState(false);
   const [italic, setItalic] = useState(false);
@@ -89,7 +90,7 @@ export default function EditorToolbar({
       </div>
       <div className="editor-toolbar__icon-group">
         <Icons.InsertImage className="editor-toolbar__disabled" />
-        <Icons.CodeView className="editor-toolbar__disabled" />
+        <Icons.CodeView onClick={onAddCode} />
         <Icons.Symbols className="editor-toolbar__disabled" />
         <Icons.InsertLink className="editor-toolbar__disabled" />
       </div>
