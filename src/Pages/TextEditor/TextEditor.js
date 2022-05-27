@@ -4,6 +4,7 @@ import './TextEditor.css';
 import textParser from '../../util/textParser';
 import TextTree from './TextTree';
 const textTree = new TextTree();
+let backspacePermission = true;
 
 export default function TextEditor() {
   let jsonText = textTree.parse();
@@ -30,7 +31,11 @@ export default function TextEditor() {
           textTree.newLine();
           break;
         case 'Backspace':
-          textTree.backspace();
+          if (backspacePermission) {
+            backspacePermission = false;
+            textTree.backspace();
+            backspacePermission = true;
+          }
           break;
         default:
           console.log('Unknown Key!');

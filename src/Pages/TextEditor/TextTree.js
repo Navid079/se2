@@ -1,3 +1,5 @@
+let x = 1;
+
 class TextNode {
   constructor(type, value, parent, options) {
     this.type = type;
@@ -6,6 +8,28 @@ class TextNode {
     for (let par in options) {
       this[par] = options[par];
     }
+  }
+
+  erace() {
+    if (typeof this.value === 'object') {
+      this.value.pop();
+    } else {
+      this.value = this.value.slice(0, this.value.length - 1);
+    }
+    return this.optimize();
+  }
+
+  optimize() {
+    if (this.type === 'root' || this.value.length > 0) {
+      if (this.value.length > 0 && typeof this.value === 'object') {
+        const lastChild = this.value[this.value.length - 1];
+        if (['newline'].includes(lastChild.type)) return this;
+        else return lastChild;
+      }
+      return this;
+    }
+    this.parent.value = this.parent.value.filter(item => item !== this);
+    return this.parent.optimize();
   }
 }
 
@@ -68,17 +92,7 @@ class TextTree {
   }
 
   backspace() {
-    if (typeof this.caret.value === 'object') {
-      this.caret.value.pop();
-    } else {
-      this.caret.value = this.caret.value.slice(0, -1);
-      while (!this.caret.value && this.caret.type !== 'root') {
-        this.caret = this.caret.parent;
-        this.caret.value.pop();
-        if (this.caret.value)
-          this.caret = this.caret.value[this.caret.value.length - 1];
-      }
-    }
+    this.caret = this.caret.erace();
   }
 
   removeFormatting(type) {
@@ -93,7 +107,7 @@ class TextTree {
         } else {
           formatsToSave.push(this.caret.type);
         }
-        this.caret = this.caret.parent
+        this.caret = this.caret.parent;
       }
       this.caret = this.caret.parent;
       for (let format of formatsToSave.reverse()) {
