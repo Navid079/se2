@@ -16,6 +16,10 @@ export default function TextEditor() {
       : textTree.removeFormatting(type);
   };
 
+  const colorChangeHandler = color => {
+    textTree.changeColor(color);
+  };
+
   const typeHandler = event => {
     event.preventDefault();
     const key = event.key;
@@ -42,7 +46,10 @@ export default function TextEditor() {
 
   return (
     <div className="editor">
-      <EditorToolbar onStateChange={toolbarStateHandler} />
+      <EditorToolbar
+        onStateChange={toolbarStateHandler}
+        onColorChange={colorChangeHandler}
+      />
       <div tabIndex={1} className="editor__content" onKeyDown={typeHandler}>
         {componentText}
       </div>

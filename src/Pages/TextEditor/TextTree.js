@@ -1,8 +1,11 @@
 class TextNode {
-  constructor(type, value, parent) {
+  constructor(type, value, parent, options) {
     this.type = type;
     this.value = value;
     this.parent = parent;
+    for (let par in options) {
+      this[par] = options[par];
+    }
   }
 }
 
@@ -31,6 +34,21 @@ class TextTree {
     } else {
       this.caret.value = [];
       const node = new TextNode(type, value, this.caret);
+      this.caret.value.push(node);
+      this.caret = node;
+    }
+  }
+
+  changeColor(color) {
+    if (this.caret.type === 'colored' && !this.caret.value) {
+      this.caret.color = color;
+    } else if (typeof this.caret.value === 'object') {
+      const node = new TextNode('colored', '', this.caret, { color });
+      this.caret.value.push(node);
+      this.caret = node;
+    } else {
+      this.caret.value = [new TextNode('simple', this.caret.value, this.caret)];
+      const node = new TextNode('colored', '', this.caret, { color });
       this.caret.value.push(node);
       this.caret = node;
     }
@@ -68,14 +86,20 @@ class TextTree {
       this.caret = this.caret.parent;
     } else {
       const formatsToSave = [];
+      let colorToSave;
       while (this.caret.type !== type) {
-        formatsToSave.push(this.caret.type);
-        this.caret = this.caret.parent;
+        if (this.caret.type === 'colored') {
+          colorToSave = this.caret.color;
+        } else {
+          formatsToSave.push(this.caret.type);
+        }
+        this.caret = this.caret.parent
       }
       this.caret = this.caret.parent;
-      for (let format of formatsToSave) {
+      for (let format of formatsToSave.reverse()) {
         this.addFormatting('', format);
       }
+      if (colorToSave) this.changeColor(colorToSave);
     }
   }
 
@@ -99,7 +123,14 @@ class TextTree {
     if (node.type === 'root') {
       return typeof value === 'object' ? value : { type: 'simple', value };
     } else {
-      return { type: node.type, value };
+      const result = {};
+      for (let par in node) {
+        if (!['parent', 'value'].includes(par)) {
+          result[par] = node[par];
+        }
+      }
+      result.value = value;
+      return result;
     }
   }
 }

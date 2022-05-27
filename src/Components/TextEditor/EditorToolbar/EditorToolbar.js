@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Icons from '../../../Assets/Icons/Icons';
 import './EditorToolbar.css';
 
-export default function EditorToolbar({ onStateChange }) {
+export default function EditorToolbar({ onStateChange, onColorChange }) {
   const [bold, setBold] = useState(false);
   const [italic, setItalic] = useState(false);
   const [strike, setStrike] = useState(false);
@@ -11,7 +11,7 @@ export default function EditorToolbar({ onStateChange }) {
   const [alignment, setAlignment] = useState('left');
   const [direction, setDirection] = useState('rtl');
 
-  const [textColor, setTextColor] = useState('#746444');
+  const [textColor, setTextColor] = useState('#000000');
   return (
     <div className="editor-toolbar">
       <div className="editor-toolbar__icon-group">
@@ -40,7 +40,8 @@ export default function EditorToolbar({ onStateChange }) {
           className={underline ? 'editor-toolbar__enabled' : undefined}
           onClick={e => {
             setUnderline(!underline);
-            if (onStateChange) onStateChange(underline ? 'underline 0' : 'underline 1');
+            if (onStateChange)
+              onStateChange(underline ? 'underline 0' : 'underline 1');
           }}
         />
       </div>
@@ -99,6 +100,7 @@ export default function EditorToolbar({ onStateChange }) {
           type="color"
           onChange={e => {
             setTextColor(e.target.value);
+            onColorChange(e.target.value);
           }}
         />
       </span>
