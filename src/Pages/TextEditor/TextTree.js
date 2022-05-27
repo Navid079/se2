@@ -1,5 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
-
 class TextNode {
   constructor(type, value, parent) {
     this.type = type;
@@ -49,6 +47,20 @@ class TextTree {
       this.caret.value.push(node);
     } else {
       this.caret.value = [node];
+    }
+  }
+
+  backspace() {
+    if (typeof this.caret.value === 'object') {
+      this.caret.value.pop();
+    } else {
+      this.caret.value = this.caret.value.slice(0, -1);
+      while (!this.caret.value && this.caret.type !== 'root') {
+        this.caret = this.caret.parent;
+        this.caret.value.pop();
+        if (this.caret.value)
+          this.caret = this.caret.value[this.caret.value.length - 1];
+      }
     }
   }
 

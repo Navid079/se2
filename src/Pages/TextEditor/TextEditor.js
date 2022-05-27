@@ -1,8 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import EditorToolbar from '../../Components/TextEditor/EditorToolbar/EditorToolbar';
 import './TextEditor.css';
 import textParser from '../../util/textParser';
-import { printableKeys, specialKeys } from './TextEditorTools';
 import TextTree from './TextTree';
 const textTree = new TextTree();
 
@@ -20,6 +19,9 @@ export default function TextEditor() {
         case 'Enter':
           textTree.newLine();
           break;
+        case 'Backspace':
+          textTree.backspace();
+          break;
         default:
           console.log('Unknown Key!');
           break;
@@ -29,7 +31,6 @@ export default function TextEditor() {
     }
 
     jsonText = textTree.parse();
-    console.log(textTree.root);
     setComponentText(textParser(jsonText));
   };
 
