@@ -10,7 +10,6 @@ export default function TextEditor() {
   const [componentText, setComponentText] = useState(textParser(jsonText));
 
   const toolbarStateHandler = state => {
-    console.log(state)
     const [type, command] = state.split(' ');
     return command === '1'
       ? textTree.addFormatting('', type)

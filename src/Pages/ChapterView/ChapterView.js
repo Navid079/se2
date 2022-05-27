@@ -18,8 +18,6 @@ export default function ChapterView() {
     return <h1>404 - Not Found!</h1>;
   }
 
-  console.log(chapter);
-
   return (
     <div className="chapter-view">
       <div className="chapter-view__content">
@@ -27,7 +25,7 @@ export default function ChapterView() {
           <img
             className="chapter-view__icon"
             src={require('../../images/book.png')}
-            alt=''
+            alt=""
           />
           <h3 className="chapter-view__title">کتاب {book.title}</h3>
           {/* TODO: Add Chapter title */}
@@ -37,7 +35,9 @@ export default function ChapterView() {
         </div>
         <Dot count={15} className="dots-mobile" />
         <Dot count={48} className="dots-pc" />
-        <div className="g-scrollbar chapter-view__text">{textParser(chapter.text)}</div>
+        <div className="g-scrollbar chapter-view__text">
+          {textParser(chapter.text)}
+        </div>
       </div>
       <div className="chapter-view__navigate">
         <Link to="">&lt; فصل بعد</Link>

@@ -42,7 +42,6 @@ class TextTree {
     if (typeof this.caret.value === 'object') {
       this.caret.value.push(node);
     } else if (this.caret.value) {
-      console.log('here');
       this.caret.value = [new TextNode('simple', this.caret.value, this.caret)];
       this.caret.value.push(node);
     } else {
