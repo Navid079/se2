@@ -4,18 +4,10 @@ import './TextEditor.css';
 import textParser from '../../util/textParser';
 import { printableKeys, specialKeys } from './TextEditorTools';
 
-const jsonText = ['|'];
+const textRoot = ['|'];
 
 export default function TextEditor() {
   const caretRef = useRef();
-
-  const boldState = useState(false);
-  const italicState = useState(false);
-  const strikeState = useState(false);
-  const underlineState = useState(false);
-  const alignmentState = useState('left');
-  const directionState = useState('rtl');
-  const textColorState = useState('#746444');
 
   const caretComponent = (
     <span className="caret" ref={caretRef}>
@@ -25,19 +17,30 @@ export default function TextEditor() {
 
   const [componentText, setComponentText] = useState([caretComponent]);
 
+  const toolbarStateHandler = state => {
+    let caretLocation = textRoot.indexOf('|');
+    switch (state) {
+      
+    }
+    if (caretLocation === 0 || textRoot[caretLocation - 1].type !== 'bold') {
+      textRoot.splice(caretLocation, 0, { type: 'bold', value: '' });
+    }
+  };
+
   const typeHandler = event => {
     event.preventDefault();
     const key = event.key;
-    let caretLocation = jsonText.indexOf('|');
+
+    let caretLocation = textRoot.indexOf('|');
 
     if (key.length > 1) {
-      specialKeys(caretLocation, key, jsonText);
+      specialKeys(caretLocation, key, textRoot);
     } else {
-      printableKeys(caretLocation, key, jsonText);
+      printableKeys(caretLocation, key, textRoot);
     }
 
-    caretLocation = jsonText.indexOf('|');
-    const components = textParser(jsonText.filter(item => item !== '|'));
+    caretLocation = textRoot.indexOf('|');
+    const components = textParser(textRoot.filter(item => item !== '|'));
     components.splice(caretLocation, 0, caretComponent);
 
     setComponentText(components);
@@ -45,15 +48,7 @@ export default function TextEditor() {
 
   return (
     <div className="editor">
-      <EditorToolbar
-        boldState={boldState}
-        italicState={italicState}
-        strikeState={strikeState}
-        underlineState={underlineState}
-        alignmentState={alignmentState}
-        directionState={directionState}
-        textColorState={textColorState}
-      />
+      <EditorToolbar onStateChange={toolbarStateHandler} />
       <div tabIndex={1} className="editor__content" onKeyDown={typeHandler}>
         {componentText}
       </div>

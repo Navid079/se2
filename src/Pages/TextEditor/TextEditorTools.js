@@ -22,7 +22,7 @@ export const specialKeys = (caretLocation, key, jsonText) => {
   }
 };
 
-export const printableKeys = (caretLocation, key, jsonText) => {
+export const printableKeys = (caretLocation, key, jsonText, currentState) => {
   if (caretLocation === 0 || jsonText[caretLocation - 1].type === 'newline') {
     jsonText.splice(caretLocation, 0, { type: 'simple', value: key });
   } else {

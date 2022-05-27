@@ -1,43 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Icons from '../../../Assets/Icons/Icons';
 import './EditorToolbar.css';
 
-export default function EditorToolbar({
-  boldState,
-  italicState,
-  strikeState,
-  underlineState,
-  alignmentState,
-  directionState,
-  textColorState,
-}) {
-  const [bold, setBold] = boldState;
-  const [italic, setItalic] = italicState;
-  const [strike, setStrike] = strikeState;
-  const [underline, setUnderline] = underlineState;
+export default function EditorToolbar({ onStateChange }) {
+  const [bold, setBold] = useState(false);
+  const [italic, setItalic] = useState(false);
+  const [strike, setStrike] = useState(false);
+  const [underline, setUnderline] = useState(false);
 
-  const [alignment, setAlignment] = alignmentState;
-  const [direction, setDirection] = directionState;
+  const [alignment, setAlignment] = useState('left');
+  const [direction, setDirection] = useState('rtl');
 
-  const [textColor, setTextColor] = textColorState;
+  const [textColor, setTextColor] = useState('#746444');
   return (
     <div className="editor-toolbar">
       <div className="editor-toolbar__icon-group">
         <Icons.Bold
           className={bold ? 'editor-toolbar__enabled' : undefined}
-          onClick={e => setBold(!bold)}
+          onClick={e => {
+            setBold(!bold);
+            if (onStateChange) onStateChange(bold ? 'bold 1' : 'bold 0');
+          }}
         />
         <Icons.Italic
           className={italic ? 'editor-toolbar__enabled' : undefined}
-          onClick={e => setItalic(!italic)}
+          onClick={e => {
+            setItalic(!italic);
+            if (onStateChange) onStateChange(italic ? 'italic 1' : 'italic 0');
+          }}
         />
         <Icons.StrikeThrough
           className={strike ? 'editor-toolbar__enabled' : undefined}
-          onClick={e => setStrike(!strike)}
+          onClick={e => {
+            setStrike(!strike);
+            if (onStateChange) onStateChange(strike ? 'strike 1' : 'strike 0');
+          }}
         />
         <Icons.Underline
           className={underline ? 'editor-toolbar__enabled' : undefined}
-          onClick={e => setUnderline(!underline)}
+          onClick={e => {
+            setUnderline(!underline);
+            if (onStateChange) onStateChange(underline ? 'underline 1' : 'underline 0');
+          }}
         />
       </div>
       <div className="editor-toolbar__icon-group">
