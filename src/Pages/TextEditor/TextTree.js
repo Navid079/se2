@@ -1,3 +1,5 @@
+import { type } from '@testing-library/user-event/dist/type';
+
 class TextNode {
   constructor(type, value, parent) {
     this.type = type;
@@ -53,12 +55,18 @@ class Tree {
     if (typeof node.value === 'object') {
       value = node.value
         .map(item => this.parse(item))
-        .filter(item => item !== null);
-    } else if (node.value) {
-      value = node.value;
+        .filter(item => item.value);
     } else {
-      return null;
+      value = node.value;
     }
+
+    if (node === this.caret && typeof value === 'object') {
+      value.push({ type: 'caret' });
+    } else if (node === this.caret) {
+      value = value ? [{ type: 'simple', value }] : [];
+      value.push({ type: 'caret' });
+    }
+
     if (node.type === 'root') {
       return value;
     } else {
