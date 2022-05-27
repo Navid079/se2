@@ -8,15 +8,19 @@ class TextNode {
   }
 }
 
-class Tree {
+class TextTree {
   constructor() {
     this.root = new TextNode('root', '', null);
-    this.caret = root;
+    this.caret = this.root;
   }
 
-  addFormatting(type, value) {
-    if (this.caret.type === type) {
+  addFormatting(value, type = this.caret.type) {
+    if (this.caret.type === type && typeof this.caret.value === 'string') {
       this.caret.value += value;
+    } else if (this.caret.type === type) {
+      const node = new TextNode('simple', value, this.caret);
+      this.caret.value.push(node);
+      this.caret = node;
     } else if (typeof this.caret.value === 'object') {
       const node = new TextNode(type, value, this.caret);
       this.caret.value.push(node);
@@ -34,11 +38,25 @@ class Tree {
     }
   }
 
+  newLine() {
+    const node = new TextNode('newline', undefined, this.caret);
+
+    if (typeof this.caret.value === 'object') {
+      this.caret.value.push(node);
+    } else if (this.caret.value) {
+      console.log('here');
+      this.caret.value = [new TextNode('simple', this.caret.value, this.caret)];
+      this.caret.value.push(node);
+    } else {
+      this.caret.value = [node];
+    }
+  }
+
   removeFormatting(type) {
     if (this.caret.type === type) {
       this.caret = this.caret.parent;
     } else {
-      formatsToSave = [];
+      const formatsToSave = [];
       while (this.caret.type !== type) {
         formatsToSave.push(this.caret.type);
         this.caret = this.caret.parent;
@@ -55,7 +73,7 @@ class Tree {
     if (typeof node.value === 'object') {
       value = node.value
         .map(item => this.parse(item))
-        .filter(item => item.value);
+        .filter(item => item.value || ['newline'].includes(item.type));
     } else {
       value = node.value;
     }
@@ -68,9 +86,11 @@ class Tree {
     }
 
     if (node.type === 'root') {
-      return value;
+      return typeof value === 'object' ? value : { type: 'simple', value };
     } else {
       return { type: node.type, value };
     }
   }
 }
+
+export default TextTree;
