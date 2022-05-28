@@ -6,6 +6,7 @@ class TextNode {
     for (let par in options) {
       this[par] = options[par];
     }
+    this.caretLocation = 0;
   }
 
   erace() {
@@ -29,6 +30,59 @@ class TextNode {
     this.parent.value = this.parent.value.filter(item => item !== this);
     return this.parent.optimize();
   }
+
+  moveCaret(dir) {
+    if (dir === 'left' && this.caretLocation === this.value.length) return 1;
+    if (dir === 'left') {
+      this.caretLocation++;
+      return 0;
+    }
+    if (dir === 'right' && this.caretLocation === 0) return 2;
+    this.caretLocation--;
+    return 0;
+  }
+
+  addCharacter(char) {
+    if (this.caretLocation === 0) {
+      this.value = char + this.value;
+    } else if (this.caretLocation === this.value.length) {
+      this.value += char;
+    } else {
+      const firstValue = this.value.slice(0, this.caretLocation - 1);
+      const secondValue = this.value.slice(this.caretLocation);
+      this.value = firstValue + char + secondValue;
+    }
+    this.caretLocation++;
+  }
+
+  parse(caret) {
+    let value;
+    if (typeof this.value === 'object') {
+      value = this.value
+        .map(item => item.parse(caret))
+        .filter(item => item.value || ['newline', 'caret'].includes(item.type));
+    } else {
+      value = this.value;
+    }
+    if (this === caret && typeof value === 'object') {
+      value.splice(this.caretLocation, 0, { type: 'caret' });
+    } else if (this === caret) {
+      const firstValue = value.slice(0, this.caretLocation);
+      const secondValue = value.slice(this.caretLocation);
+      console.log(value);
+      console.log(firstValue);
+      console.log(secondValue);
+      value = [
+        firstValue ? { type: 'simple', value: firstValue } : undefined,
+        { type: 'caret' },
+        secondValue ? { type: 'simple', value: secondValue } : undefined,
+      ].filter(item => item !== undefined);
+      console.log(value);
+    }
+    if (this.type === 'root' && typeof value === 'object') return value;
+    else if (this.type === 'root') return { type: 'simple', value };
+    return { type: this.type, value };
+  }
 }
 
 class TextTree {
@@ -39,25 +93,29 @@ class TextTree {
 
   addFormatting(value, type = this.caret.type) {
     if (this.caret.type === type && typeof this.caret.value === 'string') {
-      this.caret.value += value;
+      this.caret.addCharacter(value);
     } else if (this.caret.type === type) {
-      const node = new TextNode('simple', value, this.caret);
+      const node = new TextNode('simple', '', this.caret);
       this.caret.value.push(node);
       this.caret = node;
+      node.addCharacter(value);
     } else if (typeof this.caret.value === 'object') {
-      const node = new TextNode(type, value, this.caret);
+      const node = new TextNode(type, '', this.caret);
       this.caret.value.push(node);
       this.caret = node;
+      node.addCharacter(value);
     } else if (this.caret.value) {
       this.caret.value = [new TextNode('simple', this.caret.value, this.caret)];
-      const node = new TextNode(type, value, this.caret);
+      const node = new TextNode(type, '', this.caret);
       this.caret.value.push(node);
       this.caret = node;
+      node.addCharacter(value);
     } else {
       this.caret.value = [];
-      const node = new TextNode(type, value, this.caret);
+      const node = new TextNode(type, '', this.caret);
       this.caret.value.push(node);
       this.caret = node;
+      node.addCharacter(value);
     }
   }
 
@@ -152,35 +210,8 @@ class TextTree {
     }
   }
 
-  parse(node = this.root) {
-    let value;
-    if (typeof node.value === 'object') {
-      value = node.value
-        .map(item => this.parse(item))
-        .filter(item => item.value || ['newline'].includes(item.type));
-    } else {
-      value = node.value;
-    }
-
-    if (node === this.caret && typeof value === 'object') {
-      value.push({ type: 'caret' });
-    } else if (node === this.caret) {
-      value = value ? [{ type: 'simple', value }] : [];
-      value.push({ type: 'caret' });
-    }
-
-    if (node.type === 'root') {
-      return typeof value === 'object' ? value : { type: 'simple', value };
-    } else {
-      const result = {};
-      for (let par in node) {
-        if (!['parent', 'value'].includes(par)) {
-          result[par] = node[par];
-        }
-      }
-      result.value = value;
-      return result;
-    }
+  parse() {
+    return this.root.parse(this.caret);
   }
 }
 

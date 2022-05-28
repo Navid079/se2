@@ -26,7 +26,7 @@ export default function TextEditor() {
   };
 
   const addCodeHandler = () => {
-    console.log('first')
+    console.log('first');
     textTree.addCode();
   };
 
