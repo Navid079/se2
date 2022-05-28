@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './ModalCard.css';
 
-export default function ModalCard({ show, onClose, children }) {
+export default function ModalCard({ show, fill, onClose, children }) {
   useEffect(() => {
     const closeOnEscapeKeyDown = e => {
       if (show && (e.charCode || e.keyCode) === 27) {
@@ -18,8 +18,14 @@ export default function ModalCard({ show, onClose, children }) {
   if (!show) return null;
 
   return (
-    <div className="modal-card" onClick={onClose}>
-      <div className="modal__content" onClick={e => e.stopPropagation()}>
+    <div
+      className={`modal-card ${fill ? 'modal-card--fill' : ''} `}
+      onClick={onClose}
+    >
+      <div
+        className={`modal__content ${fill ? 'modal-content--fill' : ''}`}
+        onClick={e => e.stopPropagation()}
+      >
         {children}
       </div>
     </div>
