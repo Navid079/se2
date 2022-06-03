@@ -1,7 +1,7 @@
 .modal-card {
   position: fixed;
   left: 0;
-  top: 0;
+  top: -10vw;
   bottom: 0;
   right: 0;
   background-color: #f3ebe380;
@@ -19,7 +19,6 @@
   background-color: var(--clr-secondary-5);
   border: 1vw solid var(--clr-primary-5);
   border-radius: 3vw / 3vw;
-  padding: 4vw 4vw;
 }
 
 /* 
@@ -29,9 +28,9 @@
 */
 @media screen and (min-width: 1024px) {
   .modal__content {
+    top: 0;
     width: 50%;
     border-width: 1vh;
     border-radius: 3vh / 3vh;
-    padding: 4vh 4vh;
   }
 }
