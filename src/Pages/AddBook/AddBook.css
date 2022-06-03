@@ -3,13 +3,18 @@
     url('../../images/adbook-l.png');
   background-position: 75%;
   background-size: cover;
-  width: 80vmin;
-  height: calc(100vmax - 65vmin);
+  width: 100%;
+  height: 75vmax;
   margin: auto;
-  margin-top: 2vmin;
   border-radius: 3vmin;
   padding: 4vmin;
   color: var(--clr-primary-5);
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .add-book__cover {
@@ -17,27 +22,97 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  row-gap: 1vmax;
-  height: 85%;
+  gap: 1vmin;
 }
 
 .add-book__cover-image {
-  width: 18vmax;
-  height: 25vmax;
+  object-fit: cover;
+  width: 30vmin;
+  height: 45vmin;
   background-color: var(--clr-white);
-  border: 1px solid var(--clr-primary-5);
+  border: 0.7vmin solid var(--clr-primary-5);
   border-radius: 1vmax;
-  outline: none;
 }
 
-.add-book__title{
+.add-book__cover-text {
+  font-size: 4vmin;
+  text-align: center;
+}
+
+.add-book__title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 2vh;
+  row-gap: 5vmin;
 }
-.add-book__title-input{
+
+.add-book__title-text {
+  font-size: 4vmin;
+}
+
+.add-book__title-input {
   background-color: var(--clr-white) !important;
-  --txt-inp-width: 30vmax;
-  --txt-inp-height: 7vmax;
+  --txt-inp-width: 40vmin;
+  --txt-inp-height: 12vmin;
+}
+
+.add-book__next {
+  display: flex;
+  align-items: center;
+  column-gap: 2vmin;
+  font-size: 4vmin;
+  font-weight: bold;
+  color: var(--clr-primary-5);
+  text-decoration: none;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .add-book {
+    background-position: 100%;
+    height: 60vmin;
+    border-radius: 2vmin;
+    padding: 1vmax 2vmax;
+  }
+
+  .add-book__cover-image {
+    width: 14vmax;
+    height: 15vmax;
+    border: 0.3vmax solid var(--clr-primary-5);
+    border-radius: 1vmin;
+  }
+
+  .add-book__cover-text {
+    font-size: 1.3vmax;
+  }
+
+  .add-book__title {
+    align-self: baseline;
+    flex-direction: row;
+    gap: 2.5vmax;
+  }
+
+  .add-book__title-text {
+    font-size: 2.5vmax;
+  }
+
+  .add-book__title-input {
+    --txt-inp-width: 19vmax;
+    --txt-inp-height: 5.5vmax;
+    background-color: var(--clr-white) !important;
+    border: 0.3vmax solid var(--clr-primary-5) !important;
+    border-radius: 1vmax !important;
+  }
+
+  .add-book__next {
+    column-gap: 0.5vmax;
+    font-size: 1.5vmax;
+    font-weight: bold;
+    color: var(--clr-primary-5);
+    text-decoration: none;
+  }
 }
