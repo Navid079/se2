@@ -1,7 +1,7 @@
 .modal-card {
   position: fixed;
   left: 0;
-  top: -10vw;
+  top: 0;
   bottom: 0;
   right: 0;
   background-color: #f3ebe380;
@@ -12,7 +12,7 @@
 }
 
 .modal-card--fill {
-  top: -12vmax;
+  top: -10vmin;
 }
 
 .modal__content {
@@ -43,5 +43,9 @@
     width: 50%;
     border-width: 1vh;
     border-radius: 3vh / 3vh;
+  }
+
+  .modal-card--fill {
+    bottom: -20vmin;
   }
 }
