@@ -1,40 +1,33 @@
 .add-chapter {
-  background: linear-gradient(#ffffff80, #ffffff45),
-    url("../../images/adbook-l.png");
+  background: linear-gradient(#ffffff80, #ffffff80),
+    url('../../images/adbook-l.png');
   background-position: 75%;
   background-size: cover;
   width: 100%;
-  height: calc(100vmax - 65vmin);
-  margin: auto;
-  margin-top: 2vmin;
+  height: 75vmax;
   border-radius: 3vmin;
-  padding: 4vmin;
-  color: var(--clr-primary-5);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  padding: 5vmin;
+  padding-bottom: 0;
 }
 
 .add-chapter__chapter-container {
   overflow: scroll;
-  height: 90%;
-  width: 100%;
+  height: 85%;
 }
 
 .add-chapter__controls {
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 1px solid red; */
+  height: 15%;
+  display: grid;
+  place-items: center;
 }
 
 .add-chapter__confirm-button {
-  font-size: 4vw;
-  width: 12.5vh;
-  height: 9.5vw;
-  max-height: 100%;
+  width: 26vmin;
+  height: 11vmin;
+  border-radius: 3.5vmin;
+  font-size: 3.5vmin;
   font-weight: bold;
+  /* max-height: 100%; */
 }
 
 /* 
@@ -44,15 +37,25 @@
 */
 @media screen and (min-width: 1024px) {
   .add-chapter {
-    width: 145vh;
-    height: 72vh;
+    background-position: 100%;
+    height: 65vmin;
+    border-radius: 1vmin;
+    padding: 3vmin;
+    padding-bottom: 0;
+  }
+
+  .add-chapter__chapter-container {
+    height: 80%;
+  }
+
+  .add-chapter__controls {
+    height: 20%;
   }
 
   .add-chapter__confirm-button {
-    font-size: 1.75vw;
-    width: 20vh;
-    height: 10vw;
-    max-height: 100%;
-    font-weight: bold;
+    width: 10vmax;
+    height: 4vmax;
+    border-radius: 0.8vmax;
+    font-size: 1.7vmax;
   }
 }
