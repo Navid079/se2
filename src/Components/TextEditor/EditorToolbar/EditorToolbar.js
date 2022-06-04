@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Icons from '../../../Assets/Icons/Icons';
+import Button from '../../UI/Button/Button';
 import './EditorToolbar.css';
 
 export default function EditorToolbar({
@@ -7,6 +8,7 @@ export default function EditorToolbar({
   onColorChange,
   onFontSizeChange,
   onAddCode,
+  onSave,
 }) {
   const [bold, setBold] = useState(false);
   const [italic, setItalic] = useState(false);
@@ -17,6 +19,7 @@ export default function EditorToolbar({
   const [direction, setDirection] = useState('rtl');
 
   const [textColor, setTextColor] = useState('#000000');
+
   return (
     <div className="editor-toolbar">
       <div className="editor-toolbar__icon-group">
@@ -145,6 +148,7 @@ export default function EditorToolbar({
           Heading 3
         </option>
       </select>
+      <Button onClick={onSave}>ذخیره</Button>
     </div>
   );
 }
