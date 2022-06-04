@@ -7,6 +7,9 @@ import { FaHome } from 'react-icons/fa';
 // Stylesheets
 import './Footer.css';
 import Expendable from '../Expendable/Expendable';
+import AddChapter from '../../../Pages/AddChapter/AddChapter';
+import ModalCard from '../ModalCard/ModalCard';
+import AddBook from '../../../Pages/AddBook/AddBook';
 
 export default function Footer({ currentPage }) {
   return (
@@ -42,6 +45,12 @@ export default function Footer({ currentPage }) {
         </div>
       </Link>
       <Expendable />
+      <ModalCard show fill>
+        <AddBook />
+      </ModalCard>
+      {/* <ModalCard show fill>
+        <AddChapter />
+      </ModalCard> */}
     </footer>
   );
 }

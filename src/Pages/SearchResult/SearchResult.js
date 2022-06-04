@@ -1,18 +1,18 @@
 // Libraries
-import React from "react";
-import { IoCloseSharp } from "react-icons/io5";
-import { FaSearch } from "react-icons/fa";
+import React from 'react';
+import { FaSearch } from 'react-icons/fa';
+// import { IoCloseSharp } from 'react-icons/io5';
 
 //Components
-import SearchItem from "../../Components/SearchItem/SearchItem";
+import SearchItem from '../../Components/SearchItem/SearchItem';
 
 // Stylesheets
-import "./SearchResult.css";
+import './SearchResult.css';
 
 export default function SearchResult({ result, onSearch, onSelect }) {
   const resultComponents =
     result && result.length ? (
-      result.map((item) => (
+      result.map(item => (
         <SearchItem
           bookId={item._id}
           author={item.author}

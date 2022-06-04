@@ -1,31 +1,35 @@
 // Libraries
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
-import ChapterButton from "../../Components/AddChapter/ChapterButton/ChapterButton";
-import Button from "../../Components/UI/Button/Button";
-import ModalCard from "../../Components/UI/ModalCard/ModalCard";
-// Stylesheets
-import "./AddChapter.css";
+import ChapterButton from '../../Components/AddChapter/ChapterButton/ChapterButton';
+import Button from '../../Components/UI/Button/Button';
 
-export default function AddChapter() {
+// Stylesheets
+import './AddChapter.css';
+
+export default function AddChapter({ book }) {
+  const chapterButtons = book
+    ? book.chapters.map(chapter => (
+        <ChapterButton
+          number={chapter.number}
+          price={chapter.price}
+          key={chapter.number}
+        />
+      ))
+    : [];
   return (
-    <ModalCard show fill>
-      <div className="add-chapter">
-        <div className="g-scrollbar add-chapter__chapter-container">
-          <ChapterButton />
-          <ChapterButton />
-          <ChapterButton />
-          <ChapterButton />
-          <ChapterButton />
-          <ChapterButton />
-          <ChapterButton />
-          <ChapterButton />
-        </div>
-        <div className="add-chapter__controls">
-          <Button className="add-chapter__confirm-button">تایید</Button>
-        </div>
+    <div className="add-chapter">
+      <div className="g-scrollbar add-chapter__chapter-container">
+        {chapterButtons}
+        <ChapterButton isAdd />
       </div>
-    </ModalCard>
+      <div className="add-chapter__controls">
+        <Link to="/app/editor">
+          <Button className="add-chapter__confirm-button">تایید</Button>
+        </Link>
+      </div>
+    </div>
   );
 }
