@@ -1,7 +1,6 @@
 // Libraries
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
-// import { IoCloseSharp } from 'react-icons/io5';
 
 //Components
 import SearchItem from '../../Components/SearchItem/SearchItem';
