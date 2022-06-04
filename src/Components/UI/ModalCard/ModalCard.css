@@ -10,6 +10,11 @@
   justify-content: center;
   z-index: 1000;
 }
+
+.modal-card--fill {
+  top: -10vmin;
+}
+
 .modal__content {
   display: flex;
   justify-content: center;
@@ -19,7 +24,12 @@
   background-color: var(--clr-secondary-5);
   border: 1vw solid var(--clr-primary-5);
   border-radius: 3vw / 3vw;
-  padding: 4vw 4vw;
+}
+
+.modal-content--fill {
+  border: unset;
+  padding: unset;
+  width: 70%;
 }
 
 /* 
@@ -29,9 +39,13 @@
 */
 @media screen and (min-width: 1024px) {
   .modal__content {
+    top: 0;
     width: 50%;
     border-width: 1vh;
     border-radius: 3vh / 3vh;
-    padding: 4vh 4vh;
+  }
+
+  .modal-card--fill {
+    bottom: -20vmin;
   }
 }
