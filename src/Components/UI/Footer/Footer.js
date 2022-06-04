@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdPerson, MdSettings } from 'react-icons/md';
 import { FaHome } from 'react-icons/fa';
@@ -12,6 +12,8 @@ import ModalCard from '../ModalCard/ModalCard';
 import AddBook from '../../../Pages/AddBook/AddBook';
 
 export default function Footer({ currentPage }) {
+  const [showAddBook, setShowAddBook] = useState(false);
+  const [showAddChapter, setShowAddChapter] = useState(false);
   return (
     <footer className="footer">
       <Link to="/app/profile" className="g-reset">
@@ -44,13 +46,17 @@ export default function Footer({ currentPage }) {
           <p className="footer-item__title">تنظیمات</p>
         </div>
       </Link>
-      <Expendable />
-      <ModalCard show fill>
+      <Expendable onClick={() => setShowAddBook(true)} />
+      <ModalCard fill show={showAddBook} onClose={() => setShowAddBook(false)}>
         <AddBook />
       </ModalCard>
-      {/* <ModalCard show fill>
+      <ModalCard
+        fill
+        show={showAddChapter}
+        onClose={() => setShowAddChapter(false)}
+      >
         <AddChapter />
-      </ModalCard> */}
+      </ModalCard>
     </footer>
   );
 }
