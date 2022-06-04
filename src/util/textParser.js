@@ -17,37 +17,53 @@ const textParser = (jsText, result = []) => {
     let component;
     switch (type) {
       case 'simple':
-        component = <span>{value}</span>;
+        component = <span key={Math.random()}>{value}</span>;
         break;
       case 'bold':
-        component = <Bold>{value}</Bold>;
+        component = <Bold key={Math.random()}>{value}</Bold>;
         break;
       case 'italic':
-        component = <Italic>{value}</Italic>;
+        component = <Italic key={Math.random()}>{value}</Italic>;
         break;
       case 'strike':
-        component = <Strike>{value}</Strike>;
+        component = <Strike key={Math.random()}>{value}</Strike>;
         break;
       case 'underline':
-        component = <Underline>{value}</Underline>;
+        component = <Underline key={Math.random()}>{value}</Underline>;
         break;
       case 'code':
-        component = <Code>{value}</Code>;
+        component = <Code key={Math.random()}>{value}</Code>;
         break;
       case 'colored':
-        component = <Colored color={item.color}>{value}</Colored>;
+        component = (
+          <Colored key={Math.random()} color={item.color}>
+            {value}
+          </Colored>
+        );
         break;
       case 'newline':
-        component = <br />;
+        component = <br key={Math.random()} />;
         break;
       case 'size':
-        component = <Size size={item.size}>{value}</Size>;
+        component = (
+          <Size key={Math.random()} size={item.size}>
+            {value}
+          </Size>
+        );
         break;
       case 'formula':
-        component = <Formula display={item.display}>{value}</Formula>;
+        component = (
+          <Formula key={Math.random()} display={item.display}>
+            {value}
+          </Formula>
+        );
         break;
       case 'caret':
-        component = <span className="caret">|</span>;
+        component = (
+          <span key={Math.random()} className="caret">
+            |
+          </span>
+        );
         break;
       default:
         break;

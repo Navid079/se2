@@ -2,32 +2,30 @@ import React, { useState } from 'react';
 import EditorToolbar from '../../Components/TextEditor/EditorToolbar/EditorToolbar';
 import './TextEditor.css';
 import textParser from '../../util/textParser';
-import TextTree from './TextTree';
+import TextTree from './TextTree2';
 const textTree = new TextTree();
 let backspacePermission = true;
+let movePermission = true;
+let jsonText = textTree.parse();
 
 export default function TextEditor() {
-  let jsonText = textTree.parse();
   const [componentText, setComponentText] = useState(textParser(jsonText));
 
   const toolbarStateHandler = state => {
     const [type, command] = state.split(' ');
-    return command === '1'
-      ? textTree.addFormatting('', type)
-      : textTree.removeFormatting(type);
+    return command === '1' ? textTree.addNode(type) : textTree.removeNode(type);
   };
 
   const colorChangeHandler = color => {
-    textTree.changeColor(color);
+    textTree.addNode('colored', { color });
   };
 
   const fontSizeChangeHandler = size => {
-    textTree.changeSize(size);
+    textTree.addNode('size', { size });
   };
 
   const addCodeHandler = () => {
-    console.log('first');
-    textTree.addCode();
+    textTree.addNode('code');
   };
 
   const typeHandler = event => {
@@ -37,21 +35,35 @@ export default function TextEditor() {
     if (key.length > 1) {
       switch (key) {
         case 'Enter':
-          textTree.newLine();
+          textTree.addNode('newline');
           break;
         case 'Backspace':
           if (backspacePermission) {
             backspacePermission = false;
-            textTree.backspace();
+            textTree.removeChar();
             backspacePermission = true;
           }
           break;
+        case 'ArrowLeft':
+          if (movePermission) {
+            movePermission = false;
+            textTree.moveLeft();
+            movePermission = true;
+          }
+          break;
+        case 'ArrowRight':
+          if (movePermission) {
+            movePermission = false;
+            textTree.moveRight();
+            movePermission = true;
+          }
+          break;
         default:
-          console.log('Unknown Key!');
+          console.log(`Unknown Key!\nKey: ${key}`);
           break;
       }
     } else {
-      textTree.addFormatting(key);
+      textTree.addChar(key);
     }
 
     jsonText = textTree.parse();
