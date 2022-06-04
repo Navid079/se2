@@ -7,6 +7,12 @@ const BookReducer = (state, action) => {
         myBooks: action.myBooks,
       };
       break;
+    case 'ADD-MY-BOOK':
+      retr = {
+        ...state,
+      };
+      retr.myBooks.push(action.book);
+      break;
     case 'SET-SHELVES':
       retr = {
         ...state,
