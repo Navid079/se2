@@ -23,6 +23,7 @@ export default function AddChapter({ book, onClose }) {
     : [];
 
   const newChapterHandler = () => {
+    console.log(book)
     navigate(`/app/editor/${book._id}/newChapter`);
     onClose();
   };

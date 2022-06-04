@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import EditorToolbar from '../../Components/TextEditor/EditorToolbar/EditorToolbar';
 import './TextEditor.css';
 import textParser from '../../util/textParser';
 import TextTree from './TextTree2';
+import { useNavigate, useParams } from 'react-router-dom';
+import UpdateChapterCall from './../../Logic/API/Books/UpdateChapterCall';
+import UserContext from './../../Logic/Context/UserContext/UserContext';
+import BookContext from './../../Logic/Context/BookContext/BookContext';
 const textTree = new TextTree();
 let backspacePermission = true;
 let movePermission = true;
 let jsonText = textTree.parse();
 
 export default function TextEditor() {
+  const { bookId, chapterId } = useParams();
+  const navigate = useNavigate();
   const [componentText, setComponentText] = useState(textParser(jsonText));
+
+  const { token } = useContext(UserContext);
+  const { dispatch } = useContext(BookContext);
 
   const toolbarStateHandler = state => {
     const [type, command] = state.split(' ');
@@ -70,6 +79,15 @@ export default function TextEditor() {
     setComponentText(textParser(jsonText));
   };
 
+  const saveHandler = async () => {
+    await UpdateChapterCall(
+      { bookId, chapterId, text: jsonText },
+      token,
+      dispatch
+    );
+    navigate('/app/profile');
+  };
+
   return (
     <div className="editor">
       <EditorToolbar
@@ -77,6 +95,7 @@ export default function TextEditor() {
         onColorChange={colorChangeHandler}
         onFontSizeChange={fontSizeChangeHandler}
         onAddCode={addCodeHandler}
+        onSave={saveHandler}
       />
       <div tabIndex={1} className="editor__content" onKeyDown={typeHandler}>
         {componentText}

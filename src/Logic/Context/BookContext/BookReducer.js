@@ -13,6 +13,13 @@ const BookReducer = (state, action) => {
       };
       retr.myBooks.push(action.book);
       break;
+    case 'UPDATE-MY-BOOK':
+      retr = {
+        ...state,
+      };
+      retr.myBooks.filter(book => book._id !== action.book._id);
+      retr.myBooks.push(action.book);
+      break;
     case 'SET-SHELVES':
       retr = {
         ...state,
