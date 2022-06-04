@@ -1,0 +1,58 @@
+.add-chapter {
+  background: linear-gradient(#ffffff80, #ffffff45),
+    url("../../images/adbook-l.png");
+  background-position: 75%;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vmax - 65vmin);
+  margin: auto;
+  margin-top: 2vmin;
+  border-radius: 3vmin;
+  padding: 4vmin;
+  color: var(--clr-primary-5);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-chapter__chapter-container {
+  overflow: scroll;
+  height: 90%;
+  width: 100%;
+}
+
+.add-chapter__controls {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.add-chapter__confirm-button {
+  font-size: 4vw;
+  width: 12.5vh;
+  height: 9.5vw;
+  max-height: 100%;
+  font-weight: bold;
+}
+
+/* 
+==========================
+=     PC Media Query     =
+==========================
+*/
+@media screen and (min-width: 1024px) {
+  .add-chapter {
+    width: 145vh;
+    height: 72vh;
+  }
+
+  .add-chapter__confirm-button {
+    font-size: 1.75vw;
+    width: 20vh;
+    height: 10vw;
+    max-height: 100%;
+    font-weight: bold;
+  }
+}
