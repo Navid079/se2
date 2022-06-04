@@ -1,6 +1,5 @@
 // Libraries
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // Components
 import ChapterButton from '../../Components/AddChapter/ChapterButton/ChapterButton';
@@ -8,8 +7,11 @@ import Button from '../../Components/UI/Button/Button';
 
 // Stylesheets
 import './AddChapter.css';
+import { useNavigate } from 'react-router-dom';
 
-export default function AddChapter({ book }) {
+export default function AddChapter({ book, onClose }) {
+  const navigate = useNavigate();
+
   const chapterButtons = book
     ? book.chapters.map(chapter => (
         <ChapterButton
@@ -19,16 +21,22 @@ export default function AddChapter({ book }) {
         />
       ))
     : [];
+
+  const newChapterHandler = () => {
+    navigate(`/app/editor/${book._id}/newChapter`);
+    onClose();
+  };
+
   return (
     <div className="add-chapter">
       <div className="g-scrollbar add-chapter__chapter-container">
         {chapterButtons}
-        <ChapterButton isAdd />
+        <ChapterButton isAdd onClick={newChapterHandler} />
       </div>
       <div className="add-chapter__controls">
-        <Link to="/app/editor">
-          <Button className="add-chapter__confirm-button">تایید</Button>
-        </Link>
+        <Button className="add-chapter__confirm-button" onClick={onClose}>
+          تایید
+        </Button>
       </div>
     </div>
   );

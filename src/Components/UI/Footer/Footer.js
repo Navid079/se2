@@ -62,7 +62,7 @@ export default function Footer({ currentPage }) {
         show={showAddChapter}
         onClose={() => setShowAddChapter(false)}
       >
-        <AddChapter book={book} />
+        <AddChapter book={book} onClose={() => setShowAddChapter(false)} />
       </ModalCard>
     </footer>
   );

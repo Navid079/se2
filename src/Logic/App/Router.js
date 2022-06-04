@@ -50,7 +50,7 @@ export default function Router() {
             path="viewChapter/:bookId/:chapterId"
             element={<ChapterView />}
           />
-          <Route exact path="editor" element={<TextEditor />} />
+          <Route exact path="editor/:bookId/:chapterId" element={<TextEditor />} />
         </Route>
       </Routes>
     </RouterComponent>
