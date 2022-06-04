@@ -14,6 +14,13 @@ import AddBook from '../../../Pages/AddBook/AddBook';
 export default function Footer({ currentPage }) {
   const [showAddBook, setShowAddBook] = useState(false);
   const [showAddChapter, setShowAddChapter] = useState(false);
+  const [book, setBook] = useState(null);
+
+  const addBookHandler = book => {
+    setBook(book);
+    setShowAddBook(false);
+    setShowAddChapter(true);
+  };
   return (
     <footer className="footer">
       <Link to="/app/profile" className="g-reset">
@@ -48,14 +55,14 @@ export default function Footer({ currentPage }) {
       </Link>
       <Expendable onClick={() => setShowAddBook(true)} />
       <ModalCard fill show={showAddBook} onClose={() => setShowAddBook(false)}>
-        <AddBook />
+        <AddBook onAddBook={addBookHandler} />
       </ModalCard>
       <ModalCard
         fill
         show={showAddChapter}
         onClose={() => setShowAddChapter(false)}
       >
-        <AddChapter />
+        <AddChapter book={book} />
       </ModalCard>
     </footer>
   );

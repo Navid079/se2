@@ -29,15 +29,12 @@ export default function AddBook({ onAddBook }) {
   };
 
   const applyHandler = async () => {
-    // get all data from inputs
     const title = titleRef.current.value;
     const bookData = {
       title,
       cover: bookCover,
     };
-    // send them to backend
     const book = await AddBookCall(bookData, token, dispatch);
-    // go to addChapter
     if (onAddBook) onAddBook(book);
   };
 
