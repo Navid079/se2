@@ -7,7 +7,7 @@
 }
 
 .signup::before {
-  content: '';
+  content: "";
   height: 1vw;
 }
 
@@ -84,7 +84,7 @@
 
   .signup::before,
   .signup::after {
-    content: '';
+    content: "";
   }
 
   .signup__success {
