@@ -3,11 +3,9 @@ import './Code.css';
 
 export default function Code({ children }) {
   let lines;
-  let caret = false;
   if (typeof children === 'object') {
     lines = children.reduce((value, item) => {
       if (item.type === 'caret') {
-        caret = true;
         return value;
       }
       return value + item.value;
@@ -19,7 +17,6 @@ export default function Code({ children }) {
       return (
         <CodeLine number={index + 1}>
           {value}
-          <span className="caret">|</span>
         </CodeLine>
       );
     return <CodeLine number={index + 1}>{value}</CodeLine>;
