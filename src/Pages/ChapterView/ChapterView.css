@@ -32,6 +32,7 @@
   height: calc(100vmax - 80vmin);
   font-size: 5vmin;
   overflow: scroll;
+  color: black;
 }
 
 /* Hide scrollbar */
