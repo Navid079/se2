@@ -1,6 +1,5 @@
 // Libraries
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // Components
 import number2persian from '../../../util/numberToPersian';
